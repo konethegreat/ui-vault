@@ -10,9 +10,13 @@ source_url:
 source_author:
 retrieved: 2026-01-01
 license: MIT
+license_url:
 rights: own
 published_source: true
 files: entry.tsx
+demo: none
+demo_source:
+demo_url:
 ---
 
 # What it is
@@ -27,6 +31,10 @@ One paragraph describing the pattern and where it belongs.
 # Notes
 
 Implementation details, dependencies, accessibility or performance caveats.
+
+# Demo
+
+Use `demo: live` only for original work or permissive third-party work with a verified license. Add the wrapper at `site/src/demos/NameDemo.tsx` and point `demo_source` at it. Use `demo: link` with a `demo_url` when the original runs elsewhere. Use `demo: none` otherwise.
 
 # Attribution
 

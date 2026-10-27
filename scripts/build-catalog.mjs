@@ -9,6 +9,13 @@ const generated = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2,
 
 const TIER_RANK = { source: 0, reference: 1, pattern: 2 };
 const TIER_LABEL = { source: "Source", reference: "Reference", pattern: "Library" };
+const SITE_URL = "https://konethegreat.github.io/ui-vault";
+
+function demoCell(entry) {
+  if (entry.demo === "live") return `[live](${SITE_URL}/#demo-${entry.id})`;
+  if (entry.demo === "link" && entry.demo_url) return `[original](${entry.demo_url})`;
+  return "";
+}
 
 function toEntry(entry) {
   const d = entry.data;
@@ -28,6 +35,10 @@ function toEntry(entry) {
     upstream_commit: d.upstream_commit || "",
     retrieved: d.retrieved || "",
     published_source: d.published_source === true,
+    demo: d.demo || "none",
+    demo_url: d.demo_url || "",
+    demo_source: d.demo_source || "",
+    license_url: d.license_url || "",
     path: `${entry.folder}/${d.id}/entry.md`,
     summary: firstParagraph(entry.body),
   };
@@ -107,20 +118,20 @@ for (const source of sources) {
   );
 }
 
-indexLines.push("", "## References", "", "| Design | Author | License | Rights | Status | Notes |", "| --- | --- | --- | --- | --- | --- |");
+indexLines.push("", "## References", "", "| Design | Author | License | Rights | Status | Demo | Notes |", "| --- | --- | --- | --- | --- | --- | --- |");
 
 for (const reference of references) {
   indexLines.push(
-    `| [${mdCell(reference.title)}](${reference.path}) | ${mdCell(reference.source_author)} | ${mdCell(reference.license)} | ${mdCell(reference.rights)} | ${mdCell(reference.status)} | ${mdCell(reference.summary)} |`
+    `| [${mdCell(reference.title)}](${reference.path}) | ${mdCell(reference.source_author)} | ${mdCell(reference.license)} | ${mdCell(reference.rights)} | ${mdCell(reference.status)} | ${demoCell(reference)} | ${mdCell(reference.summary)} |`
   );
 }
 
 indexLines.push("", "## Library", "");
 
 if (patterns.length) {
-  indexLines.push("| Pattern | Type | License | Notes |", "| --- | --- | --- | --- |");
+  indexLines.push("| Pattern | Type | License | Demo | Notes |", "| --- | --- | --- | --- | --- |");
   for (const pattern of patterns) {
-    indexLines.push(`| [${mdCell(pattern.title)}](${pattern.path}) | ${mdCell(pattern.type)} | ${mdCell(pattern.license)} | ${mdCell(pattern.summary)} |`);
+    indexLines.push(`| [${mdCell(pattern.title)}](${pattern.path}) | ${mdCell(pattern.type)} | ${mdCell(pattern.license)} | ${demoCell(pattern)} | ${mdCell(pattern.summary)} |`);
   }
 } else {
   indexLines.push("No original patterns yet. See [library/README.md](library/README.md) for the bar an entry must meet.");
@@ -146,8 +157,11 @@ const thirdPartyLines = [
 ];
 
 for (const entry of [...sources, ...references]) {
+  const licenseCell = entry.license_url
+    ? `[${mdCell(entry.license)}](${entry.license_url})`
+    : mdCell(entry.license);
   thirdPartyLines.push(
-    `| [${mdCell(entry.title)}](${entry.path}) | ${mdCell(entry.source_author)} | ${mdCell(entry.license)} | ${mdCell(entry.rights)} | ${entry.source_url ? `[link](${entry.source_url})` : ""} | ${mdCell(entry.retrieved)} | ${entry.published_source ? "yes" : "no"} |`
+    `| [${mdCell(entry.title)}](${entry.path}) | ${mdCell(entry.source_author)} | ${licenseCell} | ${mdCell(entry.rights)} | ${entry.source_url ? `[link](${entry.source_url})` : ""} | ${mdCell(entry.retrieved)} | ${entry.published_source ? "yes" : "no"} |`
   );
 }
 
@@ -169,14 +183,25 @@ const entryCards = entries
     const search = [entry.title, entry.summary, entry.type, entry.tier, entry.source_author, ...entry.tags, ...entry.stack]
       .join(" ")
       .toLowerCase();
-    const author = entry.source_author
-      ? `<dt>Author</dt><dd>${escapeHtml(entry.source_author)}</dd>`
+    const authorName = entry.source_author || (entry.tier === "pattern" ? "Kone" : "");
+    const author = authorName
+      ? `<dt>Author</dt><dd>${entry.source_url ? `<a href="${escapeHtml(entry.source_url)}" target="_blank" rel="noopener">${escapeHtml(authorName)}</a>` : escapeHtml(authorName)}</dd>`
       : "";
+    const license = entry.license_url
+      ? `<a href="${escapeHtml(entry.license_url)}" target="_blank" rel="noopener">${escapeHtml(entry.license)}</a>`
+      : escapeHtml(entry.license);
+    const demo =
+      entry.demo === "live"
+        ? `<a class="more" href="${SITE_URL}/#demo-${entry.id}" target="_blank" rel="noopener">Live demo</a>`
+        : entry.demo === "link" && entry.demo_url
+          ? `<a class="more" href="${escapeHtml(entry.demo_url)}" target="_blank" rel="noopener">Original demo</a>`
+          : "";
     return `<article class="card entry-card" data-tier="${entry.tier}" data-search="${escapeHtml(search)}">
   <div class="badges">${badge(TIER_LABEL[entry.tier], `tier-${entry.tier}`)}${badge(entry.type, "plain")}${badge(entry.status, `status-${entry.status}`)}</div>
   <h3><a href="${escapeHtml(entry.path)}">${escapeHtml(entry.title)}</a></h3>
   <p>${escapeHtml(entry.summary)}</p>
-  <dl>${author}<dt>License</dt><dd>${escapeHtml(entry.license)}</dd><dt>Rights</dt><dd>${escapeHtml(entry.rights)}</dd></dl>
+  <dl>${author}<dt>License</dt><dd>${license}</dd><dt>Rights</dt><dd>${escapeHtml(entry.rights)}</dd></dl>
+  ${demo}
   <div class="tags">${tags}</div>
 </article>`;
   })

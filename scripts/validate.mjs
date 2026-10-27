@@ -14,9 +14,12 @@ const TYPES = new Set([
   "nav",
   "section",
   "card",
+  "button",
   "background",
   "interaction",
   "motion",
+  "text",
+  "data-display",
   "layout",
   "library",
   "docs",
@@ -24,6 +27,7 @@ const TYPES = new Set([
 ]);
 const STATUSES = new Set(["usable", "needs-fix", "inspiration-only"]);
 const RIGHTS = new Set(["own", "permissive", "restricted", "noncommercial", "unknown", "private-reference"]);
+const DEMOS = new Set(["live", "link", "none"]);
 const CODE_FILE = /\.(tsx?|jsx?|mjs|cjs|css|scss|glsl|frag|vert|html)$/i;
 const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
@@ -78,6 +82,17 @@ for (const entry of entries) {
     if (d.license !== "MIT") fail('pattern entries require license: MIT');
     if (!d.files) fail("pattern entries require a files list");
   }
+
+  if (d.demo && !DEMOS.has(d.demo)) fail(`unknown demo "${d.demo}"`);
+  if (d.demo === "live") {
+    if (!["own", "permissive"].includes(d.rights)) {
+      fail(`demo: live requires rights own or permissive, found "${d.rights}"`);
+    }
+    if (!d.license || d.license === "unknown") fail("demo: live requires a verified license");
+    if (!d.demo_source) fail('demo: live requires "demo_source"');
+    else if (!existsSync(join(root, d.demo_source))) fail(`demo_source not found: ${d.demo_source}`);
+  }
+  if (d.demo === "link" && !d.demo_url) fail('demo: link requires "demo_url"');
 
   if (d.files) {
     for (const file of String(d.files).split(",").map((item) => item.trim()).filter(Boolean)) {

@@ -1,0 +1,126 @@
+.ui-button {
+  --ui-button-radius: 999px;
+  --ui-button-height: 40px;
+  --ui-button-padding: 0 18px;
+  --ui-button-font: 14px;
+  --ui-button-bg: #1c1917;
+  --ui-button-fg: #ffffff;
+  --ui-button-border: transparent;
+  --ui-button-hover: #292524;
+  --ui-button-focus: #1c1917;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: var(--ui-button-height);
+  padding: var(--ui-button-padding);
+  border: 1px solid var(--ui-button-border);
+  border-radius: var(--ui-button-radius);
+  background: var(--ui-button-bg);
+  color: var(--ui-button-fg);
+  font-family: inherit;
+  font-size: var(--ui-button-font);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.ui-button:hover:not(:disabled) {
+  background: var(--ui-button-hover);
+}
+
+.ui-button:focus-visible {
+  outline: 2px solid var(--ui-button-focus);
+  outline-offset: 2px;
+}
+
+.ui-button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.ui-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.ui-button--sm {
+  --ui-button-height: 32px;
+  --ui-button-padding: 0 13px;
+  --ui-button-font: 13px;
+}
+
+.ui-button--lg {
+  --ui-button-height: 48px;
+  --ui-button-padding: 0 24px;
+  --ui-button-font: 15px;
+}
+
+.ui-button--block {
+  width: 100%;
+}
+
+.ui-button--secondary {
+  --ui-button-bg: #ffffff;
+  --ui-button-fg: #1c1917;
+  --ui-button-border: #d6d3d1;
+  --ui-button-hover: #f5f5f4;
+  --ui-button-focus: #1c1917;
+}
+
+.ui-button--ghost {
+  --ui-button-bg: transparent;
+  --ui-button-fg: #44403c;
+  --ui-button-hover: #f5f5f4;
+  --ui-button-focus: #1c1917;
+}
+
+.ui-button--danger {
+  --ui-button-bg: #b91c1c;
+  --ui-button-fg: #ffffff;
+  --ui-button-hover: #991b1b;
+  --ui-button-focus: #b91c1c;
+}
+
+.ui-button__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ui-button__spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: ui-button-spin 0.7s linear infinite;
+}
+
+@keyframes ui-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-button {
+    transition: none;
+  }
+
+  .ui-button:active:not(:disabled) {
+    transform: none;
+  }
+
+  .ui-button__spinner {
+    animation: none;
+    opacity: 0.6;
+  }
+}

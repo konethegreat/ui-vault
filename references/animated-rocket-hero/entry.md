@@ -8,7 +8,7 @@ stack: react, webgl2, glsl, tailwind
 tags: shader, hero, gradient, pointer, marketing
 source_url: https://www.shadertoy.com/user/atzedent
 source_author: Matthias Hurrle (@atzedent) for the shader; component author not recorded
-retrieved: 2026-10-27
+retrieved: 2026-10-28
 license: unknown
 rights: private-reference
 published_source: false
@@ -43,8 +43,14 @@ A full-screen dark hero. A WebGL2 fragment shader paints a drifting cloud and li
 - No reduced-motion handling. The animation runs continuously.
 - `useRef<number>()` without an initial value fails under current React type definitions.
 
+# Live alternative
+
+This hero is not hosted. The shader is a Star Nest derivative and its header credits Matthias Hurrle (@atzedent), while the wrapper carries no license. Star Nest is by Pablo Roman Andrioli (https://www.shadertoy.com/view/XlfGRj). Shadertoy shaders default to CC BY-NC-SA 3.0 unless the author states otherwise, so treat this one as non-commercial until verified independently.
+
+The vault's [Nebula Hero](https://konethegreat.github.io/ui-vault/#demo-nebula-hero) is an original, MIT-licensed replacement with the same role and mood. Use that when you need a live shader hero.
+
 # Provenance
 
-The shader header credits Matthias Hurrle (@atzedent). Shadertoy shaders default to CC BY-NC-SA 3.0 unless the author states otherwise, so treat this one as non-commercial until verified independently. The wrapper component carries no license header and its author is not recorded. The export format matches a 21st.dev component export.
+The shader header credits Matthias Hurrle (@atzedent). The wrapper component carries no license header and its author is not recorded. The export format matches a 21st.dev component export.
 
 The verbatim source is kept in the local `_private/` archive and is not published in this repository. Do not copy it into a project. Reimplement the ideas above and credit the shader author.

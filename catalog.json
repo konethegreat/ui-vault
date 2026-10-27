@@ -1,0 +1,1991 @@
+{
+  "name": "ui-vault",
+  "license": "MIT for original work, see NOTICE.md",
+  "generated": "2026-10-28",
+  "counts": {
+    "sources": 3,
+    "references": 2,
+    "patterns": 0,
+    "upstream_components": 354
+  },
+  "entries": [
+    {
+      "id": "magic-ui",
+      "title": "Magic UI",
+      "tier": "source",
+      "type": "library",
+      "status": "usable",
+      "stack": [
+        "react",
+        "tailwind",
+        "typescript"
+      ],
+      "tags": [
+        "animated",
+        "marketing",
+        "motion",
+        "shadcn"
+      ],
+      "license": "MIT",
+      "rights": "permissive",
+      "source_url": "https://magicui.design",
+      "source_author": "Magic UI (magicuidesign)",
+      "upstream_repo": "https://github.com/magicuidesign/magicui",
+      "upstream_commit": "efe76fc5755eca1142dd4f74c1d6f0ace2887e3c",
+      "retrieved": "2026-10-27",
+      "published_source": false,
+      "path": "sources/magic-ui/entry.md",
+      "summary": "Animated components built on top of shadcn/ui, aimed at marketing pages and landing experiences. Installed from the `@magicui` registry with the shadcn CLI."
+    },
+    {
+      "id": "react-bits",
+      "title": "React Bits",
+      "tier": "source",
+      "type": "library",
+      "status": "usable",
+      "stack": [
+        "react",
+        "css",
+        "tailwind",
+        "typescript"
+      ],
+      "tags": [
+        "animated",
+        "text-effects",
+        "backgrounds",
+        "cursors",
+        "shadcn"
+      ],
+      "license": "MIT + Commons Clause",
+      "rights": "restricted",
+      "source_url": "https://reactbits.dev",
+      "source_author": "David Haz (React Bits)",
+      "upstream_repo": "https://github.com/DavidHDev/react-bits",
+      "upstream_commit": "e12c22192ac7b4b452c5e2feb9b586d74765d696",
+      "retrieved": "2026-10-27",
+      "published_source": false,
+      "path": "sources/react-bits/entry.md",
+      "summary": "A large collection of animated React components: text effects, backgrounds, cursor effects, micro-interactions and full components. Installed as source through the shadcn CLI or jsrepo."
+    },
+    {
+      "id": "shadcn-ui",
+      "title": "shadcn/ui",
+      "tier": "source",
+      "type": "library",
+      "status": "usable",
+      "stack": [
+        "react",
+        "tailwind",
+        "typescript"
+      ],
+      "tags": [
+        "primitives",
+        "copy-in",
+        "registry",
+        "accessibility"
+      ],
+      "license": "MIT",
+      "rights": "permissive",
+      "source_url": "https://ui.shadcn.com",
+      "source_author": "shadcn",
+      "upstream_repo": "https://github.com/shadcn-ui/ui",
+      "upstream_commit": "96da9cc7f1aa10580a3741664e2a77c721206c00",
+      "retrieved": "2026-10-27",
+      "published_source": false,
+      "path": "sources/shadcn-ui/entry.md",
+      "summary": "The base layer for most of the stack indexed here. Components are copied into your project as source, so you own and edit the files. It is not a runtime dependency."
+    },
+    {
+      "id": "animated-rocket-hero",
+      "title": "Animated Rocket Shader Hero",
+      "tier": "reference",
+      "type": "hero",
+      "status": "needs-fix",
+      "stack": [
+        "react",
+        "webgl2",
+        "glsl",
+        "tailwind"
+      ],
+      "tags": [
+        "shader",
+        "hero",
+        "gradient",
+        "pointer",
+        "marketing"
+      ],
+      "license": "unknown",
+      "rights": "private-reference",
+      "source_url": "https://www.shadertoy.com/user/atzedent",
+      "source_author": "Matthias Hurrle (@atzedent) for the shader; component author not recorded",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-10-27",
+      "published_source": false,
+      "path": "references/animated-rocket-hero/entry.md",
+      "summary": "A full-screen dark hero. A WebGL2 fragment shader paints a drifting cloud and light field, and the marketing content sits above it with staggered fade-ins and warm gradient headings."
+    },
+    {
+      "id": "liquid-sculpture-hero",
+      "title": "Liquid Sculpture Hero",
+      "tier": "reference",
+      "type": "hero",
+      "status": "inspiration-only",
+      "stack": [
+        "react",
+        "webgl2",
+        "glsl",
+        "typescript"
+      ],
+      "tags": [
+        "particles",
+        "gpu",
+        "cursor",
+        "image",
+        "hero",
+        "light-mode"
+      ],
+      "license": "unknown",
+      "rights": "private-reference",
+      "source_url": "https://guglielmogiannattasio.it",
+      "source_author": "guglielmogiannattasio.it, via a 21st.dev component export",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-10-27",
+      "published_source": false,
+      "path": "references/liquid-sculpture-hero/entry.md",
+      "summary": "A hero that rebuilds an image as roughly one hundred thousand GPU particles. The cursor turns the material liquid and it settles back into the crisp image. Without WebGL2 it falls back to a static image."
+    }
+  ],
+  "upstream": [
+    {
+      "id": "magic-ui",
+      "library": "Magic UI",
+      "license": "MIT",
+      "rights": "permissive",
+      "source_url": "https://magicui.design",
+      "repo": "https://github.com/magicuidesign/magicui",
+      "commit": "efe76fc5755eca1142dd4f74c1d6f0ace2887e3c",
+      "install": "npx shadcn@latest add @magicui/<name>",
+      "docs": "",
+      "categories": {
+        "ui": [
+          "android",
+          "animated-beam",
+          "animated-circular-progress-bar",
+          "animated-gradient-text",
+          "animated-grid-pattern",
+          "animated-list",
+          "animated-shiny-text",
+          "animated-subscribe-button",
+          "animated-theme-toggler",
+          "arc-timeline",
+          "aurora-text",
+          "avatar-circles",
+          "bento-grid",
+          "blur-fade",
+          "border-beam",
+          "box-reveal",
+          "client-tweet-card",
+          "code-comparison",
+          "comic-text",
+          "confetti",
+          "cool-mode",
+          "dock",
+          "dot-pattern",
+          "file-tree",
+          "flickering-grid",
+          "flip-text",
+          "globe",
+          "glyph-matrix",
+          "grid-beams",
+          "grid-pattern",
+          "hero-video-dialog",
+          "highlighter",
+          "hyper-text",
+          "icon-cloud",
+          "interactive-grid-pattern",
+          "interactive-hover-button",
+          "iphone-15-pro",
+          "lens",
+          "line-shadow-text",
+          "magic-card",
+          "marquee",
+          "meteors",
+          "morphing-text",
+          "neon-gradient-card",
+          "number-ticker",
+          "orbiting-circles",
+          "particles",
+          "pixel-image",
+          "pointer",
+          "progressive-blur",
+          "pulsating-button",
+          "rainbow-button",
+          "retro-grid",
+          "ripple",
+          "ripple-button",
+          "safari",
+          "scratch-to-reveal",
+          "script-copy-btn",
+          "scroll-based-velocity",
+          "scroll-progress",
+          "shimmer-button",
+          "shine-border",
+          "shiny-button",
+          "smooth-cursor",
+          "sparkles-text",
+          "spinning-text",
+          "striped-pattern",
+          "terminal",
+          "text-animate",
+          "text-reveal",
+          "tweet-card",
+          "typing-animation",
+          "video-text",
+          "warp-background",
+          "word-rotate"
+        ]
+      },
+      "components": [
+        {
+          "name": "android",
+          "category": "ui"
+        },
+        {
+          "name": "animated-beam",
+          "category": "ui"
+        },
+        {
+          "name": "animated-circular-progress-bar",
+          "category": "ui"
+        },
+        {
+          "name": "animated-gradient-text",
+          "category": "ui"
+        },
+        {
+          "name": "animated-grid-pattern",
+          "category": "ui"
+        },
+        {
+          "name": "animated-list",
+          "category": "ui"
+        },
+        {
+          "name": "animated-shiny-text",
+          "category": "ui"
+        },
+        {
+          "name": "animated-subscribe-button",
+          "category": "ui"
+        },
+        {
+          "name": "animated-theme-toggler",
+          "category": "ui"
+        },
+        {
+          "name": "arc-timeline",
+          "category": "ui"
+        },
+        {
+          "name": "aurora-text",
+          "category": "ui"
+        },
+        {
+          "name": "avatar-circles",
+          "category": "ui"
+        },
+        {
+          "name": "bento-grid",
+          "category": "ui"
+        },
+        {
+          "name": "blur-fade",
+          "category": "ui"
+        },
+        {
+          "name": "border-beam",
+          "category": "ui"
+        },
+        {
+          "name": "box-reveal",
+          "category": "ui"
+        },
+        {
+          "name": "client-tweet-card",
+          "category": "ui"
+        },
+        {
+          "name": "code-comparison",
+          "category": "ui"
+        },
+        {
+          "name": "comic-text",
+          "category": "ui"
+        },
+        {
+          "name": "confetti",
+          "category": "ui"
+        },
+        {
+          "name": "cool-mode",
+          "category": "ui"
+        },
+        {
+          "name": "dock",
+          "category": "ui"
+        },
+        {
+          "name": "dot-pattern",
+          "category": "ui"
+        },
+        {
+          "name": "file-tree",
+          "category": "ui"
+        },
+        {
+          "name": "flickering-grid",
+          "category": "ui"
+        },
+        {
+          "name": "flip-text",
+          "category": "ui"
+        },
+        {
+          "name": "globe",
+          "category": "ui"
+        },
+        {
+          "name": "glyph-matrix",
+          "category": "ui"
+        },
+        {
+          "name": "grid-beams",
+          "category": "ui"
+        },
+        {
+          "name": "grid-pattern",
+          "category": "ui"
+        },
+        {
+          "name": "hero-video-dialog",
+          "category": "ui"
+        },
+        {
+          "name": "highlighter",
+          "category": "ui"
+        },
+        {
+          "name": "hyper-text",
+          "category": "ui"
+        },
+        {
+          "name": "icon-cloud",
+          "category": "ui"
+        },
+        {
+          "name": "interactive-grid-pattern",
+          "category": "ui"
+        },
+        {
+          "name": "interactive-hover-button",
+          "category": "ui"
+        },
+        {
+          "name": "iphone-15-pro",
+          "category": "ui"
+        },
+        {
+          "name": "lens",
+          "category": "ui"
+        },
+        {
+          "name": "line-shadow-text",
+          "category": "ui"
+        },
+        {
+          "name": "magic-card",
+          "category": "ui"
+        },
+        {
+          "name": "marquee",
+          "category": "ui"
+        },
+        {
+          "name": "meteors",
+          "category": "ui"
+        },
+        {
+          "name": "morphing-text",
+          "category": "ui"
+        },
+        {
+          "name": "neon-gradient-card",
+          "category": "ui"
+        },
+        {
+          "name": "number-ticker",
+          "category": "ui"
+        },
+        {
+          "name": "orbiting-circles",
+          "category": "ui"
+        },
+        {
+          "name": "particles",
+          "category": "ui"
+        },
+        {
+          "name": "pixel-image",
+          "category": "ui"
+        },
+        {
+          "name": "pointer",
+          "category": "ui"
+        },
+        {
+          "name": "progressive-blur",
+          "category": "ui"
+        },
+        {
+          "name": "pulsating-button",
+          "category": "ui"
+        },
+        {
+          "name": "rainbow-button",
+          "category": "ui"
+        },
+        {
+          "name": "retro-grid",
+          "category": "ui"
+        },
+        {
+          "name": "ripple",
+          "category": "ui"
+        },
+        {
+          "name": "ripple-button",
+          "category": "ui"
+        },
+        {
+          "name": "safari",
+          "category": "ui"
+        },
+        {
+          "name": "scratch-to-reveal",
+          "category": "ui"
+        },
+        {
+          "name": "script-copy-btn",
+          "category": "ui"
+        },
+        {
+          "name": "scroll-based-velocity",
+          "category": "ui"
+        },
+        {
+          "name": "scroll-progress",
+          "category": "ui"
+        },
+        {
+          "name": "shimmer-button",
+          "category": "ui"
+        },
+        {
+          "name": "shine-border",
+          "category": "ui"
+        },
+        {
+          "name": "shiny-button",
+          "category": "ui"
+        },
+        {
+          "name": "smooth-cursor",
+          "category": "ui"
+        },
+        {
+          "name": "sparkles-text",
+          "category": "ui"
+        },
+        {
+          "name": "spinning-text",
+          "category": "ui"
+        },
+        {
+          "name": "striped-pattern",
+          "category": "ui"
+        },
+        {
+          "name": "terminal",
+          "category": "ui"
+        },
+        {
+          "name": "text-animate",
+          "category": "ui"
+        },
+        {
+          "name": "text-reveal",
+          "category": "ui"
+        },
+        {
+          "name": "tweet-card",
+          "category": "ui"
+        },
+        {
+          "name": "typing-animation",
+          "category": "ui"
+        },
+        {
+          "name": "video-text",
+          "category": "ui"
+        },
+        {
+          "name": "warp-background",
+          "category": "ui"
+        },
+        {
+          "name": "word-rotate",
+          "category": "ui"
+        }
+      ]
+    },
+    {
+      "id": "react-bits",
+      "library": "React Bits",
+      "license": "MIT + Commons Clause",
+      "rights": "restricted",
+      "source_url": "https://reactbits.dev",
+      "repo": "https://github.com/DavidHDev/react-bits",
+      "commit": "e12c22192ac7b4b452c5e2feb9b586d74765d696",
+      "install": "npx shadcn@latest add @react-bits/<Name>-TS-TW",
+      "docs": "",
+      "categories": {
+        "Animations": [
+          "AnimatedContent",
+          "BlobCursor",
+          "ClickSpark",
+          "Crosshair",
+          "CrystalizedBall",
+          "Cubes",
+          "CursorGrid",
+          "DitherVeil",
+          "ElasticMesh",
+          "ElectricBorder",
+          "ElectricLogo",
+          "FadeContent",
+          "GhostCursor",
+          "GlareHover",
+          "GlowCursor",
+          "GradualBlur",
+          "HalftoneReveal",
+          "ImageTrail",
+          "LaserFlow",
+          "LogoLoop",
+          "Magnet",
+          "MetaBalls",
+          "MetallicPaint",
+          "Noise",
+          "OrbitImages",
+          "PixelSwap",
+          "PixelTrail",
+          "PixelTransition",
+          "Ribbons",
+          "RippleDistortion",
+          "ScrollExpand",
+          "ShapeBlur",
+          "SplashCursor",
+          "StarBorder",
+          "StickerPeel",
+          "Strands",
+          "SwarmCursor",
+          "TargetCursor"
+        ],
+        "Backgrounds": [
+          "AcidSquares",
+          "AeroShards",
+          "Antigravity",
+          "Aurora",
+          "Balatro",
+          "Ballpit",
+          "Beams",
+          "ColorBends",
+          "CRTWarp",
+          "DarkVeil",
+          "Dither",
+          "DotField",
+          "DotGrid",
+          "EvilEye",
+          "FaultyTerminal",
+          "Ferrofluid",
+          "FloatingLines",
+          "FluxLines",
+          "Galaxy",
+          "GhostFibers",
+          "GradientASCII",
+          "GradientBlinds",
+          "GradientWaves",
+          "Grainient",
+          "GridDistortion",
+          "GridMotion",
+          "GridScan",
+          "Hyperspeed",
+          "Iridescence",
+          "LetterGlitch",
+          "Lightfall",
+          "Lightning",
+          "LightPillar",
+          "LightRays",
+          "LightTunnel",
+          "LineWaves",
+          "LiquidChrome",
+          "LiquidEther",
+          "MagicRings",
+          "MagnetLines",
+          "MicroSlats",
+          "MoltenMetal",
+          "Orb",
+          "Particles",
+          "PatternWaves",
+          "PixelBlast",
+          "PixelSnow",
+          "Plasma",
+          "PlasmaWave",
+          "Prism",
+          "PrismaticBurst",
+          "Radar",
+          "RippleGrid",
+          "Scanner",
+          "ShapeGrid",
+          "ShapeWaves",
+          "SideRays",
+          "Silk",
+          "SlicedWaves",
+          "SoftAurora",
+          "Threads",
+          "Topography",
+          "Waves",
+          "WebThreads"
+        ],
+        "Components": [
+          "AccordionGallery",
+          "AnimatedList",
+          "BorderGlow",
+          "BounceCards",
+          "BubbleMenu",
+          "CardNav",
+          "CardSwap",
+          "Carousel",
+          "ChromaGrid",
+          "CircularCarousel",
+          "CircularGallery",
+          "Counter",
+          "CurvedInput",
+          "DecayCard",
+          "DepthCarousel",
+          "Dock",
+          "DomeGallery",
+          "DriftWall",
+          "ElasticSlider",
+          "FlexCarousel",
+          "FlowingMenu",
+          "FluidGlass",
+          "FlyingPosters",
+          "Folder",
+          "GlassIcons",
+          "GlassSurface",
+          "GooeyNav",
+          "HoloCard",
+          "InfiniteMenu",
+          "InfiniteSpiral",
+          "Lanyard",
+          "LineSidebar",
+          "MagicBento",
+          "Masonry",
+          "ModelViewer",
+          "MorphSlider",
+          "OptionWheel",
+          "PillNav",
+          "PixelCard",
+          "ProfileCard",
+          "ReflectiveCard",
+          "ScrollStack",
+          "SpecularButton",
+          "SpotlightCard",
+          "Stack",
+          "StaggeredMenu",
+          "Stepper",
+          "TiltedCard"
+        ],
+        "Micro": [
+          "BellToggle",
+          "BranchedMenu",
+          "CallChip",
+          "CodeSlots",
+          "CometDial",
+          "DodgeField",
+          "FlipCard",
+          "FlyingButton",
+          "FolderFloat",
+          "FuseButton",
+          "GlideSelect",
+          "HoldButton",
+          "JellyRadio",
+          "LatticeLoader",
+          "PaperCrumple",
+          "PeekRating",
+          "PromptBar",
+          "PulseHeart",
+          "RefineFrame",
+          "RubberSegment",
+          "ScrubField",
+          "Shredder",
+          "SlideCommit",
+          "SlingButton",
+          "SloshGauge",
+          "SpringCheck",
+          "SquishSwitch",
+          "StatusMark",
+          "SwipeRow",
+          "SwipeToast",
+          "TearTicket",
+          "ThoughtLine",
+          "VoicePill",
+          "WakeSlider",
+          "WarmTooltip"
+        ],
+        "TextAnimations": [
+          "ASCIIText",
+          "BlurText",
+          "CircularText",
+          "CountUp",
+          "CurvedLoop",
+          "DecryptedText",
+          "DepthText",
+          "EchoText",
+          "FallingText",
+          "FoldText",
+          "FuzzyText",
+          "GlitchText",
+          "GradientText",
+          "MaskedHeading",
+          "ParticleText",
+          "RotatingText",
+          "ScrambledText",
+          "ScrollFloat",
+          "ScrollReveal",
+          "ScrollVelocity",
+          "ShinyText",
+          "Shuffle",
+          "SplitFlapText",
+          "SplitText",
+          "StrokeText",
+          "TechText",
+          "TextCursor",
+          "TextLoop",
+          "TextPressure",
+          "TextType",
+          "TrueFocus",
+          "VariableProximity",
+          "WarpText"
+        ]
+      },
+      "components": [
+        {
+          "name": "AnimatedContent",
+          "category": "Animations"
+        },
+        {
+          "name": "BlobCursor",
+          "category": "Animations"
+        },
+        {
+          "name": "ClickSpark",
+          "category": "Animations"
+        },
+        {
+          "name": "Crosshair",
+          "category": "Animations"
+        },
+        {
+          "name": "CrystalizedBall",
+          "category": "Animations"
+        },
+        {
+          "name": "Cubes",
+          "category": "Animations"
+        },
+        {
+          "name": "CursorGrid",
+          "category": "Animations"
+        },
+        {
+          "name": "DitherVeil",
+          "category": "Animations"
+        },
+        {
+          "name": "ElasticMesh",
+          "category": "Animations"
+        },
+        {
+          "name": "ElectricBorder",
+          "category": "Animations"
+        },
+        {
+          "name": "ElectricLogo",
+          "category": "Animations"
+        },
+        {
+          "name": "FadeContent",
+          "category": "Animations"
+        },
+        {
+          "name": "GhostCursor",
+          "category": "Animations"
+        },
+        {
+          "name": "GlareHover",
+          "category": "Animations"
+        },
+        {
+          "name": "GlowCursor",
+          "category": "Animations"
+        },
+        {
+          "name": "GradualBlur",
+          "category": "Animations"
+        },
+        {
+          "name": "HalftoneReveal",
+          "category": "Animations"
+        },
+        {
+          "name": "ImageTrail",
+          "category": "Animations"
+        },
+        {
+          "name": "LaserFlow",
+          "category": "Animations"
+        },
+        {
+          "name": "LogoLoop",
+          "category": "Animations"
+        },
+        {
+          "name": "Magnet",
+          "category": "Animations"
+        },
+        {
+          "name": "MetaBalls",
+          "category": "Animations"
+        },
+        {
+          "name": "MetallicPaint",
+          "category": "Animations"
+        },
+        {
+          "name": "Noise",
+          "category": "Animations"
+        },
+        {
+          "name": "OrbitImages",
+          "category": "Animations"
+        },
+        {
+          "name": "PixelSwap",
+          "category": "Animations"
+        },
+        {
+          "name": "PixelTrail",
+          "category": "Animations"
+        },
+        {
+          "name": "PixelTransition",
+          "category": "Animations"
+        },
+        {
+          "name": "Ribbons",
+          "category": "Animations"
+        },
+        {
+          "name": "RippleDistortion",
+          "category": "Animations"
+        },
+        {
+          "name": "ScrollExpand",
+          "category": "Animations"
+        },
+        {
+          "name": "ShapeBlur",
+          "category": "Animations"
+        },
+        {
+          "name": "SplashCursor",
+          "category": "Animations"
+        },
+        {
+          "name": "StarBorder",
+          "category": "Animations"
+        },
+        {
+          "name": "StickerPeel",
+          "category": "Animations"
+        },
+        {
+          "name": "Strands",
+          "category": "Animations"
+        },
+        {
+          "name": "SwarmCursor",
+          "category": "Animations"
+        },
+        {
+          "name": "TargetCursor",
+          "category": "Animations"
+        },
+        {
+          "name": "AcidSquares",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "AeroShards",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Antigravity",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Aurora",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Balatro",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Ballpit",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Beams",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "ColorBends",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "CRTWarp",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "DarkVeil",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Dither",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "DotField",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "DotGrid",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "EvilEye",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "FaultyTerminal",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Ferrofluid",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "FloatingLines",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "FluxLines",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Galaxy",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "GhostFibers",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "GradientASCII",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "GradientBlinds",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "GradientWaves",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Grainient",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "GridDistortion",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "GridMotion",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "GridScan",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Hyperspeed",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Iridescence",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "LetterGlitch",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Lightfall",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Lightning",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "LightPillar",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "LightRays",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "LightTunnel",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "LineWaves",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "LiquidChrome",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "LiquidEther",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "MagicRings",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "MagnetLines",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "MicroSlats",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "MoltenMetal",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Orb",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Particles",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "PatternWaves",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "PixelBlast",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "PixelSnow",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Plasma",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "PlasmaWave",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Prism",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "PrismaticBurst",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Radar",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "RippleGrid",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Scanner",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "ShapeGrid",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "ShapeWaves",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "SideRays",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Silk",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "SlicedWaves",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "SoftAurora",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Threads",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Topography",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "Waves",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "WebThreads",
+          "category": "Backgrounds"
+        },
+        {
+          "name": "AccordionGallery",
+          "category": "Components"
+        },
+        {
+          "name": "AnimatedList",
+          "category": "Components"
+        },
+        {
+          "name": "BorderGlow",
+          "category": "Components"
+        },
+        {
+          "name": "BounceCards",
+          "category": "Components"
+        },
+        {
+          "name": "BubbleMenu",
+          "category": "Components"
+        },
+        {
+          "name": "CardNav",
+          "category": "Components"
+        },
+        {
+          "name": "CardSwap",
+          "category": "Components"
+        },
+        {
+          "name": "Carousel",
+          "category": "Components"
+        },
+        {
+          "name": "ChromaGrid",
+          "category": "Components"
+        },
+        {
+          "name": "CircularCarousel",
+          "category": "Components"
+        },
+        {
+          "name": "CircularGallery",
+          "category": "Components"
+        },
+        {
+          "name": "Counter",
+          "category": "Components"
+        },
+        {
+          "name": "CurvedInput",
+          "category": "Components"
+        },
+        {
+          "name": "DecayCard",
+          "category": "Components"
+        },
+        {
+          "name": "DepthCarousel",
+          "category": "Components"
+        },
+        {
+          "name": "Dock",
+          "category": "Components"
+        },
+        {
+          "name": "DomeGallery",
+          "category": "Components"
+        },
+        {
+          "name": "DriftWall",
+          "category": "Components"
+        },
+        {
+          "name": "ElasticSlider",
+          "category": "Components"
+        },
+        {
+          "name": "FlexCarousel",
+          "category": "Components"
+        },
+        {
+          "name": "FlowingMenu",
+          "category": "Components"
+        },
+        {
+          "name": "FluidGlass",
+          "category": "Components"
+        },
+        {
+          "name": "FlyingPosters",
+          "category": "Components"
+        },
+        {
+          "name": "Folder",
+          "category": "Components"
+        },
+        {
+          "name": "GlassIcons",
+          "category": "Components"
+        },
+        {
+          "name": "GlassSurface",
+          "category": "Components"
+        },
+        {
+          "name": "GooeyNav",
+          "category": "Components"
+        },
+        {
+          "name": "HoloCard",
+          "category": "Components"
+        },
+        {
+          "name": "InfiniteMenu",
+          "category": "Components"
+        },
+        {
+          "name": "InfiniteSpiral",
+          "category": "Components"
+        },
+        {
+          "name": "Lanyard",
+          "category": "Components"
+        },
+        {
+          "name": "LineSidebar",
+          "category": "Components"
+        },
+        {
+          "name": "MagicBento",
+          "category": "Components"
+        },
+        {
+          "name": "Masonry",
+          "category": "Components"
+        },
+        {
+          "name": "ModelViewer",
+          "category": "Components"
+        },
+        {
+          "name": "MorphSlider",
+          "category": "Components"
+        },
+        {
+          "name": "OptionWheel",
+          "category": "Components"
+        },
+        {
+          "name": "PillNav",
+          "category": "Components"
+        },
+        {
+          "name": "PixelCard",
+          "category": "Components"
+        },
+        {
+          "name": "ProfileCard",
+          "category": "Components"
+        },
+        {
+          "name": "ReflectiveCard",
+          "category": "Components"
+        },
+        {
+          "name": "ScrollStack",
+          "category": "Components"
+        },
+        {
+          "name": "SpecularButton",
+          "category": "Components"
+        },
+        {
+          "name": "SpotlightCard",
+          "category": "Components"
+        },
+        {
+          "name": "Stack",
+          "category": "Components"
+        },
+        {
+          "name": "StaggeredMenu",
+          "category": "Components"
+        },
+        {
+          "name": "Stepper",
+          "category": "Components"
+        },
+        {
+          "name": "TiltedCard",
+          "category": "Components"
+        },
+        {
+          "name": "BellToggle",
+          "category": "Micro"
+        },
+        {
+          "name": "BranchedMenu",
+          "category": "Micro"
+        },
+        {
+          "name": "CallChip",
+          "category": "Micro"
+        },
+        {
+          "name": "CodeSlots",
+          "category": "Micro"
+        },
+        {
+          "name": "CometDial",
+          "category": "Micro"
+        },
+        {
+          "name": "DodgeField",
+          "category": "Micro"
+        },
+        {
+          "name": "FlipCard",
+          "category": "Micro"
+        },
+        {
+          "name": "FlyingButton",
+          "category": "Micro"
+        },
+        {
+          "name": "FolderFloat",
+          "category": "Micro"
+        },
+        {
+          "name": "FuseButton",
+          "category": "Micro"
+        },
+        {
+          "name": "GlideSelect",
+          "category": "Micro"
+        },
+        {
+          "name": "HoldButton",
+          "category": "Micro"
+        },
+        {
+          "name": "JellyRadio",
+          "category": "Micro"
+        },
+        {
+          "name": "LatticeLoader",
+          "category": "Micro"
+        },
+        {
+          "name": "PaperCrumple",
+          "category": "Micro"
+        },
+        {
+          "name": "PeekRating",
+          "category": "Micro"
+        },
+        {
+          "name": "PromptBar",
+          "category": "Micro"
+        },
+        {
+          "name": "PulseHeart",
+          "category": "Micro"
+        },
+        {
+          "name": "RefineFrame",
+          "category": "Micro"
+        },
+        {
+          "name": "RubberSegment",
+          "category": "Micro"
+        },
+        {
+          "name": "ScrubField",
+          "category": "Micro"
+        },
+        {
+          "name": "Shredder",
+          "category": "Micro"
+        },
+        {
+          "name": "SlideCommit",
+          "category": "Micro"
+        },
+        {
+          "name": "SlingButton",
+          "category": "Micro"
+        },
+        {
+          "name": "SloshGauge",
+          "category": "Micro"
+        },
+        {
+          "name": "SpringCheck",
+          "category": "Micro"
+        },
+        {
+          "name": "SquishSwitch",
+          "category": "Micro"
+        },
+        {
+          "name": "StatusMark",
+          "category": "Micro"
+        },
+        {
+          "name": "SwipeRow",
+          "category": "Micro"
+        },
+        {
+          "name": "SwipeToast",
+          "category": "Micro"
+        },
+        {
+          "name": "TearTicket",
+          "category": "Micro"
+        },
+        {
+          "name": "ThoughtLine",
+          "category": "Micro"
+        },
+        {
+          "name": "VoicePill",
+          "category": "Micro"
+        },
+        {
+          "name": "WakeSlider",
+          "category": "Micro"
+        },
+        {
+          "name": "WarmTooltip",
+          "category": "Micro"
+        },
+        {
+          "name": "ASCIIText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "BlurText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "CircularText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "CountUp",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "CurvedLoop",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "DecryptedText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "DepthText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "EchoText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "FallingText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "FoldText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "FuzzyText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "GlitchText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "GradientText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "MaskedHeading",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "ParticleText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "RotatingText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "ScrambledText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "ScrollFloat",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "ScrollReveal",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "ScrollVelocity",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "ShinyText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "Shuffle",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "SplitFlapText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "SplitText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "StrokeText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "TechText",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "TextCursor",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "TextLoop",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "TextPressure",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "TextType",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "TrueFocus",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "VariableProximity",
+          "category": "TextAnimations"
+        },
+        {
+          "name": "WarpText",
+          "category": "TextAnimations"
+        }
+      ]
+    },
+    {
+      "id": "shadcn-ui",
+      "library": "shadcn/ui",
+      "license": "MIT",
+      "rights": "permissive",
+      "source_url": "https://ui.shadcn.com",
+      "repo": "https://github.com/shadcn-ui/ui",
+      "commit": "96da9cc7f1aa10580a3741664e2a77c721206c00",
+      "install": "npx shadcn@latest add <name>",
+      "docs": "",
+      "categories": {
+        "ui": [
+          "accordion",
+          "alert",
+          "alert-dialog",
+          "aspect-ratio",
+          "attachment",
+          "avatar",
+          "badge",
+          "breadcrumb",
+          "bubble",
+          "button",
+          "button-group",
+          "calendar",
+          "card",
+          "carousel",
+          "chart",
+          "checkbox",
+          "collapsible",
+          "combobox",
+          "command",
+          "context-menu",
+          "dialog",
+          "direction",
+          "drawer",
+          "dropdown-menu",
+          "empty",
+          "field",
+          "form",
+          "hover-card",
+          "input",
+          "input-group",
+          "input-otp",
+          "item",
+          "kbd",
+          "label",
+          "marker",
+          "menubar",
+          "message",
+          "message-scroller",
+          "native-select",
+          "navigation-menu",
+          "pagination",
+          "popover",
+          "progress",
+          "radio-group",
+          "resizable",
+          "scroll-area",
+          "select",
+          "separator",
+          "sheet",
+          "sidebar",
+          "skeleton",
+          "slider",
+          "sonner",
+          "spinner",
+          "switch",
+          "table",
+          "tabs",
+          "textarea",
+          "toggle",
+          "toggle-group",
+          "tooltip"
+        ]
+      },
+      "components": [
+        {
+          "name": "accordion",
+          "category": "ui"
+        },
+        {
+          "name": "alert",
+          "category": "ui"
+        },
+        {
+          "name": "alert-dialog",
+          "category": "ui"
+        },
+        {
+          "name": "aspect-ratio",
+          "category": "ui"
+        },
+        {
+          "name": "attachment",
+          "category": "ui"
+        },
+        {
+          "name": "avatar",
+          "category": "ui"
+        },
+        {
+          "name": "badge",
+          "category": "ui"
+        },
+        {
+          "name": "breadcrumb",
+          "category": "ui"
+        },
+        {
+          "name": "bubble",
+          "category": "ui"
+        },
+        {
+          "name": "button",
+          "category": "ui"
+        },
+        {
+          "name": "button-group",
+          "category": "ui"
+        },
+        {
+          "name": "calendar",
+          "category": "ui"
+        },
+        {
+          "name": "card",
+          "category": "ui"
+        },
+        {
+          "name": "carousel",
+          "category": "ui"
+        },
+        {
+          "name": "chart",
+          "category": "ui"
+        },
+        {
+          "name": "checkbox",
+          "category": "ui"
+        },
+        {
+          "name": "collapsible",
+          "category": "ui"
+        },
+        {
+          "name": "combobox",
+          "category": "ui"
+        },
+        {
+          "name": "command",
+          "category": "ui"
+        },
+        {
+          "name": "context-menu",
+          "category": "ui"
+        },
+        {
+          "name": "dialog",
+          "category": "ui"
+        },
+        {
+          "name": "direction",
+          "category": "ui"
+        },
+        {
+          "name": "drawer",
+          "category": "ui"
+        },
+        {
+          "name": "dropdown-menu",
+          "category": "ui"
+        },
+        {
+          "name": "empty",
+          "category": "ui"
+        },
+        {
+          "name": "field",
+          "category": "ui"
+        },
+        {
+          "name": "form",
+          "category": "ui"
+        },
+        {
+          "name": "hover-card",
+          "category": "ui"
+        },
+        {
+          "name": "input",
+          "category": "ui"
+        },
+        {
+          "name": "input-group",
+          "category": "ui"
+        },
+        {
+          "name": "input-otp",
+          "category": "ui"
+        },
+        {
+          "name": "item",
+          "category": "ui"
+        },
+        {
+          "name": "kbd",
+          "category": "ui"
+        },
+        {
+          "name": "label",
+          "category": "ui"
+        },
+        {
+          "name": "marker",
+          "category": "ui"
+        },
+        {
+          "name": "menubar",
+          "category": "ui"
+        },
+        {
+          "name": "message",
+          "category": "ui"
+        },
+        {
+          "name": "message-scroller",
+          "category": "ui"
+        },
+        {
+          "name": "native-select",
+          "category": "ui"
+        },
+        {
+          "name": "navigation-menu",
+          "category": "ui"
+        },
+        {
+          "name": "pagination",
+          "category": "ui"
+        },
+        {
+          "name": "popover",
+          "category": "ui"
+        },
+        {
+          "name": "progress",
+          "category": "ui"
+        },
+        {
+          "name": "radio-group",
+          "category": "ui"
+        },
+        {
+          "name": "resizable",
+          "category": "ui"
+        },
+        {
+          "name": "scroll-area",
+          "category": "ui"
+        },
+        {
+          "name": "select",
+          "category": "ui"
+        },
+        {
+          "name": "separator",
+          "category": "ui"
+        },
+        {
+          "name": "sheet",
+          "category": "ui"
+        },
+        {
+          "name": "sidebar",
+          "category": "ui"
+        },
+        {
+          "name": "skeleton",
+          "category": "ui"
+        },
+        {
+          "name": "slider",
+          "category": "ui"
+        },
+        {
+          "name": "sonner",
+          "category": "ui"
+        },
+        {
+          "name": "spinner",
+          "category": "ui"
+        },
+        {
+          "name": "switch",
+          "category": "ui"
+        },
+        {
+          "name": "table",
+          "category": "ui"
+        },
+        {
+          "name": "tabs",
+          "category": "ui"
+        },
+        {
+          "name": "textarea",
+          "category": "ui"
+        },
+        {
+          "name": "toggle",
+          "category": "ui"
+        },
+        {
+          "name": "toggle-group",
+          "category": "ui"
+        },
+        {
+          "name": "tooltip",
+          "category": "ui"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI Vault</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #fafaf9;
+    --panel: #ffffff;
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --soft: #f5f5f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 56px 24px 80px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 28px; margin-bottom: 28px; }
+  h1 { font-size: 34px; letter-spacing: -0.03em; margin: 0 0 8px; }
+  h2 { font-size: 18px; letter-spacing: -0.01em; margin: 40px 0 14px; }
+  p { margin: 0 0 10px; color: var(--muted); }
+  a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  code, .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12.5px; }
+  .mono { color: var(--muted); background: var(--soft); padding: 6px 8px; border-radius: 6px; display: block; white-space: normal; overflow-wrap: anywhere; }
+  .stats { display: flex; gap: 18px; flex-wrap: wrap; color: var(--muted); font-size: 13px; margin-top: 14px; }
+  .stats strong { color: var(--ink); font-weight: 600; }
+  .controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 18px 0 24px; }
+  .filter {
+    appearance: none; border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+    padding: 7px 13px; border-radius: 999px; font: inherit; font-size: 13px; cursor: pointer;
+  }
+  .filter[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+  #q {
+    flex: 1 1 220px; min-width: 180px; border: 1px solid var(--line); background: var(--panel);
+    border-radius: 999px; padding: 8px 14px; font: inherit; font-size: 13px; color: var(--ink);
+  }
+  #q:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 14px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .card h3 { font-size: 16px; margin: 0; letter-spacing: -0.01em; }
+  .card p { font-size: 13.5px; margin: 0; }
+  .badges { display: flex; gap: 6px; flex-wrap: wrap; }
+  .badge { font-size: 11px; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); background: var(--soft); text-transform: lowercase; }
+  .tier-source { background: #ecfdf5; border-color: #a7f3d0; color: #047857; }
+  .tier-reference { background: #fffbeb; border-color: #fde68a; color: #b45309; }
+  .tier-pattern { background: #eef2ff; border-color: #c7d2fe; color: #3730a3; }
+  .status-needs-fix { background: #fff7ed; border-color: #fed7aa; color: #c2410c; }
+  .status-inspiration-only { background: #fafaf9; border-color: #d6d3d1; color: #57534e; }
+  .status-usable { background: #f0fdf4; border-color: #bbf7d0; color: #15803d; }
+  dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 2px 0; font-size: 12.5px; }
+  dt { color: var(--muted); }
+  dd { margin: 0; }
+  .tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: auto; padding-top: 6px; }
+  .tag { font-size: 11px; color: var(--muted); }
+  .tag::before { content: "#"; opacity: 0.55; }
+  .more { font-size: 13px; }
+  #empty { display: none; margin-top: 24px; font-size: 14px; }
+  footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 18px; font-size: 12.5px; color: var(--muted); }
+  [hidden] { display: none !important; }
+  @media (max-width: 520px) { .wrap { padding-top: 36px; } h1 { font-size: 28px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>UI Vault</h1>
+    <p>A provenance-first index of UI and UX patterns. Third-party work stays attributed and, where rights require it, unhosted.</p>
+    <div class="stats">
+      <span><strong>3</strong> sources</span>
+      <span><strong>2</strong> references</span>
+      <span><strong>0</strong> original patterns</span>
+      <span><strong>354</strong> upstream components</span>
+      <span>generated 2026-10-28</span>
+    </div>
+  </header>
+
+  <h2>Upstream libraries</h2>
+  <div class="grid">
+<article class="card">
+  <div class="badges"><span class="badge tier-source">Source</span><span class="badge plain">75 components</span></div>
+  <h3><a href="sources/magic-ui/entry.md">Magic UI</a></h3>
+  <p class="mono">npx shadcn@latest add @magicui/&lt;name&gt;</p>
+  <p>License: MIT. Rights: permissive.</p>
+  <a class="more" href="sources/magic-ui/components.md">Component index</a>
+</article>
+<article class="card">
+  <div class="badges"><span class="badge tier-source">Source</span><span class="badge plain">218 components</span></div>
+  <h3><a href="sources/react-bits/entry.md">React Bits</a></h3>
+  <p class="mono">npx shadcn@latest add @react-bits/&lt;Name&gt;-TS-TW</p>
+  <p>License: MIT + Commons Clause. Rights: restricted.</p>
+  <a class="more" href="sources/react-bits/components.md">Component index</a>
+</article>
+<article class="card">
+  <div class="badges"><span class="badge tier-source">Source</span><span class="badge plain">61 components</span></div>
+  <h3><a href="sources/shadcn-ui/entry.md">shadcn/ui</a></h3>
+  <p class="mono">npx shadcn@latest add &lt;name&gt;</p>
+  <p>License: MIT. Rights: permissive.</p>
+  <a class="more" href="sources/shadcn-ui/components.md">Component index</a>
+</article>
+  </div>
+
+  <h2>Entries</h2>
+  <div class="controls">
+    <button class="filter" data-filter="all" aria-pressed="true">All</button>
+    <button class="filter" data-filter="source" aria-pressed="false">Sources</button>
+    <button class="filter" data-filter="reference" aria-pressed="false">References</button>
+    <button class="filter" data-filter="pattern" aria-pressed="false">Library</button>
+    <input id="q" type="search" placeholder="Filter by title, author, tag, stack" aria-label="Filter entries">
+  </div>
+  <div class="grid" id="entries">
+<article class="card entry-card" data-tier="source" data-search="magic ui animated components built on top of shadcn/ui, aimed at marketing pages and landing experiences. installed from the `@magicui` registry with the shadcn cli. library source magic ui (magicuidesign) animated marketing motion shadcn react tailwind typescript">
+  <div class="badges"><span class="badge tier-source">Source</span><span class="badge plain">library</span><span class="badge status-usable">usable</span></div>
+  <h3><a href="sources/magic-ui/entry.md">Magic UI</a></h3>
+  <p>Animated components built on top of shadcn/ui, aimed at marketing pages and landing experiences. Installed from the `@magicui` registry with the shadcn CLI.</p>
+  <dl><dt>Author</dt><dd>Magic UI (magicuidesign)</dd><dt>License</dt><dd>MIT</dd><dt>Rights</dt><dd>permissive</dd></dl>
+  <div class="tags"><span class="tag">animated</span><span class="tag">marketing</span><span class="tag">motion</span><span class="tag">shadcn</span></div>
+</article>
+<article class="card entry-card" data-tier="source" data-search="react bits a large collection of animated react components: text effects, backgrounds, cursor effects, micro-interactions and full components. installed as source through the shadcn cli or jsrepo. library source david haz (react bits) animated text-effects backgrounds cursors shadcn react css tailwind typescript">
+  <div class="badges"><span class="badge tier-source">Source</span><span class="badge plain">library</span><span class="badge status-usable">usable</span></div>
+  <h3><a href="sources/react-bits/entry.md">React Bits</a></h3>
+  <p>A large collection of animated React components: text effects, backgrounds, cursor effects, micro-interactions and full components. Installed as source through the shadcn CLI or jsrepo.</p>
+  <dl><dt>Author</dt><dd>David Haz (React Bits)</dd><dt>License</dt><dd>MIT + Commons Clause</dd><dt>Rights</dt><dd>restricted</dd></dl>
+  <div class="tags"><span class="tag">animated</span><span class="tag">text-effects</span><span class="tag">backgrounds</span><span class="tag">cursors</span><span class="tag">shadcn</span></div>
+</article>
+<article class="card entry-card" data-tier="source" data-search="shadcn/ui the base layer for most of the stack indexed here. components are copied into your project as source, so you own and edit the files. it is not a runtime dependency. library source shadcn primitives copy-in registry accessibility react tailwind typescript">
+  <div class="badges"><span class="badge tier-source">Source</span><span class="badge plain">library</span><span class="badge status-usable">usable</span></div>
+  <h3><a href="sources/shadcn-ui/entry.md">shadcn/ui</a></h3>
+  <p>The base layer for most of the stack indexed here. Components are copied into your project as source, so you own and edit the files. It is not a runtime dependency.</p>
+  <dl><dt>Author</dt><dd>shadcn</dd><dt>License</dt><dd>MIT</dd><dt>Rights</dt><dd>permissive</dd></dl>
+  <div class="tags"><span class="tag">primitives</span><span class="tag">copy-in</span><span class="tag">registry</span><span class="tag">accessibility</span></div>
+</article>
+<article class="card entry-card" data-tier="reference" data-search="animated rocket shader hero a full-screen dark hero. a webgl2 fragment shader paints a drifting cloud and light field, and the marketing content sits above it with staggered fade-ins and warm gradient headings. hero reference matthias hurrle (@atzedent) for the shader; component author not recorded shader hero gradient pointer marketing react webgl2 glsl tailwind">
+  <div class="badges"><span class="badge tier-reference">Reference</span><span class="badge plain">hero</span><span class="badge status-needs-fix">needs-fix</span></div>
+  <h3><a href="references/animated-rocket-hero/entry.md">Animated Rocket Shader Hero</a></h3>
+  <p>A full-screen dark hero. A WebGL2 fragment shader paints a drifting cloud and light field, and the marketing content sits above it with staggered fade-ins and warm gradient headings.</p>
+  <dl><dt>Author</dt><dd>Matthias Hurrle (@atzedent) for the shader; component author not recorded</dd><dt>License</dt><dd>unknown</dd><dt>Rights</dt><dd>private-reference</dd></dl>
+  <div class="tags"><span class="tag">shader</span><span class="tag">hero</span><span class="tag">gradient</span><span class="tag">pointer</span><span class="tag">marketing</span></div>
+</article>
+<article class="card entry-card" data-tier="reference" data-search="liquid sculpture hero a hero that rebuilds an image as roughly one hundred thousand gpu particles. the cursor turns the material liquid and it settles back into the crisp image. without webgl2 it falls back to a static image. hero reference guglielmogiannattasio.it, via a 21st.dev component export particles gpu cursor image hero light-mode react webgl2 glsl typescript">
+  <div class="badges"><span class="badge tier-reference">Reference</span><span class="badge plain">hero</span><span class="badge status-inspiration-only">inspiration-only</span></div>
+  <h3><a href="references/liquid-sculpture-hero/entry.md">Liquid Sculpture Hero</a></h3>
+  <p>A hero that rebuilds an image as roughly one hundred thousand GPU particles. The cursor turns the material liquid and it settles back into the crisp image. Without WebGL2 it falls back to a static image.</p>
+  <dl><dt>Author</dt><dd>guglielmogiannattasio.it, via a 21st.dev component export</dd><dt>License</dt><dd>unknown</dd><dt>Rights</dt><dd>private-reference</dd></dl>
+  <div class="tags"><span class="tag">particles</span><span class="tag">gpu</span><span class="tag">cursor</span><span class="tag">image</span><span class="tag">hero</span><span class="tag">light-mode</span></div>
+</article>
+  </div>
+  <p id="empty">No entries match that filter.</p>
+
+  <footer>
+    <p>Original work is MIT. See NOTICE.md and THIRD_PARTY.md. Attribution is not optional.</p>
+  </footer>
+</div>
+<script>
+  const buttons = [...document.querySelectorAll(".filter")];
+  const input = document.getElementById("q");
+  const cards = [...document.querySelectorAll(".entry-card")];
+  const empty = document.getElementById("empty");
+  let tier = "all";
+
+  function apply() {
+    const query = input.value.trim().toLowerCase();
+    let visible = 0;
+    for (const card of cards) {
+      const matchesTier = tier === "all" || card.dataset.tier === tier;
+      const matchesQuery = !query || card.dataset.search.includes(query);
+      const show = matchesTier && matchesQuery;
+      card.hidden = !show;
+      if (show) visible += 1;
+    }
+    empty.style.display = visible ? "none" : "block";
+  }
+
+  for (const button of buttons) {
+    button.addEventListener("click", () => {
+      tier = button.dataset.filter;
+      for (const other of buttons) other.setAttribute("aria-pressed", String(other === button));
+      apply();
+    });
+  }
+  input.addEventListener("input", apply);
+</script>
+</body>
+</html>

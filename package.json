@@ -1,0 +1,16 @@
+{
+  "name": "ui-vault",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A provenance-first index of UI and UX patterns, with attribution for every entry.",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "node scripts/build-catalog.mjs",
+    "upstream": "node scripts/build-upstream.mjs",
+    "check": "node scripts/validate.mjs && node scripts/build-catalog.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

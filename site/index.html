@@ -3,10 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="A provenance-first index of UI patterns, with live demos and attribution for every design." />
-    <meta name="theme-color" content="#fafaf9" />
+    <meta
+      name="description"
+      content="UI Vault is Kone Tshivhinda's provenance-first index of UI patterns, with live demos, agent-ready prompts and attribution for every third-party design."
+    />
+    <meta name="author" content="Kone Tshivhinda" />
+    <meta name="theme-color" content="#0e0e0c" />
     <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
-    <title>UI Vault</title>
+    <link
+      rel="preload"
+      href="fonts/instrument-serif.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="fonts/geist.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="UI Vault" />
+    <meta property="og:title" content="UI Vault · Kone Tshivhinda" />
+    <meta
+      property="og:description"
+      content="Live UI demos, copy-paste agent prompts and a provenance-first catalog. Every third-party design is named, licensed and linked to its author."
+    />
+    <meta property="og:url" content="https://konethegreat.github.io/ui-vault/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="UI Vault · Kone Tshivhinda" />
+    <meta
+      name="twitter:description"
+      content="Live UI demos, copy-paste agent prompts and a provenance-first catalog, maintained by Kone Tshivhinda."
+    />
+
+    <title>UI Vault · Kone Tshivhinda</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://konethegreat.github.io/#person",
+            "name": "Kone Tshivhinda",
+            "url": "https://konethegreat.github.io/#top",
+            "sameAs": [
+              "https://github.com/konethegreat",
+              "https://www.linkedin.com/in/kone-tshivhinda-32a760233/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "name": "UI Vault",
+            "url": "https://konethegreat.github.io/ui-vault/",
+            "description": "A provenance-first index of UI patterns with live demos and agent-ready prompts.",
+            "author": { "@id": "https://konethegreat.github.io/#person" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -17,7 +17,7 @@ The same catalog is available without reading files:
 - MCP: `POST https://ui-vault-api.erictshivhinda.workers.dev/mcp` with read-only tools `search_entries`, `get_entry`, `get_setup_prompt` and `search_components`.
 - CLI: `npx github:konethegreat/ui-vault list|search|show|prompt`.
 
-These are free and need no key. Do not hammer them; the edge limit is 120 requests per minute per IP.
+These are free and need no key. Do not hammer them; a best-effort limit of about 120 requests per minute per IP applies, and bursts can exceed it.
 
 ## Rights rules
 

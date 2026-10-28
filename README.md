@@ -26,7 +26,7 @@ Agents can also read the same catalog from a free hosted [API](#api), a zero-dep
 
 ## Agent access
 
-All three surfaces are free, read-only and need no key or account. The API is rate limited to 120 requests per minute per IP.
+All three surfaces are free, read-only and need no key or account. The API applies a best-effort limit of about 120 requests per minute per IP. It is a courtesy guard, not a security boundary, and bursts can exceed it.
 
 ### API
 

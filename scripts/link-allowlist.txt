@@ -1,0 +1,4 @@
+# Broken URLs listed here are reported as "allowed" and do not fail the audit.
+# Format: <url> <reason>
+# Only add URLs that genuinely block automated clients with a 404/410 response.
+# Never allowlist a page that is actually missing.

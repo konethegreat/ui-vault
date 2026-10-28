@@ -10,7 +10,7 @@ const generated = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2,
 const TIER_RANK = { source: 0, reference: 1, pattern: 2 };
 const TIER_LABEL = { source: "Source", reference: "Reference", pattern: "Library" };
 const SITE_URL = "https://konethegreat.github.io/ui-vault";
-const API_BASE = "https://ui-vault-api.PLACEHOLDER.workers.dev";
+const API_BASE = "https://ui-vault-api.erictshivhinda.workers.dev";
 
 function demoCell(entry) {
   if (entry.demo === "live") return `[live](${SITE_URL}/#demo-${entry.id})`;

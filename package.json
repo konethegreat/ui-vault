@@ -7,8 +7,12 @@
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "build": "node scripts/build-catalog.mjs",
+    "build:worker": "node scripts/build-worker-data.mjs",
     "upstream": "node scripts/build-upstream.mjs",
-    "check": "node scripts/validate.mjs && node scripts/build-catalog.mjs"
+    "test:worker": "node --test worker/test/mcp.test.mjs",
+    "worker:dev": "node scripts/build-worker-data.mjs && cd worker && npx --yes wrangler@latest dev",
+    "worker:deploy": "node scripts/build-worker-data.mjs && cd worker && npx --yes wrangler@latest deploy",
+    "check": "node scripts/validate.mjs && node scripts/build-catalog.mjs && node scripts/build-worker-data.mjs"
   },
   "engines": {
     "node": ">=20"

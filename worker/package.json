@@ -1,0 +1,11 @@
+{
+  "name": "ui-vault-api",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Read-only API and MCP server for the UI Vault.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  }
+}

@@ -1,4 +1,4 @@
-import { existsSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { listEntries } from "./lib.mjs";
@@ -97,6 +97,18 @@ for (const entry of entries) {
   if (d.files) {
     for (const file of String(d.files).split(",").map((item) => item.trim()).filter(Boolean)) {
       if (!existsSync(join(dir, file))) fail(`listed file not found: ${file}`);
+    }
+  }
+
+  const promptPath = join(dir, "prompt.md");
+  if (!existsSync(promptPath)) {
+    fail("missing prompt.md");
+  } else {
+    const prompt = readFileSync(promptPath, "utf8");
+    if (prompt.trim().length < 200) fail("prompt.md must be at least 200 characters");
+    if (!/^#\s/m.test(prompt)) fail("prompt.md must contain a markdown heading");
+    if (["restricted", "noncommercial", "unknown", "private-reference"].includes(d.rights)) {
+      if (!/do not copy/i.test(prompt)) fail('prompt.md must say "do not copy" for non-copyable rights');
     }
   }
 }

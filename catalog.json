@@ -39,6 +39,8 @@
       "demo_source": "",
       "license_url": "",
       "path": "sources/magic-ui/entry.md",
+      "prompt": "sources/magic-ui/prompt.md",
+      "prompt_url": "https://ui-vault-api.PLACEHOLDER.workers.dev/api/entries/magic-ui/prompt",
       "summary": "Animated components built on top of shadcn/ui, aimed at marketing pages and landing experiences. Installed from the `@magicui` registry with the shadcn CLI."
     },
     {
@@ -73,6 +75,8 @@
       "demo_source": "",
       "license_url": "",
       "path": "sources/react-bits/entry.md",
+      "prompt": "sources/react-bits/prompt.md",
+      "prompt_url": "https://ui-vault-api.PLACEHOLDER.workers.dev/api/entries/react-bits/prompt",
       "summary": "A large collection of animated React components: text effects, backgrounds, cursor effects, micro-interactions and full components. Installed as source through the shadcn CLI or jsrepo."
     },
     {
@@ -105,6 +109,8 @@
       "demo_source": "",
       "license_url": "",
       "path": "sources/shadcn-ui/entry.md",
+      "prompt": "sources/shadcn-ui/prompt.md",
+      "prompt_url": "https://ui-vault-api.PLACEHOLDER.workers.dev/api/entries/shadcn-ui/prompt",
       "summary": "The base layer for most of the stack indexed here. Components are copied into your project as source, so you own and edit the files. It is not a runtime dependency."
     },
     {
@@ -139,6 +145,8 @@
       "demo_source": "",
       "license_url": "",
       "path": "references/animated-rocket-hero/entry.md",
+      "prompt": "references/animated-rocket-hero/prompt.md",
+      "prompt_url": "https://ui-vault-api.PLACEHOLDER.workers.dev/api/entries/animated-rocket-hero/prompt",
       "summary": "A full-screen dark hero. A WebGL2 fragment shader paints a drifting cloud and light field, and the marketing content sits above it with staggered fade-ins and warm gradient headings."
     },
     {
@@ -172,6 +180,8 @@
       "demo_source": "site/src/demos/ShinyTextDemo.tsx",
       "license_url": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
       "path": "references/animated-shiny-text/entry.md",
+      "prompt": "references/animated-shiny-text/prompt.md",
+      "prompt_url": "https://ui-vault-api.PLACEHOLDER.workers.dev/api/entries/animated-shiny-text/prompt",
       "summary": "A single line of text with a light highlight that sweeps across it. The effect is a clipped background gradient animated with a CSS keyframe, so no canvas or JavaScript animation loop is involved."
     },
     {
@@ -205,6 +215,8 @@
       "demo_source": "site/src/demos/DotPatternDemo.tsx",
       "license_url": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
       "path": "references/dot-pattern/entry.md",
+      "prompt": "references/dot-pattern/prompt.md",
+      "prompt_url": "https://ui-vault-api.PLACEHOLDER.workers.dev/api/entries/dot-pattern/prompt",
       "summary": "A dot grid drawn as SVG circles that fill the parent container. With `glow`, each dot pulses on its own delay. Without it, the pattern is static."
     },
     {
@@ -240,6 +252,8 @@
       "demo_source": "",
       "license_url": "",
       "path": "references/interactive-3d-machine/entry.md",
+      "prompt": "references/interactive-3d-machine/prompt.md",
+      "prompt_url": "https://ui-vault-api.PLACEHOLDER.workers.dev/api/entries/interactive-3d-machine/prompt",
       "summary": "A React and three.js scene of a short-video factory as one physical machine. Five stations sit on a metal plate: engine, admin, storefront, cabinet and cashdesk. You can orbit it, hover a station, click to focus, switch between four modes and jump between five camera presets. Everything is procedural. There are no models, images or textures to download."
     },
     {
@@ -275,6 +289,8 @@
       "demo_source": "site/src/demos/LiquidSculptureDemo.tsx",
       "license_url": "https://21st.dev/@gughigug/components/liquid-sculpture-hero",
       "path": "references/liquid-sculpture-hero/entry.md",
+      "prompt": "references/liquid-sculpture-hero/prompt.md",
+      "prompt_url": "https://ui-vault-api.PLACEHOLDER.workers.dev/api/entries/liquid-sculpture-hero/prompt",
       "summary": "A hero that rebuilds an image as roughly one hundred thousand GPU particles. The cursor turns the material liquid and it settles back into the crisp image. Without WebGL2 it falls back to a static image."
     },
     {
@@ -308,6 +324,8 @@
       "demo_source": "site/src/demos/MarqueeDemo.tsx",
       "license_url": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
       "path": "references/marquee/entry.md",
+      "prompt": "references/marquee/prompt.md",
+      "prompt_url": "https://ui-vault-api.PLACEHOLDER.workers.dev/api/entries/marquee/prompt",
       "summary": "A horizontal or vertical marquee that duplicates its children and scrolls them with CSS keyframes. Duration and gap are CSS variables, and the animation can pause on hover."
     },
     {
@@ -340,6 +358,8 @@
       "demo_source": "site/src/demos/NumberTickerDemo.tsx",
       "license_url": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
       "path": "references/number-ticker/entry.md",
+      "prompt": "references/number-ticker/prompt.md",
+      "prompt_url": "https://ui-vault-api.PLACEHOLDER.workers.dev/api/entries/number-ticker/prompt",
       "summary": "A number that springs from a start value to a target when it scrolls into view. Formatting uses `Intl.NumberFormat`, so thousands separators and decimals follow the locale rules of `en-US`."
     },
     {
@@ -373,6 +393,8 @@
       "demo_source": "site/src/demos/ButtonDemo.tsx",
       "license_url": "",
       "path": "library/button/entry.md",
+      "prompt": "library/button/prompt.md",
+      "prompt_url": "https://ui-vault-api.PLACEHOLDER.workers.dev/api/entries/button/prompt",
       "summary": "A dependency-free React button with four variants, three sizes, a loading state and a visible focus ring. Styling lives in CSS variables, so a project can retheme it without touching the component."
     },
     {
@@ -408,6 +430,8 @@
       "demo_source": "site/src/demos/NebulaDemo.tsx",
       "license_url": "",
       "path": "library/nebula-hero/entry.md",
+      "prompt": "library/nebula-hero/prompt.md",
+      "prompt_url": "https://ui-vault-api.PLACEHOLDER.workers.dev/api/entries/nebula-hero/prompt",
       "summary": "A WebGL2 hero background made from layered value noise: a slow nebula with a warm core, faint stars and a vignette. Content sits over it with a readable scrim. All code is original and MIT."
     }
   ],

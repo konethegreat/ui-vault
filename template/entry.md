@@ -41,3 +41,17 @@ Use `demo: live` only for original work or permissive third-party work with a ve
 If this entry adapts someone else's work, write the attribution line here as well as in `source_author`:
 
 Adapted from TITLE by AUTHOR (URL), LICENSE.
+
+# Agent prompt
+
+Every entry ships a `prompt.md` beside this file. It is written for an agent, not rendered from a template, so it can name the pitfalls specific to this entry. The validator requires at least 200 characters and a heading.
+
+Prompts follow the same rights rules as the entry:
+
+| Rights | What the prompt may instruct |
+| --- | --- |
+| `own`, `permissive` | Copy or install the published source and keep the attribution. |
+| `restricted` | Use inside an application only. Never redistribute the component itself. |
+| `noncommercial`, `unknown`, `private-reference` | Do not copy. Study the notes, write an original implementation, credit the inspiration. |
+
+Prompts for non-copyable rights must contain the words "do not copy".

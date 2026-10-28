@@ -1,4 +1,4 @@
-import { copyFile, mkdir } from "node:fs/promises";
+import { copyFile, mkdir, readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -8,6 +8,13 @@ const site = join(here, "..");
 
 await mkdir(join(site, "public"), { recursive: true });
 await copyFile(join(root, "catalog.json"), join(site, "public", "catalog.json"));
+
+// Prompts are served from the site so the copy buttons work without the API.
+const catalog = JSON.parse(await readFile(join(root, "catalog.json"), "utf8"));
+await mkdir(join(site, "public", "prompts"), { recursive: true });
+for (const entry of catalog.entries) {
+  await copyFile(join(root, entry.prompt), join(site, "public", "prompts", `${entry.id}.md`));
+}
 
 // The built site bundles third-party code, so it must also serve their notices.
 await mkdir(join(site, "public", "licenses"), { recursive: true });
@@ -36,4 +43,6 @@ for (const [from, name] of vendor) {
   await copyFile(join(root, from), join(site, "src", "vendor", name));
 }
 
-console.log("Synced catalog, 9 component sources and 2 license notices into the site");
+console.log(
+  `Synced catalog, ${catalog.entries.length} prompts, 9 component sources and 2 license notices into the site`
+);

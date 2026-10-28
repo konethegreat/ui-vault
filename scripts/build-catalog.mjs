@@ -10,6 +10,7 @@ const generated = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2,
 const TIER_RANK = { source: 0, reference: 1, pattern: 2 };
 const TIER_LABEL = { source: "Source", reference: "Reference", pattern: "Library" };
 const SITE_URL = "https://konethegreat.github.io/ui-vault";
+const API_BASE = "https://ui-vault-api.PLACEHOLDER.workers.dev";
 
 function demoCell(entry) {
   if (entry.demo === "live") return `[live](${SITE_URL}/#demo-${entry.id})`;
@@ -40,6 +41,8 @@ function toEntry(entry) {
     demo_source: d.demo_source || "",
     license_url: d.license_url || "",
     path: `${entry.folder}/${d.id}/entry.md`,
+    prompt: `${entry.folder}/${d.id}/prompt.md`,
+    prompt_url: `${API_BASE}/api/entries/${d.id}/prompt`,
     summary: firstParagraph(entry.body),
   };
 }

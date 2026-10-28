@@ -26,6 +26,16 @@ It does not apply to third-party code named or linked in `sources/` or `referenc
 
 Each file carries its source and license in the matching entry under `references/`. If you copy one onward, keep that credit and the license notice.
 
+## Referenced but not hosted
+
+- Interactive 3D Machine by Evgeny Shilov (eugeneshilow). No license was found, so the scene, its code and its assets are not hosted here. The reference records observations only, and the site shows an original sketch that links to the author's deployment.
+- Animated Rocket Shader Hero. The shader is linked from its origin and is not hosted, because Shadertoy shaders default to CC BY-NC-SA 3.0.
+- React Bits. Linked and installable from upstream, never copied into this repository.
+
+## Agent surfaces
+
+The hosted API, MCP server and CLI serve the same provenance records as the repository. They return notes, license facts and prompts, not third-party source. Prompts repeat the rights rules of their entry: restricted and unknown work is never offered for copying. The surfaces are original code under the MIT license in this repository.
+
 ## Trademarks
 
 shadcn/ui, Magic UI, React Bits, 21st.dev and any other product names are trademarks of their respective owners. Use here is descriptive and does not imply endorsement.

@@ -9,6 +9,7 @@ on:
       - "references/**"
       - "library/**"
       - "scripts/**"
+      - "worker/src/data.json"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
 

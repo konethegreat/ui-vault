@@ -6,6 +6,8 @@ Live site: [konethegreat.github.io/ui-vault](https://konethegreat.github.io/ui-v
 
 Most of the value is in three places: `catalog.json` for tools and agents, `gallery.html` for a quick visual index, and the live site for demos that actually run.
 
+Agents can also read the same catalog from a free hosted [API](#api), a zero-dependency [CLI](#cli) or a read-only [MCP server](#mcp). Every entry ships a copy-paste prompt at `prompt.md`.
+
 ## The three tiers
 
 | Tier | What lives here | Can it be redistributed? |
@@ -21,6 +23,72 @@ Most of the value is in three places: `catalog.json` for tools and agents, `gall
 - [catalog.json](catalog.json): machine-readable index, including component names for each upstream library.
 - [THIRD_PARTY.md](THIRD_PARTY.md): attribution and license links for every source and reference.
 - [Live site](https://konethegreat.github.io/ui-vault/): seven running demos, a searchable catalog and the rights policy.
+
+## Agent access
+
+All three surfaces are free, read-only and need no key or account. The API is rate limited to 120 requests per minute per IP.
+
+### API
+
+Base URL: `https://ui-vault-api.erictshivhinda.workers.dev`
+
+| Route | Returns |
+| --- | --- |
+| `GET /api/health` | Status, generation date and entry counts. |
+| `GET /api/entries` | Entries. Filter with `q`, `tier`, `type`, `tag`, `demo` and `limit`. |
+| `GET /api/entries/{id}` | One entry with its `prompt_path` and `prompt_url`. |
+| `GET /api/entries/{id}/prompt` | The entry's agent prompt as `text/markdown`. |
+| `GET /api/components` | Upstream component names. Filter with `q` and `library`. |
+| `POST /mcp` | Streamable HTTP MCP endpoint. |
+
+```bash
+curl -s "https://ui-vault-api.erictshivhinda.workers.dev/api/entries?tier=reference&q=liquid"
+curl -s "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/liquid-sculpture-hero/prompt"
+```
+
+Responses carry permissive CORS headers and edge caching. The API never returns third-party source code. It returns provenance, notes and the prompt that follows the entry's rights rules.
+
+### CLI
+
+The CLI runs on Node 20 or newer with no dependencies. It reads the hosted catalog and falls back to the copy published in this repository when the API is unavailable.
+
+```bash
+npx github:konethegreat/ui-vault list --demo live
+npx github:konethegreat/ui-vault search liquid
+npx github:konethegreat/ui-vault show liquid-sculpture-hero
+npx github:konethegreat/ui-vault prompt liquid-sculpture-hero
+```
+
+Every command accepts `--json`. `prompt` prints markdown only, so it pipes into an agent or a file.
+
+### MCP
+
+Add the server to any MCP client that supports Streamable HTTP:
+
+```json
+{
+  "mcpServers": {
+    "ui-vault": {
+      "url": "https://ui-vault-api.erictshivhinda.workers.dev/mcp"
+    }
+  }
+}
+```
+
+The server is stateless and exposes four read-only tools: `search_entries`, `get_entry`, `get_setup_prompt` and `search_components`. It speaks protocol `2025-06-18` and keeps compatibility with `2025-03-26` and `2024-11-05`.
+
+### Rights behaviour
+
+The agent surfaces do not loosen the rights rules. Each prompt states what may be copied:
+
+- `own` and `permissive` entries may be copied or installed with the attribution kept.
+- `restricted` entries, including React Bits, may be used inside an application but never redistributed as components.
+- `unknown`, `noncommercial` and `private-reference` entries are inspiration only. The prompt says "do not copy" and asks for an original implementation.
+
+### Updating the hosted copy
+
+Run `npm run check` to regenerate `catalog.json` and `worker/src/data.json`, then `npm run worker:deploy` to publish them. The site deploy does not touch the Worker; publishing the API is a deliberate separate step.
+
 
 ## Attributions that are not optional
 
@@ -69,23 +137,32 @@ The live site runs seven components:
 
 The Animated Rocket Shader Hero remains documented in `references/` without hosted source. Its shader is a Star Nest derivative credited to Matthias Hurrle (@atzedent), and Shadertoy shaders default to CC BY-NC-SA 3.0 unless the author says otherwise. The site uses the original Nebula Hero instead.
 
+The [Interactive 3D Machine](https://agentic-factory-3d.vercel.app) by Evgeny Shilov is `demo: link`. No license was found, so neither its code nor the scene is hosted here. The site draws an original isometric sketch and links to the author's deployment.
+
+The live site also includes an agent-access panel where the CLI, API and MCP examples can be copied directly.
+
 ## Add an entry
 
 1. Copy `template/entry.md` into a new folder under the right tier, for example `references/my-pattern/entry.md`.
 2. Fill in every field. The `id` must match the folder name.
-3. If the entry gets a live demo, add the wrapper under `site/src/demos/` and point `demo_source` at it.
-4. Run `npm run check`. It validates provenance, license rules and the catalog build.
-5. Commit the entry and the regenerated `catalog.json`, `index.md`, `gallery.html` and `THIRD_PARTY.md`.
+3. Write `prompt.md` beside the entry. It is the agent-facing setup prompt and must name the entry's specific pitfalls.
+4. If the entry gets a live demo, add the wrapper under `site/src/demos/` and point `demo_source` at it.
+5. Run `npm run check`. It validates provenance, prompt rules, license rules and the catalog build.
+6. Commit the entry and the regenerated `catalog.json`, `index.md`, `gallery.html`, `THIRD_PARTY.md` and `worker/src/data.json`.
 
 ## Commands
 
 Root, no dependencies:
 
 ```bash
-npm run validate   # check frontmatter, ids, rights rules and file references
-npm run build      # regenerate catalog.json, index.md, gallery.html, THIRD_PARTY.md
-npm run check      # validate, then build
-npm run upstream   # rebuild source component indexes from local upstream data
+npm run validate     # check frontmatter, ids, rights rules, prompts and file references
+npm run build        # regenerate catalog.json, index.md, gallery.html, THIRD_PARTY.md
+npm run check        # validate, then build the catalog and Worker data
+npm run upstream     # rebuild source component indexes from local upstream data
+npm run audit        # check every external link in the catalog, docs and site
+npm run test:worker  # run the MCP and API unit tests
+npm run worker:dev   # build data, then run the Worker locally
+npm run worker:deploy # build data, then deploy the Worker
 ```
 
 Site, React and Vite dependencies:

@@ -17,6 +17,12 @@ jobs:
           cache-dependency-path: site/package-lock.json
       - name: Validate entries
         run: npm run check
+      - name: Check generated files are committed
+        run: git diff --exit-code catalog.json index.md THIRD_PARTY.md gallery.html worker/src/data.json
+      - name: Check Worker syntax
+        run: node --check worker/src/index.js && node --check worker/src/mcp.js && node --check worker/src/search.js
+      - name: Test Worker
+        run: npm run test:worker
       - name: Install site dependencies
         run: npm ci
         working-directory: site

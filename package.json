@@ -4,6 +4,16 @@
   "private": true,
   "type": "module",
   "description": "A provenance-first index of UI and UX patterns, with attribution for every entry.",
+  "bin": {
+    "ui-vault": "bin/ui-vault.mjs"
+  },
+  "files": [
+    "bin",
+    "catalog.json",
+    "README.md",
+    "NOTICE.md",
+    "LICENSE"
+  ],
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "build": "node scripts/build-catalog.mjs",

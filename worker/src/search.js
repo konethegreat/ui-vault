@@ -3,9 +3,10 @@ export function normalize(value) {
 }
 
 export function publicEntry(entry, origin = "") {
-  const { prompt: _prompt, prompt_path: _path, ...rest } = entry;
+  const { prompt: _prompt, ...rest } = entry;
   return {
     ...rest,
+    prompt_path: entry.path ? entry.path.replace(/entry\.md$/, "prompt.md") : "",
     prompt_url: origin ? `${origin}/api/entries/${entry.id}/prompt` : `/api/entries/${entry.id}/prompt`,
   };
 }

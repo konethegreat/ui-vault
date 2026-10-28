@@ -4,7 +4,7 @@
   "generated": "2026-10-28",
   "counts": {
     "sources": 3,
-    "references": 6,
+    "references": 7,
     "patterns": 2,
     "upstream_components": 354
   },
@@ -206,6 +206,41 @@
       "license_url": "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md",
       "path": "references/dot-pattern/entry.md",
       "summary": "A dot grid drawn as SVG circles that fill the parent container. With `glow`, each dot pulses on its own delay. Without it, the pattern is static."
+    },
+    {
+      "id": "interactive-3d-machine",
+      "title": "Interactive 3D Machine",
+      "tier": "reference",
+      "type": "interaction",
+      "status": "inspiration-only",
+      "stack": [
+        "react",
+        "three.js",
+        "webgl",
+        "typescript"
+      ],
+      "tags": [
+        "3d",
+        "three-js",
+        "product-tour",
+        "stations",
+        "camera",
+        "procedural"
+      ],
+      "license": "unknown",
+      "rights": "private-reference",
+      "source_url": "https://agentic-factory-3d.vercel.app",
+      "source_author": "Evgeny Shilov (eugeneshilow); built with OpenAI Codex, ported to React by Claude",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-10-28",
+      "published_source": false,
+      "demo": "link",
+      "demo_url": "https://agentic-factory-3d.vercel.app",
+      "demo_source": "",
+      "license_url": "",
+      "path": "references/interactive-3d-machine/entry.md",
+      "summary": "A React and three.js scene of a short-video factory as one physical machine. Five stations sit on a metal plate: engine, admin, storefront, cabinet and cashdesk. You can orbit it, hover a station, click to focus, switch between four modes and jump between five camera presets. Everything is procedural. There are no models, images or textures to download."
     },
     {
       "id": "liquid-sculpture-hero",

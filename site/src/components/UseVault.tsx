@@ -46,7 +46,7 @@ function CodeBlock({
   }
 
   return (
-    <div className="overflow-hidden rounded-xl border border-white/10 bg-[#0a0a08]">
+    <div className="min-w-0 overflow-hidden rounded-xl border border-white/10 bg-[#0a0a08]">
       <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-2.5">
         <span className="label text-paper/40">{label}</span>
         <Button variant="secondary" size="sm" onClick={onCopy}>
@@ -183,7 +183,7 @@ export function UseVault() {
               code={CLI_CODE}
               note="Commands: list, search, show, prompt, api. Add --json for raw output."
             />
-            <div className="space-y-4 text-sm leading-relaxed text-paper/60">
+            <div className="min-w-0 space-y-4 text-sm leading-relaxed text-paper/60">
               <p>
                 The CLI runs on Node 20 with no dependencies. It reads the hosted catalog and falls
                 back to the published copy when the API is unavailable.
@@ -210,7 +210,7 @@ export function UseVault() {
             hidden={active !== "api"}
             className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]"
           >
-            <div className="space-y-4">
+            <div className="min-w-0 space-y-4">
               <CodeBlock label="Request" code={API_CODE} />
               <div className="rounded-xl border border-white/10 px-4 py-3">
                 <p className="label mb-2 text-paper/35">Routes</p>
@@ -224,7 +224,7 @@ export function UseVault() {
                 </ul>
               </div>
             </div>
-            <div className="space-y-5 text-sm leading-relaxed text-paper/60">
+            <div className="min-w-0 space-y-5 text-sm leading-relaxed text-paper/60">
               <p>
                 Read-only JSON with permissive CORS and edge caching. Filter entries by{" "}
                 <code className="font-mono text-xs text-paper/80">q</code>,{" "}
@@ -245,7 +245,7 @@ export function UseVault() {
             className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]"
           >
             <CodeBlock label="MCP client config" code={MCP_CODE} />
-            <div className="space-y-4 text-sm leading-relaxed text-paper/60">
+            <div className="min-w-0 space-y-4 text-sm leading-relaxed text-paper/60">
               <p>
                 Streamable HTTP with JSON responses, served at{" "}
                 <code className="font-mono text-xs text-paper/80">/mcp</code>. No session state, no

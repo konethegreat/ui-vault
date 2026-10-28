@@ -2,6 +2,12 @@ export function normalize(value) {
   return String(value ?? "").toLowerCase();
 }
 
+function matchesQuery(fields, q) {
+  if (!q) return true;
+  const haystack = fields.map(normalize).join(" ");
+  return q.split(/\s+/).every((word) => haystack.includes(word));
+}
+
 export function publicEntry(entry, origin = "") {
   const { prompt: _prompt, ...rest } = entry;
   return {
@@ -28,9 +34,7 @@ export function filterEntries(entries, params = {}) {
     if (type && normalize(entry.type) !== type) return false;
     if (demo && normalize(entry.demo || "none") !== demo) return false;
     if (tag && !entry.tags.some((item) => normalize(item) === tag)) return false;
-    if (!q) return true;
-    return [entry.id, entry.title, entry.summary, entry.source_author, entry.type, ...entry.tags]
-      .some((value) => normalize(value).includes(q));
+    return matchesQuery([entry.id, entry.title, entry.summary, entry.source_author, entry.type, ...entry.tags], q);
   });
 
   return { total: matches.length, entries: matches.slice(0, limit) };
@@ -55,7 +59,7 @@ export function filterComponents(upstream, params = {}) {
         license: lib.license,
         rights: lib.rights,
       };
-      if (q && ![row.id, row.library, row.category].some((value) => normalize(value).includes(q))) continue;
+      if (!matchesQuery([row.id, row.library, row.category], q)) continue;
       components.push(row);
     }
   }

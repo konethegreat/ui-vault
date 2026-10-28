@@ -101,6 +101,24 @@ test("search_entries filters by tier and demo", () => {
   assert.equal(response.body.result.structuredContent.entries[0].id, "interactive-3d-machine");
 });
 
+test("search_entries matches multiple words across fields", () => {
+  const response = call("tools/call", {
+    name: "search_entries",
+    arguments: { q: "liquid hero" },
+  });
+  assert.equal(response.body.result.structuredContent.total, 1);
+  assert.equal(response.body.result.structuredContent.entries[0].id, "liquid-sculpture-hero");
+});
+
+test("search_components matches multiple words across fields", () => {
+  const response = call("tools/call", {
+    name: "search_components",
+    arguments: { q: "magic marquee" },
+  });
+  assert.equal(response.body.result.structuredContent.total, 1);
+  assert.equal(response.body.result.structuredContent.components[0].id, "marquee");
+});
+
 test("get_entry for a missing id is a tool error", () => {
   const response = call("tools/call", { name: "get_entry", arguments: { id: "nope" } });
   assert.equal(response.body.result.isError, true);

@@ -13,6 +13,7 @@ Generated 2026-10-28. This file lists every source and reference. Names and trad
 | [Interactive 3D Machine](references/interactive-3d-machine/entry.md) | Evgeny Shilov (eugeneshilow); built with OpenAI Codex, ported to React by Claude | unknown | private-reference | [link](https://agentic-factory-3d.vercel.app) | 2026-10-28 | no |
 | [Liquid Sculpture Hero](references/liquid-sculpture-hero/entry.md) | Guglielmo Giannattasio | [MIT](https://21st.dev/@gughigug/components/liquid-sculpture-hero) | permissive | [link](https://21st.dev/@gughigug/components/liquid-sculpture-hero) | 2026-10-28 | yes |
 | [Marquee](references/marquee/entry.md) | Magic UI (magicuidesign) | [MIT](https://github.com/magicuidesign/magicui/blob/main/LICENSE.md) | permissive | [link](https://magicui.design/docs/components/marquee) | 2026-10-28 | yes |
+| [Mascot Portfolio Hero](references/mascot-portfolio-hero/entry.md) | Kedhareswer Naidu | [MIT](https://21st.dev/@kedhareswer/components/mascot-portfolio-hero) | permissive | [link](https://21st.dev/@kedhareswer/components/mascot-portfolio-hero) | 2026-10-28 | yes |
 | [Number Ticker](references/number-ticker/entry.md) | Magic UI (magicuidesign) | [MIT](https://github.com/magicuidesign/magicui/blob/main/LICENSE.md) | permissive | [link](https://magicui.design/docs/components/number-ticker) | 2026-10-28 | yes |
 
 `Published source: no` means the entry is documentation only and the original code is not hosted here.

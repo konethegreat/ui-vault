@@ -1,6 +1,6 @@
 # Index
 
-3 sources, 7 references, 2 original patterns, 354 upstream components. Generated 2026-10-28.
+3 sources, 8 references, 2 original patterns, 354 upstream components. Generated 2026-10-28.
 
 Definitions live in [README.md](README.md). Machine-readable data lives in [catalog.json](catalog.json).
 
@@ -22,6 +22,7 @@ Definitions live in [README.md](README.md). Machine-readable data lives in [cata
 | [Interactive 3D Machine](references/interactive-3d-machine/entry.md) | Evgeny Shilov (eugeneshilow); built with OpenAI Codex, ported to React by Claude | unknown | private-reference | inspiration-only | [original](https://agentic-factory-3d.vercel.app) | A React and three.js scene of a short-video factory as one physical machine. Five stations sit on a metal plate: engine, admin, storefront, cabinet and cashdesk. You can orbit it, hover a station, click to focus, switch between four modes and jump between five camera presets. Everything is procedural. There are no models, images or textures to download. |
 | [Liquid Sculpture Hero](references/liquid-sculpture-hero/entry.md) | Guglielmo Giannattasio | MIT | permissive | usable | [live](https://konethegreat.github.io/ui-vault/#demo-liquid-sculpture-hero) | A hero that rebuilds an image as roughly one hundred thousand GPU particles. The cursor turns the material liquid and it settles back into the crisp image. Without WebGL2 it falls back to a static image. |
 | [Marquee](references/marquee/entry.md) | Magic UI (magicuidesign) | MIT | permissive | usable | [live](https://konethegreat.github.io/ui-vault/#demo-marquee) | A horizontal or vertical marquee that duplicates its children and scrolls them with CSS keyframes. Duration and gap are CSS variables, and the animation can pause on hover. |
+| [Mascot Portfolio Hero](references/mascot-portfolio-hero/entry.md) | Kedhareswer Naidu | MIT | permissive | usable | [live](https://konethegreat.github.io/ui-vault/#demo-mascot-portfolio-hero) | A one-screen portfolio hero built as a printed poster for the screen. A one-point-perspective room is generated in SVG, a four-line display headline fills the left, and an illustrated character stands at the right. The head follows the pointer with layered parallax, blinks on its own, and greets the visitor when clicked. |
 | [Number Ticker](references/number-ticker/entry.md) | Magic UI (magicuidesign) | MIT | permissive | usable | [live](https://konethegreat.github.io/ui-vault/#demo-number-ticker) | A number that springs from a start value to a target when it scrolls into view. Formatting uses `Intl.NumberFormat`, so thousands separators and decimals follow the locale rules of `en-US`. |
 
 ## Library

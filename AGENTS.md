@@ -44,6 +44,7 @@ When in doubt, the stricter reading wins.
 - `demo: live` requires `rights: own` or `permissive`, a verified license, and an existing `demo_source`.
 - `demo: link` requires `demo_url` and means the original is hosted elsewhere.
 - Never mark a third-party component as `live` to make the site look fuller. The validator rejects unlicensed live demos, and the site must show the real component with a visible credit.
+- 21st.dev is a platform, not a license. Check the specific component page, record the author, and treat unknown or non-commercial terms as link-only. A permissive page allows the published file to be vendored unchanged and run live with credit.
 - Site wrappers live in `site/src/demos/`. Published component sources live in `references/<id>/` or `library/<id>/` and are copied into the site by `site/scripts/sync-data.mjs`. Do not edit the generated copies.
 
 ## Attribution when adapting

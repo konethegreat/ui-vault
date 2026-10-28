@@ -4,7 +4,7 @@
   "generated": "2026-10-28",
   "counts": {
     "sources": 3,
-    "references": 7,
+    "references": 8,
     "patterns": 2,
     "upstream_components": 354
   },
@@ -327,6 +327,45 @@
       "prompt": "references/marquee/prompt.md",
       "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/marquee/prompt",
       "summary": "A horizontal or vertical marquee that duplicates its children and scrolls them with CSS keyframes. Duration and gap are CSS variables, and the animation can pause on hover."
+    },
+    {
+      "id": "mascot-portfolio-hero",
+      "title": "Mascot Portfolio Hero",
+      "tier": "reference",
+      "type": "hero",
+      "status": "usable",
+      "stack": [
+        "react",
+        "typescript",
+        "svg",
+        "css",
+        "container-queries"
+      ],
+      "tags": [
+        "hero",
+        "mascot",
+        "svg",
+        "pointer",
+        "portfolio",
+        "light-mode",
+        "character"
+      ],
+      "license": "MIT",
+      "rights": "permissive",
+      "source_url": "https://21st.dev/@kedhareswer/components/mascot-portfolio-hero",
+      "source_author": "Kedhareswer Naidu",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-10-28",
+      "published_source": true,
+      "demo": "live",
+      "demo_url": "",
+      "demo_source": "site/src/demos/MascotPortfolioDemo.tsx",
+      "license_url": "https://21st.dev/@kedhareswer/components/mascot-portfolio-hero",
+      "path": "references/mascot-portfolio-hero/entry.md",
+      "prompt": "references/mascot-portfolio-hero/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/mascot-portfolio-hero/prompt",
+      "summary": "A one-screen portfolio hero built as a printed poster for the screen. A one-point-perspective room is generated in SVG, a four-line display headline fills the left, and an illustrated character stands at the right. The head follows the pointer with layered parallax, blinks on its own, and greets the visitor when clicked."
     },
     {
       "id": "number-ticker",

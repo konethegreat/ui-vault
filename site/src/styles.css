@@ -35,6 +35,23 @@
   src: url("/fonts/geist-mono.woff2") format("woff2");
 }
 
+/* Used by the Mascot Portfolio Hero, which names both families in its stacks. */
+@font-face {
+  font-family: "Archivo Black";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/archivo-black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/fonts/inter.woff2") format("woff2");
+}
+
 :root {
   --radius: 0.75rem;
   --paper: #f2eee6;

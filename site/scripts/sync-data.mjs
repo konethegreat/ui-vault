@@ -23,11 +23,20 @@ await copyFile(
   join(root, "references", "liquid-sculpture-hero", "LICENSE.md"),
   join(site, "public", "licenses", "liquid-sculpture.txt")
 );
+await copyFile(
+  join(root, "references", "mascot-portfolio-hero", "LICENSE.md"),
+  join(site, "public", "licenses", "mascot-portfolio.txt")
+);
+await copyFile(
+  join(root, "references", "fonts-LICENSE.txt"),
+  join(site, "public", "licenses", "fonts.txt")
+);
 
 // The reference entries hold the published source. The site imports a byte-for-byte
 // copy so the files resolve React from this package instead of the repository root.
 const vendor = [
   ["references/liquid-sculpture-hero/SculptureHero.tsx", "SculptureHero.tsx"],
+  ["references/mascot-portfolio-hero/MascotPortfolioHero.tsx", "MascotPortfolioHero.tsx"],
   ["references/marquee/Marquee.tsx", "Marquee.tsx"],
   ["references/animated-shiny-text/AnimatedShinyText.tsx", "AnimatedShinyText.tsx"],
   ["references/number-ticker/NumberTicker.tsx", "NumberTicker.tsx"],
@@ -44,5 +53,5 @@ for (const [from, name] of vendor) {
 }
 
 console.log(
-  `Synced catalog, ${catalog.entries.length} prompts, 9 component sources and 2 license notices into the site`
+  `Synced catalog, ${catalog.entries.length} prompts, 10 component sources and 3 license notices into the site`
 );

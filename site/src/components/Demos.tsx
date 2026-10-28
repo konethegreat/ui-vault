@@ -1,5 +1,6 @@
 import * as React from "react";
 import LiquidSculptureDemo from "@/demos/LiquidSculptureDemo";
+import MascotPortfolioDemo from "@/demos/MascotPortfolioDemo";
 import NebulaDemo from "@/demos/NebulaDemo";
 import ButtonDemo from "@/demos/ButtonDemo";
 import MarqueeDemo from "@/demos/MarqueeDemo";
@@ -43,12 +44,12 @@ export function Demos() {
               <span className="italic text-ink/60">not screenshots.</span>
             </h2>
             <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink/65">
-              Each stage states who made it and under what license. The first demo is the original
-              third-party component; the rest are patterns built for this vault or MIT components
-              installed through the Magic UI registry.
+              Each stage states who made it and under what license. The first two demos are the
+              original third-party heroes; the rest are patterns built for this vault or MIT
+              components installed through the Magic UI registry.
             </p>
           </div>
-          <p className="label shrink-0 text-ink/40">07 live · 01 linked</p>
+          <p className="label shrink-0 text-ink/40">08 live · 01 linked</p>
         </div>
 
         <div className="mt-12 space-y-8">
@@ -72,8 +73,27 @@ export function Demos() {
           </DemoFrame>
 
           <DemoFrame
-            id="nebula-hero"
+            id="mascot-portfolio-hero"
             index="02"
+            title="Mascot Portfolio Hero"
+            credit={
+              <>
+                <Link href="https://21st.dev/@kedhareswer">Kedhareswer Naidu</Link>
+                {" · "}
+                <Link href="https://21st.dev/@kedhareswer/components/mascot-portfolio-hero">
+                  via 21st.dev, MIT
+                </Link>
+              </>
+            }
+            note="Third-party. Runs the vendored component unchanged, with both of its fonts self-hosted."
+            bleed
+          >
+            <MascotPortfolioDemo />
+          </DemoFrame>
+
+          <DemoFrame
+            id="nebula-hero"
+            index="03"
             title="Nebula Hero"
             credit={
               <>
@@ -89,7 +109,7 @@ export function Demos() {
 
           <DemoFrame
             id="button"
-            index="03"
+            index="04"
             title="Button"
             credit={
               <>
@@ -105,7 +125,7 @@ export function Demos() {
           <div className="grid gap-8 md:grid-cols-2">
             <DemoFrame
               id="marquee"
-              index="04"
+              index="05"
               title="Marquee"
               credit={<MagicCredit docs="https://magicui.design/docs/components/marquee" />}
             >
@@ -114,7 +134,7 @@ export function Demos() {
 
             <DemoFrame
               id="animated-shiny-text"
-              index="05"
+              index="06"
               title="Animated Shiny Text"
               credit={<MagicCredit docs="https://magicui.design/docs/components/animated-shiny-text" />}
             >
@@ -123,7 +143,7 @@ export function Demos() {
 
             <DemoFrame
               id="number-ticker"
-              index="06"
+              index="07"
               title="Number Ticker"
               credit={<MagicCredit docs="https://magicui.design/docs/components/number-ticker" />}
             >
@@ -132,7 +152,7 @@ export function Demos() {
 
             <DemoFrame
               id="dot-pattern"
-              index="07"
+              index="08"
               title="Dot Pattern"
               credit={<MagicCredit docs="https://magicui.design/docs/components/dot-pattern" />}
             >

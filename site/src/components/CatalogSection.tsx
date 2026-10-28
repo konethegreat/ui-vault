@@ -95,6 +95,11 @@ function CatalogCard({ entry, index }: { entry: Entry; index: number }) {
             Original demo
           </a>
         ) : null}
+        {entry.tier === "reference" && entry.demo === "none" ? (
+          <a href="#rights" className="text-ink/50 transition-colors hover:text-ink">
+            Why not hosted
+          </a>
+        ) : null}
         <span aria-live="polite" className="sr-only">
           {status === "copied" ? `Prompt copied for ${entry.title}` : ""}
           {status === "failed" ? `Prompt copy failed for ${entry.title}` : ""}

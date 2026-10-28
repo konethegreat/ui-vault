@@ -22,6 +22,7 @@ It does not apply to third-party code named or linked in `sources/` or `referenc
 ## Third-party code currently hosted
 
 - Liquid Sculpture Hero by Guglielmo Giannattasio, MIT, via 21st.dev.
+- Mascot Portfolio Hero by Kedhareswer Naidu, MIT, via 21st.dev.
 - Marquee, Animated Shiny Text, Number Ticker and Dot Pattern by Magic UI, MIT.
 
 Each file carries its source and license in the matching entry under `references/`. If you copy one onward, keep that credit and the license notice.
@@ -29,8 +30,12 @@ Each file carries its source and license in the matching entry under `references
 ## Referenced but not hosted
 
 - Interactive 3D Machine by Evgeny Shilov (eugeneshilow). No license was found, so the scene, its code and its assets are not hosted here. The reference records observations only, and the site shows an original sketch that links to the author's deployment.
-- Animated Rocket Shader Hero. The shader is linked from its origin and is not hosted, because Shadertoy shaders default to CC BY-NC-SA 3.0.
+- Animated Rocket Shader Hero. The shader is a Star Nest derivative credited to Matthias Hurrle (@atzedent), the wrapper author is not recorded, and Shadertoy shaders default to CC BY-NC-SA 3.0. The wrapper also does not compile as shipped. It is linked and documented, not hosted, because a non-commercial share-alike work cannot be mixed into an MIT site.
 - React Bits. Linked and installable from upstream, never copied into this repository.
+
+## Fonts
+
+The site self-hosts Instrument Serif, Geist, Geist Mono, Archivo Black and Inter. All five are licensed under the SIL Open Font License 1.1. The notice is kept at `references/fonts-LICENSE.txt` and served at `licenses/fonts.txt`.
 
 ## Agent surfaces
 

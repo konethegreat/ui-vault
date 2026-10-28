@@ -22,7 +22,7 @@ Agents can also read the same catalog from a free hosted [API](#api), a zero-dep
 - [gallery.html](gallery.html): open in a browser for a visual index with filters.
 - [catalog.json](catalog.json): machine-readable index, including component names for each upstream library.
 - [THIRD_PARTY.md](THIRD_PARTY.md): attribution and license links for every source and reference.
-- [Live site](https://konethegreat.github.io/ui-vault/): seven running demos, a searchable catalog and the rights policy.
+- [Live site](https://konethegreat.github.io/ui-vault/): eight running demos, a searchable catalog and the rights policy.
 
 ## Agent access
 
@@ -123,11 +123,12 @@ The site imports generated, byte-for-byte copies of the published source from `r
 
 React Bits permits use inside apps and products, including commercial ones, but forbids selling or redistributing the components themselves. That is why this repo links to React Bits instead of copying it.
 
-The live site runs seven components:
+The live site runs eight components:
 
 | Component | Author | License | Source |
 | --- | --- | --- | --- |
 | Liquid Sculpture Hero | Guglielmo Giannattasio | MIT | [21st.dev](https://21st.dev/@gughigug/components/liquid-sculpture-hero) |
+| Mascot Portfolio Hero | Kedhareswer Naidu | MIT | [21st.dev](https://21st.dev/@kedhareswer/components/mascot-portfolio-hero) |
 | Nebula Hero | Kone | MIT | Original |
 | Button | Kone | MIT | Original |
 | Marquee | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/marquee) |
@@ -135,7 +136,9 @@ The live site runs seven components:
 | Number Ticker | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/number-ticker) |
 | Dot Pattern | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/dot-pattern) |
 
-The Animated Rocket Shader Hero remains documented in `references/` without hosted source. Its shader is a Star Nest derivative credited to Matthias Hurrle (@atzedent), and Shadertoy shaders default to CC BY-NC-SA 3.0 unless the author says otherwise. The site uses the original Nebula Hero instead.
+21st.dev components are handled one at a time, not as a library. A component runs live here only when its own page records a permissive license and names the author. Mascot Portfolio Hero and Liquid Sculpture Hero meet that bar, so both are vendored unchanged and run in their own frames. Components with unknown or non-commercial terms stay link-only even when they come from the same platform.
+
+The Animated Rocket Shader Hero remains documented in `references/` without hosted source. Its shader is a Star Nest derivative credited to Matthias Hurrle (@atzedent), the wrapper author is not recorded, and Shadertoy shaders default to CC BY-NC-SA 3.0 unless the author says otherwise. Hosting it would mix a non-commercial, share-alike work into an MIT site, so it is not live. The site uses the original Nebula Hero instead, and the catalog card links to the rights policy that explains the decision.
 
 The [Interactive 3D Machine](https://agentic-factory-3d.vercel.app) by Evgeny Shilov is `demo: link`. No license was found, so neither its code nor the scene is hosted here. The site draws an original isometric sketch and links to the author's deployment.
 

@@ -7,6 +7,8 @@ import { usePrefersReducedMotion } from "@/hooks/useReveal";
 
 const FALLBACK_TITLES = [
   "Liquid Sculpture Hero",
+  "Mascot Portfolio Hero",
+  "Glassmorphism Folder Cards",
   "Nebula Hero",
   "Marquee",
   "Number Ticker",
@@ -14,6 +16,7 @@ const FALLBACK_TITLES = [
   "Dot Pattern",
   "Button",
   "Interactive 3D Machine",
+  "Circular Navigation Bar",
 ];
 
 function Stat({ value, label, reduced }: { value: number; label: string; reduced: boolean }) {
@@ -33,7 +36,7 @@ export function Hero() {
 
   const entries = catalog?.entries ?? [];
   const titles = entries.length ? entries.map((entry) => entry.title) : FALLBACK_TITLES;
-  const liveDemos = entries.filter((entry) => entry.demo === "live").length || 7;
+  const liveDemos = entries.filter((entry) => entry.demo === "live").length || 9;
 
   return (
     <section id="top" className="scroll-mt-20">
@@ -42,8 +45,8 @@ export function Hero() {
           eyebrow="UI Vault · by Kone Tshivhinda"
           headline="Interfaces, with the credits attached."
           body="A working index of UI patterns, live demos and agent-ready prompts. Every third-party design is named, licensed and linked back to its author."
-          primaryCta={{ label: "Browse the catalog", href: "#catalog" }}
-          secondaryCta={{ label: "Use the vault", href: "#use" }}
+          primaryCta={{ label: "See the live demos", href: "#demos" }}
+          secondaryCta={{ label: "Browse the catalog", href: "#catalog" }}
           height="min(88svh, 780px)"
         />
       </div>
@@ -109,7 +112,7 @@ export function Hero() {
             </div>
 
             <dl className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
-              <Stat value={entries.length || 12} label="entries in the vault" reduced={reduced} />
+              <Stat value={entries.length || 15} label="entries in the vault" reduced={reduced} />
               <Stat value={liveDemos} label="live demos on this page" reduced={reduced} />
               <Stat
                 value={catalog?.counts.upstream_components ?? 354}

@@ -28,6 +28,10 @@ await copyFile(
   join(site, "public", "licenses", "mascot-portfolio.txt")
 );
 await copyFile(
+  join(root, "references", "glass-folder-cards", "LICENSE.md"),
+  join(site, "public", "licenses", "glass-folder-cards.txt")
+);
+await copyFile(
   join(root, "references", "fonts-LICENSE.txt"),
   join(site, "public", "licenses", "fonts.txt")
 );
@@ -37,6 +41,7 @@ await copyFile(
 const vendor = [
   ["references/liquid-sculpture-hero/SculptureHero.tsx", "SculptureHero.tsx"],
   ["references/mascot-portfolio-hero/MascotPortfolioHero.tsx", "MascotPortfolioHero.tsx"],
+  ["references/glass-folder-cards/GlassFolderCards.tsx", "GlassFolderCards.tsx"],
   ["references/marquee/Marquee.tsx", "Marquee.tsx"],
   ["references/animated-shiny-text/AnimatedShinyText.tsx", "AnimatedShinyText.tsx"],
   ["references/number-ticker/NumberTicker.tsx", "NumberTicker.tsx"],
@@ -53,5 +58,5 @@ for (const [from, name] of vendor) {
 }
 
 console.log(
-  `Synced catalog, ${catalog.entries.length} prompts, 10 component sources and 3 license notices into the site`
+  `Synced catalog, ${catalog.entries.length} prompts, ${vendor.length} component sources and 4 license notices into the site`
 );

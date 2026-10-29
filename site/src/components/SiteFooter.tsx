@@ -80,6 +80,12 @@ export function SiteFooter() {
                 <FooterLink href={`${BASE}licenses/liquid-sculpture.txt`}>Sculpture license</FooterLink>
               </li>
               <li>
+                <FooterLink href={`${BASE}licenses/mascot-portfolio.txt`}>Mascot license</FooterLink>
+              </li>
+              <li>
+                <FooterLink href={`${BASE}licenses/glass-folder-cards.txt`}>Folder cards license</FooterLink>
+              </li>
+              <li>
                 <FooterLink href={`${REPO}/blob/main/LICENSE`} external>
                   MIT license ↗
                 </FooterLink>

@@ -1,10 +1,10 @@
 {
   "name": "ui-vault",
   "license": "MIT for original work, see NOTICE.md",
-  "generated": "2026-10-28",
+  "generated": "2026-10-29",
   "counts": {
     "sources": 3,
-    "references": 8,
+    "references": 10,
     "patterns": 2,
     "upstream_components": 354
   },
@@ -185,6 +185,45 @@
       "summary": "A single line of text with a light highlight that sweeps across it. The effect is a clipped background gradient animated with a CSS keyframe, so no canvas or JavaScript animation loop is involved."
     },
     {
+      "id": "circular-navigation-bar",
+      "title": "Circular Navigation Bar",
+      "tier": "reference",
+      "type": "nav",
+      "status": "inspiration-only",
+      "stack": [
+        "react",
+        "tailwind",
+        "framer-motion",
+        "lucide-react",
+        "typescript"
+      ],
+      "tags": [
+        "navigation",
+        "menu",
+        "radial",
+        "overlay",
+        "glassmorphism",
+        "motion",
+        "keyboard"
+      ],
+      "license": "unknown",
+      "rights": "private-reference",
+      "source_url": "https://21st.dev/@kaif-ui/components/cicular-navigation-bar",
+      "source_author": "Kaif UI",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-10-29",
+      "published_source": false,
+      "demo": "link",
+      "demo_url": "https://21st.dev/@kaif-ui/components/cicular-navigation-bar",
+      "demo_source": "",
+      "license_url": "",
+      "path": "references/circular-navigation-bar/entry.md",
+      "prompt": "references/circular-navigation-bar/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/circular-navigation-bar/prompt",
+      "summary": "A full-screen navigation overlay that replaces a list with a circular dial. Up to seven destinations sit evenly around a translucent disc, each one an icon and a label inside a round target. A white circular button in the middle closes the overlay. The disc scales in from nothing while a dimmed backdrop covers the page. Hovering a destination fills it white and flips its icon and text to black."
+    },
+    {
       "id": "dot-pattern",
       "title": "Dot Pattern",
       "tier": "reference",
@@ -218,6 +257,47 @@
       "prompt": "references/dot-pattern/prompt.md",
       "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/dot-pattern/prompt",
       "summary": "A dot grid drawn as SVG circles that fill the parent container. With `glow`, each dot pulses on its own delay. Without it, the pattern is static."
+    },
+    {
+      "id": "glass-folder-cards",
+      "title": "Glassmorphism Folder Cards",
+      "tier": "reference",
+      "type": "card",
+      "status": "usable",
+      "stack": [
+        "react",
+        "typescript",
+        "css",
+        "canvas",
+        "svg"
+      ],
+      "tags": [
+        "glassmorphism",
+        "glass",
+        "folder",
+        "card",
+        "canvas",
+        "generative",
+        "pointer",
+        "keyboard",
+        "file-manager"
+      ],
+      "license": "MIT",
+      "rights": "permissive",
+      "source_url": "https://21st.dev/@kedhareswer/components/glass-folder-cards",
+      "source_author": "Kedhareswer Naidu",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-10-29",
+      "published_source": true,
+      "demo": "live",
+      "demo_url": "",
+      "demo_source": "site/src/demos/GlassFolderCardsDemo.tsx",
+      "license_url": "https://21st.dev/@kedhareswer/components/glass-folder-cards",
+      "path": "references/glass-folder-cards/entry.md",
+      "prompt": "references/glass-folder-cards/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/glass-folder-cards/prompt",
+      "summary": "A folder you can open, drawn as three real layers instead of a picture of a folder. A back panel holds generated artwork, the files sit between the panels, and a frosted front panel blurs whatever is behind it. Hovering leans the glass toward the pointer, clicking drops the panel and fans the files out as labelled buttons, and the plus key drops a new file into the pocket."
     },
     {
       "id": "interactive-3d-machine",

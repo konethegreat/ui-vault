@@ -22,7 +22,7 @@ Agents can also read the same catalog from a free hosted [API](#api), a zero-dep
 - [gallery.html](gallery.html): open in a browser for a visual index with filters.
 - [catalog.json](catalog.json): machine-readable index, including component names for each upstream library.
 - [THIRD_PARTY.md](THIRD_PARTY.md): attribution and license links for every source and reference.
-- [Live site](https://konethegreat.github.io/ui-vault/): eight running demos, a searchable catalog and the rights policy.
+- [Live site](https://konethegreat.github.io/ui-vault/): nine running demos, a searchable catalog and the rights policy.
 
 ## Agent access
 
@@ -123,12 +123,13 @@ The site imports generated, byte-for-byte copies of the published source from `r
 
 React Bits permits use inside apps and products, including commercial ones, but forbids selling or redistributing the components themselves. That is why this repo links to React Bits instead of copying it.
 
-The live site runs eight components:
+The live site runs nine components:
 
 | Component | Author | License | Source |
 | --- | --- | --- | --- |
 | Liquid Sculpture Hero | Guglielmo Giannattasio | MIT | [21st.dev](https://21st.dev/@gughigug/components/liquid-sculpture-hero) |
 | Mascot Portfolio Hero | Kedhareswer Naidu | MIT | [21st.dev](https://21st.dev/@kedhareswer/components/mascot-portfolio-hero) |
+| Glassmorphism Folder Cards | Kedhareswer Naidu | MIT | [21st.dev](https://21st.dev/@kedhareswer/components/glass-folder-cards) |
 | Nebula Hero | Kone | MIT | Original |
 | Button | Kone | MIT | Original |
 | Marquee | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/marquee) |
@@ -136,7 +137,9 @@ The live site runs eight components:
 | Number Ticker | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/number-ticker) |
 | Dot Pattern | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/dot-pattern) |
 
-21st.dev components are handled one at a time, not as a library. A component runs live here only when its own page records a permissive license and names the author. Mascot Portfolio Hero and Liquid Sculpture Hero meet that bar, so both are vendored unchanged and run in their own frames. Components with unknown or non-commercial terms stay link-only even when they come from the same platform.
+21st.dev components are handled one at a time, not as a library. A component runs live here only when its own page records a permissive license and names the author. Mascot Portfolio Hero, Liquid Sculpture Hero and Glassmorphism Folder Cards meet that bar, so all three are vendored unchanged and run in their own frames. Components with unknown or non-commercial terms stay link-only even when they come from the same platform. Circular Navigation Bar by Kaif UI is link-only: its page names the author but records no license, so the entry documents the technique and links to the original.
+
+Glassmorphism Folder Cards is the only demo here that is a working object rather than a page section. Its files are real buttons between two panels and the front panel is real backdrop glass. The demo measures its column and caps the folder width, because the component scales its fixed stage instead of reflowing it.
 
 The Animated Rocket Shader Hero remains documented in `references/` without hosted source. Its shader is a Star Nest derivative credited to Matthias Hurrle (@atzedent), the wrapper author is not recorded, and Shadertoy shaders default to CC BY-NC-SA 3.0 unless the author says otherwise. Hosting it would mix a non-commercial, share-alike work into an MIT site, so it is not live. The site uses the original Nebula Hero instead, and the catalog card links to the rights policy that explains the decision.
 

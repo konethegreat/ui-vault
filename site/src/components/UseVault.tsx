@@ -124,7 +124,7 @@ export function UseVault() {
       <div className="mx-auto max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="label text-amber">02 / Use the vault</p>
+            <p className="label text-amber">03 / Use the vault</p>
             <h2 className="mt-4 max-w-2xl font-display text-[2.6rem] leading-[1.02] tracking-tight text-paper sm:text-6xl">
               Call it from an agent,{" "}
               <span className="italic text-paper/55">a terminal or a browser.</span>
@@ -170,7 +170,7 @@ export function UseVault() {
           ))}
         </div>
 
-        <div className="mt-8 min-h-[22rem]">
+        <div className="mt-8 min-h-[18rem]">
           <div
             role="tabpanel"
             id="panel-cli"

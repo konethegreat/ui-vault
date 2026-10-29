@@ -28,7 +28,13 @@ export function DemoFrame({
     >
       <figcaption className="flex flex-col gap-3 border-b border-white/10 px-5 py-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
         <div className="flex items-start gap-4">
-          <span className="label mt-0.5 text-amber">{index}</span>
+          <a
+            href="#demos-index"
+            aria-label={`Back to the demo index from ${title}`}
+            className="label mt-0.5 text-amber underline-offset-4 hover:underline"
+          >
+            {index}
+          </a>
           <div>
             <h3 className="font-display text-2xl leading-none text-paper">{title}</h3>
             <p className="mt-2 text-xs leading-relaxed text-paper/55 [&_a]:text-paper/80 [&_a]:underline [&_a]:decoration-paper/25 [&_a]:underline-offset-2 [&_a]:transition-colors hover:[&_a]:text-amber-soft hover:[&_a]:decoration-amber/60">

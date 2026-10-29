@@ -17,6 +17,23 @@ const TIER_LABEL: Record<Tier, string> = {
   source: "Source",
 };
 
+const TIER_ORDER: Record<Tier, number> = { pattern: 0, reference: 1, source: 2 };
+
+const TIER_GROUP: Record<Tier, { title: string; note: string }> = {
+  pattern: {
+    title: "Original patterns",
+    note: "Written for this vault and licensed MIT.",
+  },
+  reference: {
+    title: "Third-party references",
+    note: "Studied in detail. Hosted only with a verified license and a credit.",
+  },
+  source: {
+    title: "Upstream libraries",
+    note: "Install commands and component indexes for the libraries behind the stack.",
+  },
+};
+
 function CatalogCard({ entry, index }: { entry: Entry; index: number }) {
   const ref = useReveal<HTMLLIElement>();
   const [status, setStatus] = React.useState<"idle" | "loading" | "copied" | "failed">("idle");
@@ -58,6 +75,19 @@ function CatalogCard({ entry, index }: { entry: Entry; index: number }) {
       </p>
       <p className="mt-3 text-[13.5px] leading-relaxed text-ink/65">{entry.summary}</p>
 
+      {entry.tags.length ? (
+        <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Tags">
+          {entry.tags.slice(0, 3).map((tag) => (
+            <li
+              key={tag}
+              className="rounded-full border border-line px-2 py-0.5 text-[10px] text-ink/45"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+      ) : null}
+
       <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-4 text-xs">
         <Button variant="secondary" size="sm" onClick={onCopyPrompt} loading={status === "loading"}>
           {status === "copied" ? "Copied" : status === "failed" ? "Copy failed" : "Copy prompt"}
@@ -77,7 +107,7 @@ function CatalogCard({ entry, index }: { entry: Entry; index: number }) {
             rel="noopener noreferrer"
             className="text-ink/50 transition-colors hover:text-ink"
           >
-            Source
+            Upstream
           </a>
         ) : null}
         {entry.demo === "live" ? (
@@ -113,16 +143,29 @@ export function CatalogSection() {
   const { catalog, error } = useCatalog();
   const [query, setQuery] = React.useState("");
   const [tier, setTier] = React.useState<"all" | Tier>("all");
+  const [expanded, setExpanded] = React.useState<Partial<Record<Tier, boolean>>>({});
   const headRef = useReveal<HTMLDivElement>();
 
   const entries = catalog?.entries ?? [];
-  const filtered = entries.filter((entry) => {
-    if (tier !== "all" && entry.tier !== tier) return false;
-    const haystack = [entry.title, entry.summary, entry.source_author, entry.type, ...entry.tags]
-      .join(" ")
-      .toLowerCase();
-    return haystack.includes(query.trim().toLowerCase());
-  });
+  const queryText = query.trim().toLowerCase();
+  const filtered = entries
+    .filter((entry) => {
+      if (tier !== "all" && entry.tier !== tier) return false;
+      const haystack = [entry.title, entry.summary, entry.source_author, entry.type, ...entry.tags]
+        .join(" ")
+        .toLowerCase();
+      return haystack.includes(queryText);
+    })
+    .sort((a, b) => TIER_ORDER[a.tier] - TIER_ORDER[b.tier] || a.title.localeCompare(b.title));
+
+  const groups = (["pattern", "reference", "source"] as const)
+    .map((groupTier) => ({
+      tier: groupTier,
+      items: filtered.filter((entry) => entry.tier === groupTier),
+    }))
+    .filter((group) => group.items.length > 0);
+
+  const searchOrFiltered = queryText !== "" || tier !== "all";
 
   return (
     <section id="catalog" className="relative scroll-mt-20 overflow-hidden border-b border-line bg-paper-2">
@@ -138,7 +181,7 @@ export function CatalogSection() {
       <div className="relative mx-auto max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
         <div ref={headRef} className="reveal flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="label text-ink/45">03 / Catalog</p>
+            <p className="label text-ink/45">02 / Catalog</p>
             <h2 className="mt-4 max-w-2xl font-display text-[2.6rem] leading-[1.02] tracking-tight text-ink sm:text-6xl">
               Every entry,{" "}
               <span className="italic text-ink/55">with its provenance.</span>
@@ -202,11 +245,56 @@ export function CatalogSection() {
             .
           </p>
         ) : (
-          <ul className="mt-6 grid gap-4 md:grid-cols-2">
-            {filtered.map((entry, index) => (
-              <CatalogCard key={entry.id} entry={entry} index={index} />
-            ))}
-          </ul>
+          <div className="mt-8 space-y-12">
+            {groups.map((group) => {
+              const open = searchOrFiltered || Boolean(expanded[group.tier]);
+              const visible = open ? group.items : group.items.slice(0, 4);
+              return (
+                <section key={group.tier} aria-labelledby={`group-${group.tier}`}>
+                  <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-line pb-3">
+                    <div>
+                      <h3
+                        id={`group-${group.tier}`}
+                        className="font-display text-2xl leading-none tracking-tight text-ink"
+                      >
+                        {TIER_GROUP[group.tier].title}
+                      </h3>
+                      <p className="mt-2 text-xs leading-relaxed text-ink/50">
+                        {TIER_GROUP[group.tier].note}
+                      </p>
+                    </div>
+                    <p className="label text-ink/35">
+                      {group.items.length} {group.items.length === 1 ? "entry" : "entries"}
+                    </p>
+                  </div>
+
+                  <ul className="mt-5 grid gap-4 md:grid-cols-2">
+                    {visible.map((entry, index) => (
+                      <CatalogCard key={entry.id} entry={entry} index={index} />
+                    ))}
+                  </ul>
+
+                  {!searchOrFiltered && group.items.length > 4 ? (
+                    <button
+                      type="button"
+                      aria-expanded={open}
+                      onClick={() =>
+                        setExpanded((value) => ({ ...value, [group.tier]: !value[group.tier] }))
+                      }
+                      className="mt-5 inline-flex items-center gap-2 rounded-full border border-ink/15 bg-[#f8f4ec] px-4 py-2 text-xs font-medium text-ink/70 transition-colors hover:border-ink/40 hover:text-ink"
+                    >
+                      {open
+                        ? "Show fewer"
+                        : `Show all ${group.items.length} ${group.items.length === 1 ? "entry" : "entries"}`}
+                      <span aria-hidden="true" className="font-mono text-[10px]">
+                        {open ? "↑" : "↓"}
+                      </span>
+                    </button>
+                  ) : null}
+                </section>
+              );
+            })}
+          </div>
         )}
 
         {catalog && filtered.length === 0 ? (

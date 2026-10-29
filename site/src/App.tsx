@@ -21,8 +21,8 @@ export default function App() {
       <main id="main">
         <Hero />
         <Demos />
-        <UseVault />
         <CatalogSection />
+        <UseVault />
         <Rights />
       </main>
 

@@ -1,0 +1,227 @@
+.rocket-field {
+  position: relative;
+  display: flex;
+  min-height: var(--rocket-height, 680px);
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(70% 52% at 50% 100%, rgba(232, 163, 61, 0.24), transparent 68%),
+    radial-gradient(90% 80% at 82% 8%, rgba(90, 108, 140, 0.2), transparent 60%),
+    #0a0a08;
+  color: #faf8f2;
+}
+
+.rocket-field__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.rocket-field__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(100deg, rgba(10, 10, 8, 0.9) 8%, rgba(10, 10, 8, 0.55) 42%, rgba(10, 10, 8, 0) 68%),
+    linear-gradient(0deg, rgba(10, 10, 8, 0.72) 0%, rgba(10, 10, 8, 0) 45%);
+}
+
+.rocket-field__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(22px, 4vw, 52px);
+  pointer-events: none;
+}
+
+.rocket-field__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.rocket-field__eyebrow {
+  margin: 0;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(232, 163, 61, 0.85);
+}
+
+.rocket-field__telemetry {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250, 248, 242, 0.5);
+}
+
+.rocket-field__telemetry span {
+  color: rgba(250, 248, 242, 0.88);
+  font-variant-numeric: tabular-nums;
+}
+
+.rocket-field__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: #e8a33d;
+  box-shadow: 0 0 0 0 rgba(232, 163, 61, 0.5);
+  animation: rocket-signal 2.6s ease-out infinite;
+}
+
+.rocket-field__foot {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 42rem;
+}
+
+.rocket-field__title {
+  margin: 0;
+  max-width: 13ch;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(2.7rem, 6.4vw, 5.1rem);
+  font-weight: 400;
+  line-height: 0.94;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.rocket-field__body {
+  margin: 0;
+  max-width: 46ch;
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.6;
+  color: rgba(250, 248, 242, 0.7);
+}
+
+.rocket-field__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.35rem;
+}
+
+.rocket-field__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2.75rem;
+  padding: 0 1.3rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: #e8a33d;
+  color: #171512;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  pointer-events: auto;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.rocket-field__cta:hover {
+  background: #f2b559;
+}
+
+.rocket-field__cta:focus-visible {
+  outline: 2px solid #faf8f2;
+  outline-offset: 3px;
+}
+
+.rocket-field__cta--quiet {
+  background: transparent;
+  border-color: rgba(250, 248, 242, 0.28);
+  color: #faf8f2;
+}
+
+.rocket-field__cta--quiet:hover {
+  background: rgba(250, 248, 242, 0.08);
+  border-color: rgba(250, 248, 242, 0.5);
+}
+
+.rocket-field__credit {
+  margin: 0.2rem 0 0;
+  max-width: 58ch;
+  font-size: 0.72rem;
+  line-height: 1.55;
+  color: rgba(250, 248, 242, 0.48);
+}
+
+.rocket-field__credit a {
+  color: rgba(250, 248, 242, 0.72);
+  text-underline-offset: 2px;
+  pointer-events: auto;
+}
+
+.rocket-field__hint {
+  position: absolute;
+  right: clamp(22px, 4vw, 52px);
+  bottom: clamp(24px, 4vw, 54px);
+  margin: 0;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250, 248, 242, 0.58);
+}
+
+@keyframes rocket-signal {
+  0% {
+    box-shadow: 0 0 0 0 rgba(232, 163, 61, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(232, 163, 61, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(232, 163, 61, 0);
+  }
+}
+
+@media (max-width: 699px) {
+  .rocket-field {
+    min-height: min(var(--rocket-height, 680px), 560px);
+  }
+
+  .rocket-field__title {
+    max-width: 11ch;
+  }
+
+  .rocket-field__hint {
+    display: none;
+  }
+
+  .rocket-field__veil {
+    background:
+      linear-gradient(100deg, rgba(10, 10, 8, 0.88) 10%, rgba(10, 10, 8, 0.45) 55%, rgba(10, 10, 8, 0) 80%),
+      linear-gradient(0deg, rgba(10, 10, 8, 0.8) 0%, rgba(10, 10, 8, 0) 52%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rocket-field__dot {
+    animation: none;
+  }
+
+  .rocket-field__cta {
+    transition: none;
+  }
+}

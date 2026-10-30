@@ -5,7 +5,7 @@
   "counts": {
     "sources": 3,
     "references": 12,
-    "patterns": 4,
+    "patterns": 6,
     "upstream_components": 354
   },
   "entries": [
@@ -696,6 +696,81 @@
       "prompt": "library/nebula-hero/prompt.md",
       "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/nebula-hero/prompt",
       "summary": "A WebGL2 hero background made from layered value noise: a slow nebula with a warm core, faint stars and a vignette. Content sits over it with a readable scrim. All code is original and MIT."
+    },
+    {
+      "id": "rocket-field-hero",
+      "title": "Rocket Field Hero",
+      "tier": "pattern",
+      "type": "hero",
+      "status": "usable",
+      "stack": [
+        "react",
+        "canvas",
+        "typescript",
+        "css"
+      ],
+      "tags": [
+        "hero",
+        "canvas",
+        "rocket",
+        "stars",
+        "pointer",
+        "reduced-motion"
+      ],
+      "license": "MIT",
+      "rights": "own",
+      "source_url": "",
+      "source_author": "Kone",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-10-30",
+      "published_source": true,
+      "demo": "live",
+      "demo_url": "",
+      "demo_source": "site/src/demos/RocketFieldHeroDemo.tsx",
+      "license_url": "",
+      "path": "library/rocket-field-hero/entry.md",
+      "prompt": "library/rocket-field-hero/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/rocket-field-hero/prompt",
+      "summary": "A full-bleed dark hero drawn on a 2D canvas. Three depths of stars drift behind a low horizon, small rockets climb from the line with tapering amber trails, and the pointer shifts the field by a few pixels. The headline, buttons and launch counter sit in HTML above the canvas."
+    },
+    {
+      "id": "station-machine",
+      "title": "Station Machine",
+      "tier": "pattern",
+      "type": "interaction",
+      "status": "usable",
+      "stack": [
+        "react",
+        "three",
+        "typescript",
+        "css"
+      ],
+      "tags": [
+        "3d",
+        "three.js",
+        "orbit",
+        "camera",
+        "procedural",
+        "webgl",
+        "reduced-motion"
+      ],
+      "license": "MIT",
+      "rights": "own",
+      "source_url": "",
+      "source_author": "Kone",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-10-30",
+      "published_source": true,
+      "demo": "live",
+      "demo_url": "",
+      "demo_source": "site/src/demos/StationMachineDemo.tsx",
+      "license_url": "",
+      "path": "library/station-machine/entry.md",
+      "prompt": "library/station-machine/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/station-machine/prompt",
+      "summary": "A procedural three.js scene of a five station production line on a metal plate. The stations are built from primitives: a hopper, a press, a pair of rings, a tank and a ramp. Drag to orbit, click a station or use the labelled buttons to move the camera, and the scene explains the selected station in plain text."
     }
   ],
   "upstream": [

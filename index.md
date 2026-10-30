@@ -1,6 +1,6 @@
 # Index
 
-3 sources, 12 references, 4 original patterns, 354 upstream components. Generated 2026-10-30.
+3 sources, 12 references, 6 original patterns, 354 upstream components. Generated 2026-10-30.
 
 Definitions live in [README.md](README.md). Machine-readable data lives in [catalog.json](catalog.json).
 
@@ -37,6 +37,8 @@ Definitions live in [README.md](README.md). Machine-readable data lives in [cata
 | [Depth Zoom Parallax](library/depth-zoom-parallax/entry.md) | motion | MIT | [live](https://konethegreat.github.io/ui-vault/demos#demo-depth-zoom-parallax) | A scroll-driven gallery where seven framed images sit on a dark stage and fly past the camera at different depths. A sticky stage holds the composition in place while the page scrolls through a tall section, so the images appear to move toward the viewer rather than with the document. |
 | [Editorial Image Accordion](library/editorial-image-accordion/entry.md) | interaction | MIT | [live](https://konethegreat.github.io/ui-vault/demos#demo-editorial-image-accordion) | A horizontal band of images where one panel holds the width and the rest collapse to slim spines with vertical labels. Hovering a spine on a mouse, or clicking, tapping or arrowing to one, expands it. A caption under the band names the active image and describes it. |
 | [Nebula Hero](library/nebula-hero/entry.md) | hero | MIT | [live](https://konethegreat.github.io/ui-vault/demos#demo-nebula-hero) | A WebGL2 hero background made from layered value noise: a slow nebula with a warm core, faint stars and a vignette. Content sits over it with a readable scrim. All code is original and MIT. |
+| [Rocket Field Hero](library/rocket-field-hero/entry.md) | hero | MIT | [live](https://konethegreat.github.io/ui-vault/demos#demo-rocket-field-hero) | A full-bleed dark hero drawn on a 2D canvas. Three depths of stars drift behind a low horizon, small rockets climb from the line with tapering amber trails, and the pointer shifts the field by a few pixels. The headline, buttons and launch counter sit in HTML above the canvas. |
+| [Station Machine](library/station-machine/entry.md) | interaction | MIT | [live](https://konethegreat.github.io/ui-vault/demos#demo-station-machine) | A procedural three.js scene of a five station production line on a metal plate. The stations are built from primitives: a hopper, a press, a pair of rings, a tank and a ramp. Drag to orbit, click a station or use the labelled buttons to move the camera, and the scene explains the selected station in plain text. |
 
 ## Attribution
 

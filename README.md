@@ -22,7 +22,7 @@ Agents can also read the same catalog from a free hosted [API](#api), a zero-dep
 - [gallery.html](gallery.html): open in a browser for a visual index with filters.
 - [catalog.json](catalog.json): machine-readable index, including component names for each upstream library.
 - [THIRD_PARTY.md](THIRD_PARTY.md): attribution and license links for every source and reference.
-- [Live site](https://konethegreat.github.io/ui-vault/): eleven running demos, a searchable catalog and the rights policy.
+- [Live site](https://konethegreat.github.io/ui-vault/): thirteen running demos, a searchable catalog and the rights policy.
 
 ## The site
 
@@ -145,7 +145,7 @@ The site imports generated, byte-for-byte copies of the published source from `r
 
 React Bits permits use inside apps and products, including commercial ones, but forbids selling or redistributing the components themselves. That is why this repo links to React Bits instead of copying it.
 
-The live site runs eleven components:
+The live site runs thirteen components:
 
 | Component | Author | License | Source |
 | --- | --- | --- | --- |
@@ -153,6 +153,7 @@ The live site runs eleven components:
 | Mascot Portfolio Hero | Kedhareswer Naidu | MIT | [21st.dev](https://21st.dev/@kedhareswer/components/mascot-portfolio-hero) |
 | Glassmorphism Folder Cards | Kedhareswer Naidu | MIT | [21st.dev](https://21st.dev/@kedhareswer/components/glass-folder-cards) |
 | Nebula Hero | Kone | MIT | Original |
+| Rocket Field Hero | Kone | MIT | Original, inspired by the Animated Rocket Shader Hero |
 | Depth Zoom Parallax | Kone | MIT | Original, inspired by Efferd |
 | Editorial Image Accordion | Kone | MIT | Original, inspired by Le Thanh |
 | Button | Kone | MIT | Original |
@@ -160,6 +161,7 @@ The live site runs eleven components:
 | Animated Shiny Text | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/animated-shiny-text) |
 | Number Ticker | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/number-ticker) |
 | Dot Pattern | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/dot-pattern) |
+| Station Machine | Kone | MIT | Original, inspired by Evgeny Shilov |
 
 21st.dev components are handled one at a time, not as a library. A component runs live here only when its own page records a permissive license and names the author. Mascot Portfolio Hero, Liquid Sculpture Hero and Glassmorphism Folder Cards meet that bar, so all three are vendored unchanged and run in their own frames. Components with unknown or non-commercial terms stay link-only even when they come from the same platform. Circular Navigation Bar by Kaif UI is link-only: its page names the author but records no license, so the entry documents the technique and links to the original.
 
@@ -167,9 +169,9 @@ Zoom Parallax by Efferd and Interactive Image Accordion by Le Thanh are link-onl
 
 Glassmorphism Folder Cards is the only demo here that is a working object rather than a page section. Its files are real buttons between two panels and the front panel is real backdrop glass. The demo measures its column and caps the folder width, because the component scales its fixed stage instead of reflowing it.
 
-The Animated Rocket Shader Hero remains documented in `references/` without hosted source. Its shader is a Star Nest derivative credited to Matthias Hurrle (@atzedent), the wrapper author is not recorded, and Shadertoy shaders default to CC BY-NC-SA 3.0 unless the author says otherwise. Hosting it would mix a non-commercial, share-alike work into an MIT site, so it is not live. The site uses the original Nebula Hero instead, and the catalog card links to the rights policy that explains the decision.
+The Animated Rocket Shader Hero remains documented in `references/` without hosted source. Its shader is a Star Nest derivative credited to Matthias Hurrle (@atzedent), the wrapper author is not recorded, and Shadertoy shaders default to CC BY-NC-SA 3.0 unless the author says otherwise. Hosting it would mix a non-commercial, share-alike work into an MIT site, so it is not live. The site runs two original replacements instead: the Rocket Field Hero, drawn on a canvas that launches its own trails, and the Nebula Hero shader. Both keep a visible credit to the inspiration.
 
-The [Interactive 3D Machine](https://agentic-factory-3d.vercel.app) by Evgeny Shilov is `demo: link`. No license was found, so neither its code nor the scene is hosted here. The site draws an original isometric sketch and links to the author's deployment.
+The [Interactive 3D Machine](https://agentic-factory-3d.vercel.app) by Evgeny Shilov is `demo: link`. No license was found, so neither its code nor the scene is hosted here. The site runs an original procedural Station Machine instead, built from three.js geometry with its own five stations, and links to the author's deployment. No model, texture or station name was copied.
 
 The live site also includes an agent-access panel where the CLI, API and MCP examples can be copied directly.
 

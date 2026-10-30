@@ -424,37 +424,6 @@
   }
 }
 
-.machine-scan {
-  animation: vault-scan 7s linear infinite;
-}
-
-@keyframes vault-scan {
-  0% {
-    transform: translateY(-8%);
-    opacity: 0;
-  }
-  12% {
-    opacity: 0.9;
-  }
-  88% {
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateY(760%);
-    opacity: 0;
-  }
-}
-
-.machine-dash {
-  animation: vault-dash 12s linear infinite;
-}
-
-@keyframes vault-dash {
-  to {
-    stroke-dashoffset: -120;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -472,11 +441,6 @@
   }
 
   .nebula-hero__content > * {
-    animation: none;
-  }
-
-  .machine-scan,
-  .machine-dash {
     animation: none;
   }
 

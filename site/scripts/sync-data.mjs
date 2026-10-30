@@ -54,6 +54,10 @@ const vendor = [
   ["library/depth-zoom-parallax/depth-zoom-parallax.css", "depth-zoom-parallax.css"],
   ["library/editorial-image-accordion/EditorialImageAccordion.tsx", "EditorialImageAccordion.tsx"],
   ["library/editorial-image-accordion/editorial-image-accordion.css", "editorial-image-accordion.css"],
+  ["library/station-machine/StationMachine.tsx", "StationMachine.tsx"],
+  ["library/station-machine/station-machine.css", "station-machine.css"],
+  ["library/rocket-field-hero/RocketFieldHero.tsx", "RocketFieldHero.tsx"],
+  ["library/rocket-field-hero/rocket-field-hero.css", "rocket-field-hero.css"],
 ];
 
 await mkdir(join(site, "src", "vendor"), { recursive: true });

@@ -10,8 +10,9 @@ import NumberTickerDemo from "@/demos/NumberTickerDemo";
 import DotPatternDemo from "@/demos/DotPatternDemo";
 import DepthZoomParallaxDemo from "@/demos/DepthZoomParallaxDemo";
 import EditorialImageAccordionDemo from "@/demos/EditorialImageAccordionDemo";
+import StationMachineDemo from "@/demos/StationMachineDemo";
+import RocketFieldHeroDemo from "@/demos/RocketFieldHeroDemo";
 import { DemoFrame } from "@/components/DemoFrame";
-import { MachineSketch } from "@/components/MachineSketch";
 import { REPO } from "@/lib/catalog";
 
 const MAGIC_LICENSE = "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md";
@@ -28,7 +29,8 @@ const DEMO_INDEX = [
   { id: "animated-shiny-text", title: "Animated Shiny Text", group: "Magic UI" },
   { id: "number-ticker", title: "Number Ticker", group: "Magic UI" },
   { id: "dot-pattern", title: "Dot Pattern", group: "Magic UI" },
-  { id: "machine", title: "Interactive 3D Machine", group: "Linked" },
+  { id: "station-machine", title: "Station Machine", group: "Original" },
+  { id: "rocket-field-hero", title: "Rocket Field Hero", group: "Original" },
 ];
 
 function Link({ href, children }: { href: string; children: React.ReactNode }) {
@@ -54,7 +56,7 @@ export function Demos() {
         <nav id="demos-index" aria-label="Demo index" className="scroll-mt-28">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="label text-ink/40">On this page</p>
-            <p className="label text-ink/40">11 live · 01 linked</p>
+            <p className="label text-ink/40">13 live</p>
           </div>
           <ul className="mt-3 grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
             {DEMO_INDEX.map((demo, index) => (
@@ -246,7 +248,45 @@ export function Demos() {
             </DemoFrame>
           </div>
 
-          <MachineSketch />
+          <DemoFrame
+            id="station-machine"
+            index="12"
+            title="Station Machine"
+            credit={
+              <>
+                Kone Tshivhinda · MIT ·{" "}
+                <Link href={`${REPO}/blob/main/library/station-machine/StationMachine.tsx`}>
+                  read the source
+                </Link>
+                {" · inspired by "}
+                <Link href="https://agentic-factory-3d.vercel.app">Evgeny Shilov</Link>
+              </>
+            }
+            note="Original scene. The Interactive 3D Machine original records no license, so no code or scene was copied. three.js loads as a separate chunk when this demo mounts."
+            bleed
+          >
+            <StationMachineDemo />
+          </DemoFrame>
+
+          <DemoFrame
+            id="rocket-field-hero"
+            index="13"
+            title="Rocket Field Hero"
+            credit={
+              <>
+                Kone Tshivhinda · MIT ·{" "}
+                <Link href={`${REPO}/blob/main/library/rocket-field-hero/RocketFieldHero.tsx`}>
+                  read the source
+                </Link>
+                {" · inspired by "}
+                <Link href="https://www.shadertoy.com/user/atzedent">Matthias Hurrle</Link>
+              </>
+            }
+            note="Original canvas scene. The Animated Rocket Shader Hero original is a Star Nest derivative under non-commercial terms, so no shader code or asset was copied. Move to drift, click the sky to launch."
+            bleed
+          >
+            <RocketFieldHeroDemo />
+          </DemoFrame>
         </div>
       </div>
     </section>

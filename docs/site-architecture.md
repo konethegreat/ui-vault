@@ -39,7 +39,9 @@ forward, scroll restoration, and focus management.
   `/ui-vault/licenses/` and external links keep native behavior.
 - `route("/demos")` returns the base-aware href. Use it for every internal link.
 - A route with a hash scrolls to the target after render. This is how
-  `/demos#demo-glass-folder-cards` works from a catalog card.
+  `/demos#demo-glass-folder-cards` works from a catalog card. The first scroll is instant, then it
+  checks the target each frame for four seconds so late layout shifts (tall canvases, fonts) cannot
+  leave the target off screen. Any user input or a new hash navigation stops the correction.
 - Legacy `/#demo-<id>` links redirect to `/demos#demo-<id>`.
 - Navigating without a hash scrolls to the top and focuses `#main`.
 

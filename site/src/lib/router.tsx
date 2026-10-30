@@ -36,12 +36,56 @@ type RouterValue = Location & {
 
 const RouterContext = React.createContext<RouterValue | null>(null);
 
-function scrollToHash() {
+function scrollToHash(): () => void {
   const id = decodeURIComponent(window.location.hash.slice(1));
-  if (!id) return;
-  window.requestAnimationFrame(() => {
-    document.getElementById(id)?.scrollIntoView({ block: "start" });
-  });
+  if (!id) return () => {};
+
+  const root = document.documentElement;
+  const previousBehavior = root.style.scrollBehavior;
+  root.style.scrollBehavior = "auto";
+
+  const deadline = performance.now() + 4000;
+  let stopped = false;
+  let frame = 0;
+
+  const align = (target: HTMLElement) => {
+    target.scrollIntoView({ block: "start" });
+  };
+
+  const stop = () => {
+    if (stopped) return;
+    stopped = true;
+    window.cancelAnimationFrame(frame);
+    root.style.scrollBehavior = previousBehavior;
+    window.removeEventListener("wheel", stop);
+    window.removeEventListener("touchstart", stop);
+    window.removeEventListener("pointerdown", stop);
+    window.removeEventListener("keydown", stop);
+    window.removeEventListener("hashchange", stop);
+  };
+
+  const step = () => {
+    if (stopped || performance.now() > deadline) return stop();
+
+    const target = document.getElementById(id);
+    if (target) {
+      const margin = Number.parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
+      if (Math.abs(target.getBoundingClientRect().top - margin) > 1.5) align(target);
+    }
+    frame = window.requestAnimationFrame(step);
+  };
+
+  const initial = document.getElementById(id);
+  if (initial) align(initial);
+  frame = window.requestAnimationFrame(step);
+
+  window.addEventListener("wheel", stop, { passive: true });
+  window.addEventListener("touchstart", stop, { passive: true });
+  window.addEventListener("pointerdown", stop, { passive: true });
+  window.addEventListener("keydown", stop);
+  window.addEventListener("hashchange", stop);
+
+  return stop;
 }
 
 export function RouterProvider({ children }: { children: React.ReactNode }) {
@@ -101,10 +145,7 @@ export function RouterProvider({ children }: { children: React.ReactNode }) {
       firstScroll.current = false;
       if (!hasHash) return;
     }
-    if (hasHash) {
-      scrollToHash();
-      return;
-    }
+    if (hasHash) return scrollToHash();
     window.scrollTo(0, 0);
   }, [location.key]);
 

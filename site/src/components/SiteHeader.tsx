@@ -1,18 +1,24 @@
 import * as React from "react";
 import { Menu, X } from "lucide-react";
 import { OWNER, REPO } from "@/lib/catalog";
+import { route, useRouter } from "@/lib/router";
 
 const LINKS = [
-  { label: "Demos", href: "#demos" },
-  { label: "Catalog", href: "#catalog" },
-  { label: "Use", href: "#use" },
-  { label: "Rights", href: "#rights" },
+  { label: "Demos", to: "/demos" },
+  { label: "Catalog", to: "/catalog" },
+  { label: "Agents", to: "/use" },
+  { label: "Rights", to: "/rights" },
+  { label: "Privacy", to: "/privacy" },
 ];
 
 export function SiteHeader() {
+  const { path } = useRouter();
   const [open, setOpen] = React.useState(false);
-  const [active, setActive] = React.useState("");
   const buttonRef = React.useRef<HTMLButtonElement>(null);
+
+  React.useEffect(() => {
+    setOpen(false);
+  }, [path]);
 
   React.useEffect(() => {
     if (!open) return;
@@ -26,41 +32,15 @@ export function SiteHeader() {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
-  React.useEffect(() => {
-    const sections = LINKS.map((link) => document.getElementById(link.href.slice(1))).filter(
-      (section): section is HTMLElement => section !== null
-    );
-    if (!sections.length) return;
-
-    let frame = 0;
-    const update = () => {
-      frame = 0;
-      const line = window.scrollY + window.innerHeight * 0.35;
-      let current = "";
-      for (const section of sections) {
-        if (section.getBoundingClientRect().top + window.scrollY <= line) current = section.id;
-      }
-      setActive(current);
-    };
-    const onScroll = () => {
-      if (!frame) frame = requestAnimationFrame(update);
-    };
-
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      if (frame) cancelAnimationFrame(frame);
-    };
-  }, []);
-
   return (
     <header className="on-dark sticky top-0 z-50 border-b border-white/10 bg-graphite/92 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-4 px-5 py-3.5 sm:px-8">
         <div className="flex min-w-0 items-center gap-x-3">
-          <a href="#top" className="group flex items-center gap-2.5">
+          <a
+            href={route("/")}
+            aria-label="UI Vault home"
+            className="group flex items-center gap-2.5"
+          >
             <span
               aria-hidden="true"
               className="grid size-8 place-items-center rounded-md bg-amber font-mono text-[11px] font-semibold tracking-[0.06em] text-graphite transition-transform duration-300 group-hover:-rotate-3"
@@ -80,15 +60,15 @@ export function SiteHeader() {
           </a>
         </div>
 
-        <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
           {LINKS.map((link) => {
-            const current = active === link.href.slice(1);
+            const current = path === link.to;
             return (
               <a
-                key={link.href}
-                href={link.href}
-                aria-current={current ? "location" : undefined}
-                className={`rounded-full px-3.5 py-2 text-sm transition-colors ${
+                key={link.to}
+                href={route(link.to)}
+                aria-current={current ? "page" : undefined}
+                className={`rounded-full px-3 py-2 text-sm transition-colors ${
                   current
                     ? "bg-white/10 text-paper"
                     : "text-paper/65 hover:bg-white/5 hover:text-paper"
@@ -114,7 +94,7 @@ export function SiteHeader() {
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
           aria-controls="mobile-nav"
-          className="grid size-10 place-items-center rounded-full border border-white/15 text-paper md:hidden"
+          className="grid size-10 place-items-center rounded-full border border-white/15 text-paper lg:hidden"
         >
           <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
           {open ? <X aria-hidden="true" size={17} /> : <Menu aria-hidden="true" size={17} />}
@@ -125,17 +105,17 @@ export function SiteHeader() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="border-t border-white/10 bg-graphite px-5 pb-5 pt-2 md:hidden"
+          className="border-t border-white/10 bg-graphite px-5 pb-5 pt-2 lg:hidden"
         >
           <ul className="divide-y divide-white/8">
-            {LINKS.map((link) => {
-              const current = active === link.href.slice(1);
+            {[...LINKS, { label: "Takedown", to: "/takedown" }].map((link) => {
+              const current = path === link.to;
               return (
-                <li key={link.href}>
+                <li key={link.to}>
                   <a
-                    href={link.href}
+                    href={route(link.to)}
                     onClick={() => setOpen(false)}
-                    aria-current={current ? "location" : undefined}
+                    aria-current={current ? "page" : undefined}
                     className={`flex items-center justify-between py-3.5 text-[15px] ${
                       current ? "text-paper" : "text-paper/80"
                     }`}
@@ -166,6 +146,9 @@ export function SiteHeader() {
               </a>
             </li>
           </ul>
+          <p className="pt-5 text-[11px] leading-relaxed text-paper/40">
+            Third-party designs belong to their authors.
+          </p>
         </nav>
       ) : null}
     </header>

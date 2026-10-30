@@ -10,6 +10,7 @@ import {
   type Tier,
 } from "@/lib/catalog";
 import { useReveal } from "@/hooks/useReveal";
+import { route } from "@/lib/router";
 
 const TIER_LABEL: Record<Tier, string> = {
   pattern: "Library",
@@ -111,7 +112,7 @@ function CatalogCard({ entry, index }: { entry: Entry; index: number }) {
           </a>
         ) : null}
         {entry.demo === "live" ? (
-          <a href={`#demo-${entry.id}`} className="text-ink/50 transition-colors hover:text-ink">
+          <a href={route(`/demos#demo-${entry.id}`)} className="text-ink/50 transition-colors hover:text-ink">
             Live demo
           </a>
         ) : null}
@@ -126,7 +127,7 @@ function CatalogCard({ entry, index }: { entry: Entry; index: number }) {
           </a>
         ) : null}
         {entry.tier === "reference" && entry.demo === "none" ? (
-          <a href="#rights" className="text-ink/50 transition-colors hover:text-ink">
+          <a href={route("/rights#tiers")} className="text-ink/50 transition-colors hover:text-ink">
             Why not hosted
           </a>
         ) : null}
@@ -144,7 +145,6 @@ export function CatalogSection() {
   const [query, setQuery] = React.useState("");
   const [tier, setTier] = React.useState<"all" | Tier>("all");
   const [expanded, setExpanded] = React.useState<Partial<Record<Tier, boolean>>>({});
-  const headRef = useReveal<HTMLDivElement>();
 
   const entries = catalog?.entries ?? [];
   const queryText = query.trim().toLowerCase();
@@ -178,25 +178,8 @@ export function CatalogSection() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
-        <div ref={headRef} className="reveal flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="label text-ink/45">02 / Catalog</p>
-            <h2 className="mt-4 max-w-2xl font-display text-[2.6rem] leading-[1.02] tracking-tight text-ink sm:text-6xl">
-              Every entry,{" "}
-              <span className="italic text-ink/55">with its provenance.</span>
-            </h2>
-            <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink/65">
-              Generated from the markdown entries in the repository. Each card states the tier, the
-              rights, the author and the license before any design advice.
-            </p>
-          </div>
-          <p className="label shrink-0 text-ink/40">
-            {catalog?.counts.upstream_components ?? 354} upstream components indexed
-          </p>
-        </div>
-
-        <div className="mt-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div className="relative mx-auto max-w-[1200px] px-5 py-14 sm:px-8 sm:py-16">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filter by tier">
             {(["all", "pattern", "reference", "source"] as const).map((value) => (
               <button

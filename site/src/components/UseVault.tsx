@@ -120,31 +120,9 @@ export function UseVault() {
   }
 
   return (
-    <section ref={ref} id="use" className="reveal on-dark scroll-mt-20 border-b border-white/10 bg-graphite">
-      <div className="mx-auto max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="label text-amber">03 / Use the vault</p>
-            <h2 className="mt-4 max-w-2xl font-display text-[2.6rem] leading-[1.02] tracking-tight text-paper sm:text-6xl">
-              Call it from an agent,{" "}
-              <span className="italic text-paper/55">a terminal or a browser.</span>
-            </h2>
-            <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-paper/60">
-              The same catalog powers a hosted API, a zero-dependency CLI and a read-only MCP server.
-              Free to query, no key, no account.
-            </p>
-          </div>
-          <a
-            href={`${REPO}#agent-access`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="label shrink-0 text-paper/50 underline decoration-white/20 underline-offset-4 transition-colors hover:text-amber-soft"
-          >
-            Full reference ↗
-          </a>
-        </div>
-
-        <div role="tablist" aria-label="Ways to use the vault" className="mt-10 flex gap-1 border-b border-white/10">
+    <section ref={ref} id="use" className="reveal on-dark border-b border-white/10 bg-graphite">
+      <div className="mx-auto max-w-[1200px] px-5 py-12 sm:px-8 sm:py-16">
+        <div role="tablist" aria-label="Ways to use the vault" className="flex gap-1 border-b border-white/10">
           {TABS.map((tab, index) => (
             <button
               key={tab.id}

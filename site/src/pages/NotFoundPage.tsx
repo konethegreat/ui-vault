@@ -2,7 +2,7 @@ import { PageHero } from "@/components/PageHero";
 import { route } from "@/lib/router";
 
 const LINKS = [
-  { label: "Live demos", href: route("/demos"), note: "Nine running components and one linked reference." },
+  { label: "Live demos", href: route("/demos"), note: "Thirteen running components, every one credited." },
   { label: "Catalog", href: route("/catalog"), note: "Every entry with its author, license and prompt." },
   { label: "Rights", href: route("/rights"), note: "What each tier allows and what stays with the author." },
 ];

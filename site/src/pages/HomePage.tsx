@@ -4,8 +4,9 @@ import { route } from "@/lib/router";
 
 export function HomePage() {
   const { catalog } = useCatalog();
-  const entries = catalog?.entries.length ?? 19;
-  const live = catalog?.entries.filter((entry) => entry.demo === "live").length ?? 11;
+  const entries = catalog?.entries.length ?? 21;
+  const live = catalog?.entries.filter((entry) => entry.demo === "live").length ?? 13;
+  const linked = catalog?.entries.filter((entry) => entry.demo === "link").length ?? 4;
   const upstream = catalog?.counts.upstream_components ?? 354;
 
   const ways = [
@@ -14,7 +15,7 @@ export function HomePage() {
       label: "Watch",
       title: "See it running",
       body: "Real components in real frames. Each stage states who made it, where it came from and what license applies.",
-      meta: `${String(live).padStart(2, "0")} live · 01 linked`,
+      meta: `${String(live).padStart(2, "0")} live · ${String(linked).padStart(2, "0")} linked`,
     },
     {
       href: route("/catalog"),

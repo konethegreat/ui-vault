@@ -16,7 +16,7 @@ history router, not one long scroll. GitHub Pages serves it; there is no server-
 | Path | Page component | Purpose |
 | --- | --- | --- |
 | `/` | `site/src/pages/HomePage.tsx` | Hero, three ways in, ownership rule |
-| `/demos` | `site/src/pages/DemosPage.tsx` | All live demos and the linked reference |
+| `/demos` | `site/src/pages/DemosPage.tsx` | All live demos. Linked-only references stay in the catalog. |
 | `/catalog` | `site/src/pages/CatalogPage.tsx` | Search, tier filters, grouped cards |
 | `/use` | `site/src/pages/UsePage.tsx` | CLI, API and MCP access |
 | `/rights` | `site/src/pages/RightsPage.tsx` | Ownership, tiers and attribution |

@@ -47,7 +47,7 @@ A full-screen dark hero. A WebGL2 fragment shader paints a drifting cloud and li
 
 This hero is not hosted. The shader is a Star Nest derivative and its header credits Matthias Hurrle (@atzedent), while the wrapper carries no license. Star Nest is by Pablo Roman Andrioli (https://www.shadertoy.com/view/XlfGRj). Shadertoy shaders default to CC BY-NC-SA 3.0 unless the author states otherwise, so treat this one as non-commercial until verified independently.
 
-The vault's [Nebula Hero](https://konethegreat.github.io/ui-vault/#demo-nebula-hero) is an original, MIT-licensed replacement with the same role and mood. Use that when you need a live shader hero.
+The vault runs two original, MIT-licensed replacements for this role. The [Rocket Field Hero](https://konethegreat.github.io/ui-vault/demos#demo-rocket-field-hero) is a canvas scene with drifting stars and original rocket trails. The [Nebula Hero](https://konethegreat.github.io/ui-vault/demos#demo-nebula-hero) is a WebGL noise field. Neither copies this shader, and both keep a visible credit to the inspiration.
 
 # Provenance
 

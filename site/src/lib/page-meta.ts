@@ -14,7 +14,7 @@ const META: Record<string, Meta> = {
   "/demos": {
     title: "Live demos · UI Vault",
     description:
-      "Nine live UI demos and one linked reference. Every stage names its author, source and license.",
+      "Thirteen live UI demos, from shader heroes to a 3D machine. Every stage names its author, source and license.",
   },
   "/catalog": {
     title: "Catalog · UI Vault",

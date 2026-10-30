@@ -22,7 +22,7 @@ Agents can also read the same catalog from a free hosted [API](#api), a zero-dep
 - [gallery.html](gallery.html): open in a browser for a visual index with filters.
 - [catalog.json](catalog.json): machine-readable index, including component names for each upstream library.
 - [THIRD_PARTY.md](THIRD_PARTY.md): attribution and license links for every source and reference.
-- [Live site](https://konethegreat.github.io/ui-vault/): nine running demos, a searchable catalog and the rights policy.
+- [Live site](https://konethegreat.github.io/ui-vault/): eleven running demos, a searchable catalog and the rights policy.
 
 ## The site
 
@@ -145,7 +145,7 @@ The site imports generated, byte-for-byte copies of the published source from `r
 
 React Bits permits use inside apps and products, including commercial ones, but forbids selling or redistributing the components themselves. That is why this repo links to React Bits instead of copying it.
 
-The live site runs nine components:
+The live site runs eleven components:
 
 | Component | Author | License | Source |
 | --- | --- | --- | --- |
@@ -153,6 +153,8 @@ The live site runs nine components:
 | Mascot Portfolio Hero | Kedhareswer Naidu | MIT | [21st.dev](https://21st.dev/@kedhareswer/components/mascot-portfolio-hero) |
 | Glassmorphism Folder Cards | Kedhareswer Naidu | MIT | [21st.dev](https://21st.dev/@kedhareswer/components/glass-folder-cards) |
 | Nebula Hero | Kone | MIT | Original |
+| Depth Zoom Parallax | Kone | MIT | Original, inspired by Efferd |
+| Editorial Image Accordion | Kone | MIT | Original, inspired by Le Thanh |
 | Button | Kone | MIT | Original |
 | Marquee | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/marquee) |
 | Animated Shiny Text | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/animated-shiny-text) |
@@ -160,6 +162,8 @@ The live site runs nine components:
 | Dot Pattern | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/dot-pattern) |
 
 21st.dev components are handled one at a time, not as a library. A component runs live here only when its own page records a permissive license and names the author. Mascot Portfolio Hero, Liquid Sculpture Hero and Glassmorphism Folder Cards meet that bar, so all three are vendored unchanged and run in their own frames. Components with unknown or non-commercial terms stay link-only even when they come from the same platform. Circular Navigation Bar by Kaif UI is link-only: its page names the author but records no license, so the entry documents the technique and links to the original.
+
+Zoom Parallax by Efferd and Interactive Image Accordion by Le Thanh are link-only for the same reason: both pages record no license. Their reference entries document the technique and link out. The site runs original MIT implementations of those ideas, credited as inspired by, using generated images. No code, thumbnails or preview assets were taken from either page.
 
 Glassmorphism Folder Cards is the only demo here that is a working object rather than a page section. Its files are real buttons between two panels and the front panel is real backdrop glass. The demo measures its column and caps the folder width, because the component scales its fixed stage instead of reflowing it.
 

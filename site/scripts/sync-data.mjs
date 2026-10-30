@@ -50,6 +50,10 @@ const vendor = [
   ["library/button/button.css", "button.css"],
   ["library/nebula-hero/NebulaHero.tsx", "NebulaHero.tsx"],
   ["library/nebula-hero/nebula-hero.css", "nebula-hero.css"],
+  ["library/depth-zoom-parallax/DepthZoomParallax.tsx", "DepthZoomParallax.tsx"],
+  ["library/depth-zoom-parallax/depth-zoom-parallax.css", "depth-zoom-parallax.css"],
+  ["library/editorial-image-accordion/EditorialImageAccordion.tsx", "EditorialImageAccordion.tsx"],
+  ["library/editorial-image-accordion/editorial-image-accordion.css", "editorial-image-accordion.css"],
 ];
 
 await mkdir(join(site, "src", "vendor"), { recursive: true });

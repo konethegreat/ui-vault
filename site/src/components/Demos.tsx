@@ -8,6 +8,8 @@ import MarqueeDemo from "@/demos/MarqueeDemo";
 import ShinyTextDemo from "@/demos/ShinyTextDemo";
 import NumberTickerDemo from "@/demos/NumberTickerDemo";
 import DotPatternDemo from "@/demos/DotPatternDemo";
+import DepthZoomParallaxDemo from "@/demos/DepthZoomParallaxDemo";
+import EditorialImageAccordionDemo from "@/demos/EditorialImageAccordionDemo";
 import { DemoFrame } from "@/components/DemoFrame";
 import { MachineSketch } from "@/components/MachineSketch";
 import { REPO } from "@/lib/catalog";
@@ -19,6 +21,8 @@ const DEMO_INDEX = [
   { id: "mascot-portfolio-hero", title: "Mascot Portfolio Hero", group: "Third-party" },
   { id: "glass-folder-cards", title: "Glassmorphism Folder Cards", group: "Third-party" },
   { id: "nebula-hero", title: "Nebula Hero", group: "Original" },
+  { id: "depth-zoom-parallax", title: "Depth Zoom Parallax", group: "Original" },
+  { id: "editorial-image-accordion", title: "Editorial Image Accordion", group: "Original" },
   { id: "button", title: "Button", group: "Original" },
   { id: "marquee", title: "Marquee", group: "Magic UI" },
   { id: "animated-shiny-text", title: "Animated Shiny Text", group: "Magic UI" },
@@ -50,7 +54,7 @@ export function Demos() {
         <nav id="demos-index" aria-label="Demo index" className="scroll-mt-28">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="label text-ink/40">On this page</p>
-            <p className="label text-ink/40">09 live · 01 linked</p>
+            <p className="label text-ink/40">11 live · 01 linked</p>
           </div>
           <ul className="mt-3 grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
             {DEMO_INDEX.map((demo, index) => (
@@ -146,8 +150,52 @@ export function Demos() {
           </DemoFrame>
 
           <DemoFrame
-            id="button"
+            id="depth-zoom-parallax"
             index="05"
+            title="Depth Zoom Parallax"
+            credit={
+              <>
+                Kone Tshivhinda · MIT ·{" "}
+                <Link href={`${REPO}/blob/main/library/depth-zoom-parallax/DepthZoomParallax.tsx`}>
+                  read the source
+                </Link>
+                {" · inspired by "}
+                <Link href="https://21st.dev/@efferd/components/zoom-parallax">Efferd</Link>
+              </>
+            }
+            note="Original implementation. The Efferd original records no license, so no code or assets were copied from it."
+            bleed
+            clip={false}
+          >
+            <DepthZoomParallaxDemo />
+          </DemoFrame>
+
+          <DemoFrame
+            id="editorial-image-accordion"
+            index="06"
+            title="Editorial Image Accordion"
+            credit={
+              <>
+                Kone Tshivhinda · MIT ·{" "}
+                <Link
+                  href={`${REPO}/blob/main/library/editorial-image-accordion/EditorialImageAccordion.tsx`}
+                >
+                  read the source
+                </Link>
+                {" · inspired by "}
+                <Link href="https://21st.dev/@minhxthanh/components/interactive-image-accordion">
+                  Le Thanh
+                </Link>
+              </>
+            }
+            note="Original implementation. Real tabs, keyboard support and a vertical layout under 700px. The Le Thanh original records no license, so no code or assets were copied."
+          >
+            <EditorialImageAccordionDemo />
+          </DemoFrame>
+
+          <DemoFrame
+            id="button"
+            index="07"
             title="Button"
             credit={
               <>
@@ -163,7 +211,7 @@ export function Demos() {
           <div className="grid gap-8 md:grid-cols-2">
             <DemoFrame
               id="marquee"
-              index="06"
+              index="08"
               title="Marquee"
               credit={<MagicCredit docs="https://magicui.design/docs/components/marquee" />}
             >
@@ -172,7 +220,7 @@ export function Demos() {
 
             <DemoFrame
               id="animated-shiny-text"
-              index="07"
+              index="09"
               title="Animated Shiny Text"
               credit={<MagicCredit docs="https://magicui.design/docs/components/animated-shiny-text" />}
             >
@@ -181,7 +229,7 @@ export function Demos() {
 
             <DemoFrame
               id="number-ticker"
-              index="08"
+              index="10"
               title="Number Ticker"
               credit={<MagicCredit docs="https://magicui.design/docs/components/number-ticker" />}
             >
@@ -190,7 +238,7 @@ export function Demos() {
 
             <DemoFrame
               id="dot-pattern"
-              index="09"
+              index="11"
               title="Dot Pattern"
               credit={<MagicCredit docs="https://magicui.design/docs/components/dot-pattern" />}
             >

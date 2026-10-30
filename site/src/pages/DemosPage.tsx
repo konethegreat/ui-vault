@@ -14,7 +14,7 @@ export function DemosPage() {
           </>
         }
         description="Each stage states who made it and under what license. Third-party demos run only when the author's license allows it, and every one keeps a visible credit."
-        meta="09 live · 01 linked"
+        meta="11 live · 01 linked"
         actions={
           <a
             href={route("/catalog")}

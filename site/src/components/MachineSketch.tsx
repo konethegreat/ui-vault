@@ -91,7 +91,7 @@ export function MachineSketch() {
     >
       <div className="grid lg:grid-cols-[0.92fr_1.08fr]">
         <div className="p-6 sm:p-9">
-          <p className="label text-amber">10 / External reference · not hosted here</p>
+          <p className="label text-amber">12 / External reference · not hosted here</p>
           <h3 className="mt-4 font-display text-[2.2rem] leading-none tracking-tight text-paper">
             Interactive 3D Machine
           </h3>

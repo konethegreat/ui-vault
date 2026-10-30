@@ -4,8 +4,8 @@
   "generated": "2026-10-30",
   "counts": {
     "sources": 3,
-    "references": 10,
-    "patterns": 2,
+    "references": 12,
+    "patterns": 4,
     "upstream_components": 354
   },
   "entries": [
@@ -337,6 +337,42 @@
       "summary": "A React and three.js scene of a short-video factory as one physical machine. Five stations sit on a metal plate: engine, admin, storefront, cabinet and cashdesk. You can orbit it, hover a station, click to focus, switch between four modes and jump between five camera presets. Everything is procedural. There are no models, images or textures to download."
     },
     {
+      "id": "interactive-image-accordion",
+      "title": "Interactive Image Accordion",
+      "tier": "reference",
+      "type": "interaction",
+      "status": "inspiration-only",
+      "stack": [
+        "react",
+        "tailwind",
+        "typescript"
+      ],
+      "tags": [
+        "accordion",
+        "images",
+        "hover",
+        "landing",
+        "gallery",
+        "motion"
+      ],
+      "license": "unknown",
+      "rights": "private-reference",
+      "source_url": "https://21st.dev/@minhxthanh/components/interactive-image-accordion",
+      "source_author": "Le Thanh",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-10-30",
+      "published_source": false,
+      "demo": "link",
+      "demo_url": "https://21st.dev/@minhxthanh/components/interactive-image-accordion",
+      "demo_source": "",
+      "license_url": "",
+      "path": "references/interactive-image-accordion/entry.md",
+      "prompt": "references/interactive-image-accordion/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/interactive-image-accordion/prompt",
+      "summary": "A landing section with five tall image panels in a row. The active panel is 400px wide and the rest are 60px spines with rotated titles. Hovering another panel widens it, so the row behaves like an accordion without any vertical collapse."
+    },
+    {
       "id": "liquid-sculpture-hero",
       "title": "Liquid Sculpture Hero",
       "tier": "reference",
@@ -482,6 +518,43 @@
       "summary": "A number that springs from a start value to a target when it scrolls into view. Formatting uses `Intl.NumberFormat`, so thousands separators and decimals follow the locale rules of `en-US`."
     },
     {
+      "id": "zoom-parallax",
+      "title": "Zoom Parallax",
+      "tier": "reference",
+      "type": "motion",
+      "status": "inspiration-only",
+      "stack": [
+        "react",
+        "typescript",
+        "tailwind",
+        "framer-motion"
+      ],
+      "tags": [
+        "parallax",
+        "scroll",
+        "zoom",
+        "sticky",
+        "images",
+        "motion"
+      ],
+      "license": "unknown",
+      "rights": "private-reference",
+      "source_url": "https://21st.dev/@efferd/components/zoom-parallax",
+      "source_author": "Efferd",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-10-30",
+      "published_source": false,
+      "demo": "link",
+      "demo_url": "https://21st.dev/@efferd/components/zoom-parallax",
+      "demo_source": "",
+      "license_url": "",
+      "path": "references/zoom-parallax/entry.md",
+      "prompt": "references/zoom-parallax/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/zoom-parallax/prompt",
+      "summary": "A scroll scene made of seven images on one sticky stage. The stage holds for three viewport heights while each image scales at a different rate, from 4x to 9x, so the composition appears to pull apart and push through the screen."
+    },
+    {
       "id": "button",
       "title": "Button",
       "tier": "pattern",
@@ -515,6 +588,77 @@
       "prompt": "library/button/prompt.md",
       "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/button/prompt",
       "summary": "A dependency-free React button with four variants, three sizes, a loading state and a visible focus ring. Styling lives in CSS variables, so a project can retheme it without touching the component."
+    },
+    {
+      "id": "depth-zoom-parallax",
+      "title": "Depth Zoom Parallax",
+      "tier": "pattern",
+      "type": "motion",
+      "status": "usable",
+      "stack": [
+        "react",
+        "motion",
+        "typescript",
+        "css"
+      ],
+      "tags": [
+        "parallax",
+        "scroll",
+        "gallery",
+        "sticky",
+        "images"
+      ],
+      "license": "MIT",
+      "rights": "own",
+      "source_url": "",
+      "source_author": "Kone",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-10-30",
+      "published_source": true,
+      "demo": "live",
+      "demo_url": "",
+      "demo_source": "site/src/demos/DepthZoomParallaxDemo.tsx",
+      "license_url": "",
+      "path": "library/depth-zoom-parallax/entry.md",
+      "prompt": "library/depth-zoom-parallax/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/depth-zoom-parallax/prompt",
+      "summary": "A scroll-driven gallery where seven framed images sit on a dark stage and fly past the camera at different depths. A sticky stage holds the composition in place while the page scrolls through a tall section, so the images appear to move toward the viewer rather than with the document."
+    },
+    {
+      "id": "editorial-image-accordion",
+      "title": "Editorial Image Accordion",
+      "tier": "pattern",
+      "type": "interaction",
+      "status": "usable",
+      "stack": [
+        "react",
+        "typescript",
+        "css"
+      ],
+      "tags": [
+        "accordion",
+        "gallery",
+        "tabs",
+        "keyboard",
+        "touch"
+      ],
+      "license": "MIT",
+      "rights": "own",
+      "source_url": "",
+      "source_author": "Kone",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-10-30",
+      "published_source": true,
+      "demo": "live",
+      "demo_url": "",
+      "demo_source": "site/src/demos/EditorialImageAccordionDemo.tsx",
+      "license_url": "",
+      "path": "library/editorial-image-accordion/entry.md",
+      "prompt": "library/editorial-image-accordion/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/editorial-image-accordion/prompt",
+      "summary": "A horizontal band of images where one panel holds the width and the rest collapse to slim spines with vertical labels. Hovering a spine on a mouse, or clicking, tapping or arrowing to one, expands it. A caption under the band names the active image and describes it."
     },
     {
       "id": "nebula-hero",

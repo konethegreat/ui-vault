@@ -8,6 +8,7 @@ export function DemoFrame({
   credit,
   note,
   bleed = false,
+  clip = true,
   children,
 }: {
   id: string;
@@ -16,6 +17,7 @@ export function DemoFrame({
   credit: React.ReactNode;
   note?: string;
   bleed?: boolean;
+  clip?: boolean;
   children: React.ReactNode;
 }) {
   const ref = useReveal<HTMLElement>();
@@ -24,7 +26,9 @@ export function DemoFrame({
     <figure
       ref={ref}
       id={`demo-${id}`}
-      className="reveal scroll-mt-28 overflow-hidden rounded-2xl border border-white/10 bg-graphite shadow-[0_30px_80px_-40px_rgba(14,14,12,0.65)]"
+      className={`reveal scroll-mt-28 rounded-2xl border border-white/10 bg-graphite shadow-[0_30px_80px_-40px_rgba(14,14,12,0.65)] ${
+        clip ? "overflow-hidden" : ""
+      }`}
     >
       <figcaption className="flex flex-col gap-3 border-b border-white/10 px-5 py-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
         <div className="flex items-start gap-4">
@@ -49,8 +53,8 @@ export function DemoFrame({
       {bleed ? (
         <div className="bg-graphite">{children}</div>
       ) : (
-        <div className="p-2 sm:p-3">
-          <div className="overflow-hidden rounded-xl bg-paper">{children}</div>
+        <div className={clip ? "p-2 sm:p-3" : ""}>
+          <div className={clip ? "overflow-hidden rounded-xl bg-paper" : "bg-paper"}>{children}</div>
         </div>
       )}
     </figure>

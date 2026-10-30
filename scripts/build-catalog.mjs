@@ -13,7 +13,7 @@ const SITE_URL = "https://konethegreat.github.io/ui-vault";
 const API_BASE = "https://ui-vault-api.erictshivhinda.workers.dev";
 
 function demoCell(entry) {
-  if (entry.demo === "live") return `[live](${SITE_URL}/#demo-${entry.id})`;
+  if (entry.demo === "live") return `[live](${SITE_URL}/demos#demo-${entry.id})`;
   if (entry.demo === "link" && entry.demo_url) return `[original](${entry.demo_url})`;
   return "";
 }
@@ -195,7 +195,7 @@ const entryCards = entries
       : escapeHtml(entry.license);
     const demo =
       entry.demo === "live"
-        ? `<a class="more" href="${SITE_URL}/#demo-${entry.id}" target="_blank" rel="noopener">Live demo</a>`
+        ? `<a class="more" href="${SITE_URL}/demos#demo-${entry.id}" target="_blank" rel="noopener">Live demo</a>`
         : entry.demo === "link" && entry.demo_url
           ? `<a class="more" href="${escapeHtml(entry.demo_url)}" target="_blank" rel="noopener">Original demo</a>`
           : "";

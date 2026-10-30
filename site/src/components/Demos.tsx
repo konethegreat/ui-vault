@@ -11,7 +11,6 @@ import DotPatternDemo from "@/demos/DotPatternDemo";
 import { DemoFrame } from "@/components/DemoFrame";
 import { MachineSketch } from "@/components/MachineSketch";
 import { REPO } from "@/lib/catalog";
-import { useReveal } from "@/hooks/useReveal";
 
 const MAGIC_LICENSE = "https://github.com/magicuidesign/magicui/blob/main/LICENSE.md";
 
@@ -45,29 +44,14 @@ function MagicCredit({ docs }: { docs: string }) {
 }
 
 export function Demos() {
-  const headRef = useReveal<HTMLDivElement>();
-
   return (
-    <section id="demos" className="scroll-mt-20 border-b border-line bg-paper">
-      <div className="mx-auto max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
-        <div ref={headRef} className="reveal flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="label text-ink/45">01 / Live demos</p>
-            <h2 className="mt-4 max-w-2xl font-display text-[2.6rem] leading-[1.02] tracking-tight text-ink sm:text-6xl">
-              Running components,{" "}
-              <span className="italic text-ink/60">not screenshots.</span>
-            </h2>
-            <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink/65">
-              Each stage states who made it and under what license. The first three demos are
-              third-party components with a verified MIT license. The rest are patterns built for
-              this vault or MIT components installed through the Magic UI registry.
-            </p>
+    <section id="demos" className="border-b border-line bg-paper">
+      <div className="mx-auto max-w-[1200px] px-5 py-14 sm:px-8 sm:py-16">
+        <nav id="demos-index" aria-label="Demo index" className="scroll-mt-28">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="label text-ink/40">On this page</p>
+            <p className="label text-ink/40">09 live · 01 linked</p>
           </div>
-          <p className="label shrink-0 text-ink/40">09 live · 01 linked</p>
-        </div>
-
-        <nav id="demos-index" aria-label="Demo index" className="mt-10 scroll-mt-28">
-          <p className="label text-ink/40">On this page</p>
           <ul className="mt-3 grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
             {DEMO_INDEX.map((demo, index) => (
               <li key={demo.id}>

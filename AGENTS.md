@@ -2,6 +2,16 @@
 
 This repository is a design reference index. Use it to find a pattern, learn the technique, then implement in the target project with attribution. It also ships a site that runs some of the components live.
 
+## Context docs
+
+Read these before changing the site, the policy pages or the release process:
+
+- `docs/site-architecture.md`: routes, router behavior, page shells, build output and where to add a page.
+- `docs/site-policies.md`: verified facts behind the rights, privacy and takedown pages.
+- `docs/delivery.md`: checks, generated files, Pages and Worker deployment, live verification.
+
+The public site is a multipage React app. Internal links use `route()` from `site/src/lib/router.tsx`; do not hardcode `/ui-vault/`. Generated route entry points and `404.html` are written by `site/scripts/copy-routes.mjs`.
+
 ## How to query
 
 1. Read `catalog.json`.

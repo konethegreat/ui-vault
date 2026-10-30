@@ -4,6 +4,7 @@ import { AnimatedShinyText } from "@/vendor/AnimatedShinyText";
 import { NumberTicker } from "@/vendor/NumberTicker";
 import { useCatalog, OWNER } from "@/lib/catalog";
 import { usePrefersReducedMotion } from "@/hooks/useReveal";
+import { route } from "@/lib/router";
 
 const FALLBACK_TITLES = [
   "Liquid Sculpture Hero",
@@ -45,8 +46,8 @@ export function Hero() {
           eyebrow="UI Vault · by Kone Tshivhinda"
           headline="Interfaces, with the credits attached."
           body="A working index of UI patterns, live demos and agent-ready prompts. Every third-party design is named, licensed and linked back to its author."
-          primaryCta={{ label: "See the live demos", href: "#demos" }}
-          secondaryCta={{ label: "Browse the catalog", href: "#catalog" }}
+          primaryCta={{ label: "See the live demos", href: route("/demos") }}
+          secondaryCta={{ label: "Browse the catalog", href: route("/catalog") }}
           height="min(88svh, 780px)"
         />
       </div>
@@ -83,8 +84,14 @@ export function Hero() {
                 Designed and maintained by {OWNER.name}.
               </h2>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-paper/55">
-                Original work is MIT. Third-party components stay with their authors, and the rights
-                rules that keep this honest are enforced by the validator.
+                Original work is MIT. Third-party components stay with their authors, and the{" "}
+                <a
+                  href={route("/rights")}
+                  className="text-paper/75 underline decoration-white/25 underline-offset-2 transition-colors hover:text-amber-soft"
+                >
+                  rights rules
+                </a>{" "}
+                that keep this honest are enforced by the validator.
               </p>
               <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs">
                 {[
@@ -113,7 +120,7 @@ export function Hero() {
 
             <dl className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
               <Stat value={entries.length || 15} label="entries in the vault" reduced={reduced} />
-              <Stat value={liveDemos} label="live demos on this page" reduced={reduced} />
+              <Stat value={liveDemos} label="live demos in the vault" reduced={reduced} />
               <Stat
                 value={catalog?.counts.upstream_components ?? 354}
                 label="upstream components indexed"

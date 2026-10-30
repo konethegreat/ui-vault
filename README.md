@@ -24,6 +24,28 @@ Agents can also read the same catalog from a free hosted [API](#api), a zero-dep
 - [THIRD_PARTY.md](THIRD_PARTY.md): attribution and license links for every source and reference.
 - [Live site](https://konethegreat.github.io/ui-vault/): nine running demos, a searchable catalog and the rights policy.
 
+## The site
+
+The site is split into pages instead of one long scroll, so policies and demos can be read on their own.
+
+| Page | What it holds |
+| --- | --- |
+| `/` | What the vault is, who owns what, and the three ways in. |
+| `/demos` | The live components with visible credits. |
+| `/catalog` | Searchable entries, upstream component names and live-demo links. |
+| `/use` | The API, CLI and MCP surfaces. |
+| `/rights` | Ownership, tiers, permissions, attribution and how to report misuse. |
+| `/privacy` | What the site and API do and do not collect. |
+| `/takedown` | The warning and notice process for third-party work. |
+
+Old `/#demo-*` links redirect to `/demos#demo-*`. Each route has its own title, description and static entry point, so deep links work on GitHub Pages. The policies are written from verified facts: GitHub Pages hosting, Cloudflare request handling, an in-memory rate limit, and no cookies, accounts or analytics.
+
+Work in this repository is documented in three context files:
+
+- [docs/site-architecture.md](docs/site-architecture.md): stack, routes, router rules and data flow.
+- [docs/site-policies.md](docs/site-policies.md): verified rights and privacy facts and the editorial rules behind the pages.
+- [docs/delivery.md](docs/delivery.md): checks, generated files and the deploy and PR flow.
+
 ## Agent access
 
 All three surfaces are free, read-only and need no key or account. The API applies a best-effort limit of about 120 requests per minute per IP. It is a courtesy guard, not a security boundary, and bursts can exceed it.

@@ -9,7 +9,7 @@ const entries = catalog.entries.map((entry) => {
   const { prompt_url: _promptUrl, ...rest } = entry;
   return {
     ...rest,
-    prompt: readFileSync(join(root, entry.prompt), "utf8"),
+    prompt: readFileSync(join(root, entry.prompt), "utf8").replace(/\r\n/g, "\n"),
   };
 });
 

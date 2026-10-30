@@ -1,0 +1,68 @@
+name: Rights notice
+description: Report unlicensed use, a missing credit or a licensing error.
+title: "[Rights] "
+labels: ["rights"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is public. Do not include private contact details, identity documents or confidential agreements. If the matter is sensitive, ask for a private channel on LinkedIn first.
+
+        Read the [takedown and reporting process](https://konethegreat.github.io/ui-vault/takedown/) before submitting.
+  - type: input
+    id: work
+    attributes:
+      label: The work
+      description: Name the design, component or article you own or represent.
+      placeholder: Component or work title
+    validations:
+      required: true
+  - type: input
+    id: original
+    attributes:
+      label: Original publication
+      description: Link to the original source, repository or portfolio page.
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: entry
+    attributes:
+      label: Page on this site
+      description: Paste the exact UI Vault URL where the disputed material appears.
+      placeholder: https://konethegreat.github.io/ui-vault/...
+    validations:
+      required: true
+  - type: textarea
+    id: explanation
+    attributes:
+      label: What is wrong
+      description: Explain whether the work is unlicensed here, miscredited, or hosted against your terms.
+      placeholder: The entry hosts my component, but the license on my page is non-commercial.
+    validations:
+      required: true
+  - type: input
+    id: authority
+    attributes:
+      label: Your authority
+      description: Are you the author, the rights holder, or an authorized representative?
+      placeholder: Author, rights holder, or representative
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Public contact
+      description: A contact method you are comfortable sharing publicly.
+      placeholder: GitHub handle, website or email
+    validations:
+      required: true
+  - type: checkboxes
+    id: statements
+    attributes:
+      label: Statements
+      options:
+        - label: I have a good faith belief that the use described is not authorized by the rights holder, its agent or the law.
+          required: true
+        - label: The information in this notice is accurate, and I am authorized to act for the rights holder.
+          required: true

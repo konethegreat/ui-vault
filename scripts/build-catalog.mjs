@@ -5,7 +5,8 @@ import { listEntries, splitList, firstParagraph, escapeHtml } from "./lib.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const now = new Date();
-const generated = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+// UTC keeps the generated stamp stable on CI runners whatever the local timezone.
+const generated = now.toISOString().slice(0, 10);
 
 const TIER_RANK = { source: 0, reference: 1, pattern: 2 };
 const TIER_LABEL = { source: "Source", reference: "Reference", pattern: "Library" };

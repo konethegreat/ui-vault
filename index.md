@@ -1,6 +1,6 @@
 # Index
 
-3 sources, 14 references, 7 original patterns, 354 upstream components. Generated 2026-11-02.
+3 sources, 14 references, 7 original patterns, 354 upstream components. Generated 2026-11-01.
 
 Definitions live in [README.md](README.md). Machine-readable data lives in [catalog.json](catalog.json).
 

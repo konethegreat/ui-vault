@@ -115,6 +115,12 @@ export function SiteFooter() {
                 <FooterLink href={`${BASE}licenses/glass-folder-cards.txt`}>Folder cards</FooterLink>
               </li>
               <li>
+                <FooterLink href={`${BASE}licenses/portal-carousel.txt`}>Portal carousel</FooterLink>
+              </li>
+              <li>
+                <FooterLink href={`${BASE}licenses/gsap.txt`}>GSAP runtime</FooterLink>
+              </li>
+              <li>
                 <FooterLink href={`${BASE}licenses/fonts.txt`}>Fonts</FooterLink>
               </li>
               <li>

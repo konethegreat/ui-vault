@@ -1,6 +1,6 @@
 # Third-party attribution
 
-Generated 2026-10-30. This file lists every source and reference. Names and trademarks belong to their owners.
+Generated 2026-11-01. This file lists every source and reference. Names and trademarks belong to their owners.
 
 | Item | Author | License | Rights | Source | Retrieved | Published source |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -18,6 +18,8 @@ Generated 2026-10-30. This file lists every source and reference. Names and trad
 | [Marquee](references/marquee/entry.md) | Magic UI (magicuidesign) | [MIT](https://github.com/magicuidesign/magicui/blob/main/LICENSE.md) | permissive | [link](https://magicui.design/docs/components/marquee) | 2026-10-28 | yes |
 | [Mascot Portfolio Hero](references/mascot-portfolio-hero/entry.md) | Kedhareswer Naidu | [MIT](https://21st.dev/@kedhareswer/components/mascot-portfolio-hero) | permissive | [link](https://21st.dev/@kedhareswer/components/mascot-portfolio-hero) | 2026-10-28 | yes |
 | [Number Ticker](references/number-ticker/entry.md) | Magic UI (magicuidesign) | [MIT](https://github.com/magicuidesign/magicui/blob/main/LICENSE.md) | permissive | [link](https://magicui.design/docs/components/number-ticker) | 2026-10-28 | yes |
+| [Portal Carousel](references/portal-carousel/entry.md) | Hyperiux | [MPL-2.0](https://mozilla.org/MPL/2.0/) | permissive | [link](https://21st.dev/@hyperiux/components/portal-carousel) | 2026-11-02 | yes |
+| [Spotlight Card](references/spotlight-card/entry.md) | Hossain Jahed | unknown | private-reference | [link](https://21st.dev/@jahed/components/spotlight-card) | 2026-11-02 | no |
 | [Zoom Parallax](references/zoom-parallax/entry.md) | Efferd | unknown | private-reference | [link](https://21st.dev/@efferd/components/zoom-parallax) | 2026-10-30 | no |
 
 `Published source: no` means the entry is documentation only and the original code is not hosted here.

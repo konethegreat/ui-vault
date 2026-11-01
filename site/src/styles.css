@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Vendor sources are generated and gitignored, so Tailwind must scan them explicitly. */
+@source "./vendor";
+
 @custom-variant dark (&:is(.dark *));
 
 @font-face {

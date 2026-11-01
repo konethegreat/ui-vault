@@ -12,6 +12,8 @@ import DepthZoomParallaxDemo from "@/demos/DepthZoomParallaxDemo";
 import EditorialImageAccordionDemo from "@/demos/EditorialImageAccordionDemo";
 import StationMachineDemo from "@/demos/StationMachineDemo";
 import RocketFieldHeroDemo from "@/demos/RocketFieldHeroDemo";
+import PortalCarouselDemo from "@/demos/PortalCarouselDemo";
+import SpotlightGlowCardDemo from "@/demos/SpotlightGlowCardDemo";
 import { DemoFrame } from "@/components/DemoFrame";
 import { REPO } from "@/lib/catalog";
 
@@ -31,6 +33,8 @@ const DEMO_INDEX = [
   { id: "dot-pattern", title: "Dot Pattern", group: "Magic UI" },
   { id: "station-machine", title: "Station Machine", group: "Original" },
   { id: "rocket-field-hero", title: "Rocket Field Hero", group: "Original" },
+  { id: "portal-carousel", title: "Portal Carousel", group: "Third-party" },
+  { id: "spotlight-glow-card", title: "Spotlight Glow Card", group: "Original" },
 ];
 
 function Link({ href, children }: { href: string; children: React.ReactNode }) {
@@ -56,7 +60,7 @@ export function Demos() {
         <nav id="demos-index" aria-label="Demo index" className="scroll-mt-28">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="label text-ink/40">On this page</p>
-            <p className="label text-ink/40">13 live</p>
+            <p className="label text-ink/40">15 live</p>
           </div>
           <ul className="mt-3 grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
             {DEMO_INDEX.map((demo, index) => (
@@ -286,6 +290,45 @@ export function Demos() {
             bleed
           >
             <RocketFieldHeroDemo />
+          </DemoFrame>
+
+          <DemoFrame
+            id="portal-carousel"
+            index="14"
+            title="Portal Carousel"
+            credit={
+              <>
+                <Link href="https://21st.dev/@hyperiux">Hyperiux</Link>
+                {" · "}
+                <Link href="https://21st.dev/@hyperiux/components/portal-carousel">
+                  via 21st.dev, MPL 2.0
+                </Link>
+              </>
+            }
+            note="Third-party. Runs the vendored component unchanged apart from the license notice. The demo uses five original stills; the original demo photos are not used. Click the stage or the preview to advance."
+            bleed
+          >
+            <PortalCarouselDemo />
+          </DemoFrame>
+
+          <DemoFrame
+            id="spotlight-glow-card"
+            index="15"
+            title="Spotlight Glow Card"
+            credit={
+              <>
+                Kone Tshivhinda · MIT ·{" "}
+                <Link href={`${REPO}/blob/main/library/spotlight-glow-card/SpotlightGlowCard.tsx`}>
+                  read the source
+                </Link>
+                {" · inspired by "}
+                <Link href="https://21st.dev/@jahed/components/spotlight-card">Hossain Jahed</Link>
+              </>
+            }
+            note="Original implementation. The Spotlight Card original records no license, so no code or assets were copied. One listener per card, scoped CSS, and a focus state."
+            bleed
+          >
+            <SpotlightGlowCardDemo />
           </DemoFrame>
         </div>
       </div>

@@ -22,7 +22,7 @@ Agents can also read the same catalog from a free hosted [API](#api), a zero-dep
 - [gallery.html](gallery.html): open in a browser for a visual index with filters.
 - [catalog.json](catalog.json): machine-readable index, including component names for each upstream library.
 - [THIRD_PARTY.md](THIRD_PARTY.md): attribution and license links for every source and reference.
-- [Live site](https://konethegreat.github.io/ui-vault/): thirteen running demos, a searchable catalog and the rights policy.
+- [Live site](https://konethegreat.github.io/ui-vault/): fifteen running demos, a searchable catalog and the rights policy.
 
 ## The site
 
@@ -145,7 +145,7 @@ The site imports generated, byte-for-byte copies of the published source from `r
 
 React Bits permits use inside apps and products, including commercial ones, but forbids selling or redistributing the components themselves. That is why this repo links to React Bits instead of copying it.
 
-The live site runs thirteen components:
+The live site runs fifteen components:
 
 | Component | Author | License | Source |
 | --- | --- | --- | --- |
@@ -162,8 +162,12 @@ The live site runs thirteen components:
 | Number Ticker | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/number-ticker) |
 | Dot Pattern | Magic UI | MIT | [magicui.design](https://magicui.design/docs/components/dot-pattern) |
 | Station Machine | Kone | MIT | Original, inspired by Evgeny Shilov |
+| Portal Carousel | Hyperiux | MPL 2.0 | [21st.dev](https://21st.dev/@hyperiux/components/portal-carousel) |
+| Spotlight Glow Card | Kone | MIT | Original, inspired by Hossain Jahed |
 
-21st.dev components are handled one at a time, not as a library. A component runs live here only when its own page records a permissive license and names the author. Mascot Portfolio Hero, Liquid Sculpture Hero and Glassmorphism Folder Cards meet that bar, so all three are vendored unchanged and run in their own frames. Components with unknown or non-commercial terms stay link-only even when they come from the same platform. Circular Navigation Bar by Kaif UI is link-only: its page names the author but records no license, so the entry documents the technique and links to the original.
+21st.dev components are handled one at a time, not as a library. A component runs live here only when its own page records a permissive license and names the author. Mascot Portfolio Hero, Liquid Sculpture Hero and Glassmorphism Folder Cards meet that bar, so all three are vendored unchanged and run in their own frames. Portal Carousel is a Hyperiux Free Core effect under MPL 2.0, so its source is vendored with the license notice and it runs live. Components with unknown or non-commercial terms stay link-only even when they come from the same platform. Circular Navigation Bar by Kaif UI is link-only: its page names the author but records no license, so the entry documents the technique and links to the original.
+
+Spotlight Card by Hossain Jahed is link-only for the same reason: the page records no license. The site runs an original MIT implementation of the idea, Spotlight Glow Card, credited as inspired by, with its own pointer listener per card, scoped CSS and a focus state. No code or assets were taken from the original.
 
 Zoom Parallax by Efferd and Interactive Image Accordion by Le Thanh are link-only for the same reason: both pages record no license. Their reference entries document the technique and link out. The site runs original MIT implementations of those ideas, credited as inspired by, using generated images. No code, thumbnails or preview assets were taken from either page.
 

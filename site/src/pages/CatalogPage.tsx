@@ -4,7 +4,7 @@ import { useCatalog } from "@/lib/catalog";
 
 export function CatalogPage() {
   const { catalog } = useCatalog();
-  const entries = catalog?.entries.length ?? 15;
+  const entries = catalog?.entries.length ?? 24;
   const upstream = catalog?.counts.upstream_components ?? 354;
 
   return (

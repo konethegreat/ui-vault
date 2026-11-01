@@ -35,6 +35,11 @@ await copyFile(
   join(root, "references", "fonts-LICENSE.txt"),
   join(site, "public", "licenses", "fonts.txt")
 );
+await copyFile(
+  join(root, "references", "portal-carousel", "LICENSE.md"),
+  join(site, "public", "licenses", "portal-carousel.txt")
+);
+await copyFile(join(root, "references", "gsap-LICENSE.txt"), join(site, "public", "licenses", "gsap.txt"));
 
 // The reference entries hold the published source. The site imports a byte-for-byte
 // copy so the files resolve React from this package instead of the repository root.
@@ -58,6 +63,9 @@ const vendor = [
   ["library/station-machine/station-machine.css", "station-machine.css"],
   ["library/rocket-field-hero/RocketFieldHero.tsx", "RocketFieldHero.tsx"],
   ["library/rocket-field-hero/rocket-field-hero.css", "rocket-field-hero.css"],
+  ["references/portal-carousel/PortalCarousel.tsx", "PortalCarousel.tsx"],
+  ["library/spotlight-glow-card/SpotlightGlowCard.tsx", "SpotlightGlowCard.tsx"],
+  ["library/spotlight-glow-card/spotlight-glow-card.css", "spotlight-glow-card.css"],
 ];
 
 await mkdir(join(site, "src", "vendor"), { recursive: true });
@@ -66,5 +74,5 @@ for (const [from, name] of vendor) {
 }
 
 console.log(
-  `Synced catalog, ${catalog.entries.length} prompts, ${vendor.length} component sources and 4 license notices into the site`
+  `Synced catalog, ${catalog.entries.length} prompts, ${vendor.length} component sources and 6 license notices into the site`
 );

@@ -1,11 +1,11 @@
 {
   "name": "ui-vault",
   "license": "MIT for original work, see NOTICE.md",
-  "generated": "2026-10-30",
+  "generated": "2026-11-02",
   "counts": {
     "sources": 3,
-    "references": 12,
-    "patterns": 6,
+    "references": 14,
+    "patterns": 7,
     "upstream_components": 354
   },
   "entries": [
@@ -518,6 +518,79 @@
       "summary": "A number that springs from a start value to a target when it scrolls into view. Formatting uses `Intl.NumberFormat`, so thousands separators and decimals follow the locale rules of `en-US`."
     },
     {
+      "id": "portal-carousel",
+      "title": "Portal Carousel",
+      "tier": "reference",
+      "type": "interaction",
+      "status": "usable",
+      "stack": [
+        "react",
+        "gsap",
+        "typescript",
+        "tailwind"
+      ],
+      "tags": [
+        "carousel",
+        "cursor",
+        "gallery",
+        "fullscreen",
+        "gsap",
+        "click"
+      ],
+      "license": "MPL-2.0",
+      "rights": "permissive",
+      "source_url": "https://21st.dev/@hyperiux/components/portal-carousel",
+      "source_author": "Hyperiux",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-11-02",
+      "published_source": true,
+      "demo": "live",
+      "demo_url": "",
+      "demo_source": "site/src/demos/PortalCarouselDemo.tsx",
+      "license_url": "https://mozilla.org/MPL/2.0/",
+      "path": "references/portal-carousel/entry.md",
+      "prompt": "references/portal-carousel/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/portal-carousel/prompt",
+      "summary": "A full-stage image carousel where the next image waits as a small square preview near the cursor. A click expands that preview from its parked corner into the whole frame with GSAP, then the following preview appears. Titles and the image count roll over as each image lands."
+    },
+    {
+      "id": "spotlight-card",
+      "title": "Spotlight Card",
+      "tier": "reference",
+      "type": "card",
+      "status": "inspiration-only",
+      "stack": [
+        "react",
+        "typescript",
+        "css"
+      ],
+      "tags": [
+        "card",
+        "spotlight",
+        "pointer",
+        "glow",
+        "border",
+        "hover"
+      ],
+      "license": "unknown",
+      "rights": "private-reference",
+      "source_url": "https://21st.dev/@jahed/components/spotlight-card",
+      "source_author": "Hossain Jahed",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-11-02",
+      "published_source": false,
+      "demo": "link",
+      "demo_url": "https://21st.dev/@jahed/components/spotlight-card",
+      "demo_source": "",
+      "license_url": "",
+      "path": "references/spotlight-card/entry.md",
+      "prompt": "references/spotlight-card/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/spotlight-card/prompt",
+      "summary": "A card whose border and surface light up under the pointer. A soft radial glow follows the cursor across the edge, while the card face picks up a weaker tint in the same place. Several named glow colors and sizes are offered."
+    },
+    {
       "id": "zoom-parallax",
       "title": "Zoom Parallax",
       "tier": "reference",
@@ -733,6 +806,43 @@
       "prompt": "library/rocket-field-hero/prompt.md",
       "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/rocket-field-hero/prompt",
       "summary": "A full-bleed dark hero drawn on a 2D canvas. Three depths of stars drift behind a low horizon, small rockets climb from the line with tapering amber trails, and the pointer shifts the field by a few pixels. The headline, buttons and launch counter sit in HTML above the canvas."
+    },
+    {
+      "id": "spotlight-glow-card",
+      "title": "Spotlight Glow Card",
+      "tier": "pattern",
+      "type": "card",
+      "status": "usable",
+      "stack": [
+        "react",
+        "typescript",
+        "css"
+      ],
+      "tags": [
+        "card",
+        "spotlight",
+        "pointer",
+        "glow",
+        "border",
+        "focus",
+        "keyboard"
+      ],
+      "license": "MIT",
+      "rights": "own",
+      "source_url": "",
+      "source_author": "Kone",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-11-02",
+      "published_source": true,
+      "demo": "live",
+      "demo_url": "",
+      "demo_source": "site/src/demos/SpotlightGlowCardDemo.tsx",
+      "license_url": "",
+      "path": "library/spotlight-glow-card/entry.md",
+      "prompt": "library/spotlight-glow-card/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/spotlight-glow-card/prompt",
+      "summary": "A dark card with a warm light on its edge and face that follows the pointer. The border ring catches the light first, the surface takes a wider and weaker version of it, and the light fades out when the pointer leaves. Keyboard focus shows the same light at a fixed anchor."
     },
     {
       "id": "station-machine",

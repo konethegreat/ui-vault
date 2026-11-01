@@ -4,9 +4,9 @@ import { route } from "@/lib/router";
 
 export function HomePage() {
   const { catalog } = useCatalog();
-  const entries = catalog?.entries.length ?? 21;
-  const live = catalog?.entries.filter((entry) => entry.demo === "live").length ?? 13;
-  const linked = catalog?.entries.filter((entry) => entry.demo === "link").length ?? 4;
+  const entries = catalog?.entries.length ?? 24;
+  const live = catalog?.entries.filter((entry) => entry.demo === "live").length ?? 15;
+  const linked = catalog?.entries.filter((entry) => entry.demo === "link").length ?? 5;
   const upstream = catalog?.counts.upstream_components ?? 354;
 
   const ways = [

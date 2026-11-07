@@ -118,6 +118,9 @@ export function SiteFooter() {
                 <FooterLink href={`${BASE}licenses/portal-carousel.txt`}>Portal carousel</FooterLink>
               </li>
               <li>
+                <FooterLink href={`${BASE}licenses/animated-hero.txt`}>Animated hero</FooterLink>
+              </li>
+              <li>
                 <FooterLink href={`${BASE}licenses/gsap.txt`}>GSAP runtime</FooterLink>
               </li>
               <li>

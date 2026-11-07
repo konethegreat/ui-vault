@@ -14,6 +14,8 @@ import StationMachineDemo from "@/demos/StationMachineDemo";
 import RocketFieldHeroDemo from "@/demos/RocketFieldHeroDemo";
 import PortalCarouselDemo from "@/demos/PortalCarouselDemo";
 import SpotlightGlowCardDemo from "@/demos/SpotlightGlowCardDemo";
+import OrbitSceneCardDemo from "@/demos/OrbitSceneCardDemo";
+import AnimatedHeroDemo from "@/demos/AnimatedHeroDemo";
 import { DemoFrame } from "@/components/DemoFrame";
 import { REPO } from "@/lib/catalog";
 
@@ -35,6 +37,8 @@ const DEMO_INDEX = [
   { id: "rocket-field-hero", title: "Rocket Field Hero", group: "Original" },
   { id: "portal-carousel", title: "Portal Carousel", group: "Third-party" },
   { id: "spotlight-glow-card", title: "Spotlight Glow Card", group: "Original" },
+  { id: "orbit-scene-card", title: "Orbit Scene Card", group: "Original" },
+  { id: "animated-hero", title: "Animated Hero", group: "Third-party" },
 ];
 
 function Link({ href, children }: { href: string; children: React.ReactNode }) {
@@ -60,7 +64,7 @@ export function Demos() {
         <nav id="demos-index" aria-label="Demo index" className="scroll-mt-28">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="label text-ink/40">On this page</p>
-            <p className="label text-ink/40">15 live</p>
+            <p className="label text-ink/40">17 live</p>
           </div>
           <ul className="mt-3 grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
             {DEMO_INDEX.map((demo, index) => (
@@ -329,6 +333,45 @@ export function Demos() {
             bleed
           >
             <SpotlightGlowCardDemo />
+          </DemoFrame>
+
+          <DemoFrame
+            id="orbit-scene-card"
+            index="16"
+            title="Orbit Scene Card"
+            credit={
+              <>
+                Kone Tshivhinda · MIT ·{" "}
+                <Link href={`${REPO}/blob/main/library/orbit-scene-card/OrbitSceneCard.tsx`}>
+                  read the source
+                </Link>
+                {" · inspired by "}
+                <Link href="https://21st.dev/@serafimcloud/components/splite">Serafim</Link>
+              </>
+            }
+            note="Original three.js scene. The Spline Scene reference is link-only because its demo scene is a separate asset with no stated license. This card keeps the composition with no Spline runtime or borrowed scene. three.js loads as its own chunk when the demo mounts."
+            bleed
+          >
+            <OrbitSceneCardDemo />
+          </DemoFrame>
+
+          <DemoFrame
+            id="animated-hero"
+            index="17"
+            title="Animated Hero"
+            credit={
+              <>
+                <Link href="https://21st.dev/@tommyjepsen">Tommy Jepsen</Link>
+                {" · "}
+                <Link href="https://21st.dev/@tommyjepsen/components/animated-hero">
+                  via 21st.dev, MIT
+                </Link>
+              </>
+            }
+            note="Third-party. Runs the vendored hero with this site's Button, the motion package and a reduced-motion branch. The three buttons are inert in this frame."
+            bleed
+          >
+            <AnimatedHeroDemo />
           </DemoFrame>
         </div>
       </div>

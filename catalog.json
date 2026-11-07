@@ -1,11 +1,11 @@
 {
   "name": "ui-vault",
   "license": "MIT for original work, see NOTICE.md",
-  "generated": "2026-11-01",
+  "generated": "2026-11-07",
   "counts": {
     "sources": 3,
-    "references": 14,
-    "patterns": 7,
+    "references": 16,
+    "patterns": 8,
     "upstream_components": 354
   },
   "entries": [
@@ -112,6 +112,44 @@
       "prompt": "sources/shadcn-ui/prompt.md",
       "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/shadcn-ui/prompt",
       "summary": "The base layer for most of the stack indexed here. Components are copied into your project as source, so you own and edit the files. It is not a runtime dependency."
+    },
+    {
+      "id": "animated-hero",
+      "title": "Animated Hero",
+      "tier": "reference",
+      "type": "hero",
+      "status": "usable",
+      "stack": [
+        "react",
+        "typescript",
+        "tailwind",
+        "motion"
+      ],
+      "tags": [
+        "hero",
+        "rotating-text",
+        "spring",
+        "animation",
+        "cta",
+        "marketing",
+        "smb"
+      ],
+      "license": "MIT",
+      "rights": "permissive",
+      "source_url": "https://21st.dev/@tommyjepsen/components/animated-hero",
+      "source_author": "Tommy Jepsen",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-11-07",
+      "published_source": true,
+      "demo": "live",
+      "demo_url": "",
+      "demo_source": "site/src/demos/AnimatedHeroDemo.tsx",
+      "license_url": "https://21st.dev/@tommyjepsen/components/animated-hero",
+      "path": "references/animated-hero/entry.md",
+      "prompt": "references/animated-hero/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/animated-hero/prompt",
+      "summary": "A centered marketing hero with one rotating word. \"This is something\" stays put while amazing, new, wonderful, beautiful and smart swap on a two second timer. Each word enters on a spring, the previous word leaves in the opposite direction, and a row of buttons sits under the copy."
     },
     {
       "id": "animated-rocket-hero",
@@ -555,6 +593,44 @@
       "summary": "A full-stage image carousel where the next image waits as a small square preview near the cursor. A click expands that preview from its parked corner into the whole frame with GSAP, then the following preview appears. Titles and the image count roll over as each image lands."
     },
     {
+      "id": "spline-scene",
+      "title": "Spline Scene",
+      "tier": "reference",
+      "type": "hero",
+      "status": "usable",
+      "stack": [
+        "react",
+        "typescript",
+        "tailwind",
+        "spline"
+      ],
+      "tags": [
+        "hero",
+        "3d",
+        "spline",
+        "lazy-loading",
+        "suspense",
+        "scene",
+        "pointer"
+      ],
+      "license": "MIT",
+      "rights": "permissive",
+      "source_url": "https://21st.dev/@serafimcloud/components/splite",
+      "source_author": "Serafim",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-11-07",
+      "published_source": true,
+      "demo": "link",
+      "demo_url": "https://21st.dev/@serafimcloud/components/splite",
+      "demo_source": "",
+      "license_url": "https://21st.dev/@serafimcloud/components/splite",
+      "path": "references/spline-scene/entry.md",
+      "prompt": "references/spline-scene/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/spline-scene/prompt",
+      "summary": "A wrapper that mounts a Spline scene in React. The Spline runtime is imported on demand, a Suspense fallback covers the module load, and the scene itself is a URL that Spline hosts. The published file is about twenty lines."
+    },
+    {
       "id": "spotlight-card",
       "title": "Spotlight Card",
       "tier": "reference",
@@ -769,6 +845,46 @@
       "prompt": "library/nebula-hero/prompt.md",
       "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/nebula-hero/prompt",
       "summary": "A WebGL2 hero background made from layered value noise: a slow nebula with a warm core, faint stars and a vignette. Content sits over it with a readable scrim. All code is original and MIT."
+    },
+    {
+      "id": "orbit-scene-card",
+      "title": "Orbit Scene Card",
+      "tier": "pattern",
+      "type": "hero",
+      "status": "usable",
+      "stack": [
+        "react",
+        "typescript",
+        "three.js",
+        "css"
+      ],
+      "tags": [
+        "hero",
+        "3d",
+        "three.js",
+        "card",
+        "pointer",
+        "parallax",
+        "lazy-loading",
+        "dark",
+        "webgl"
+      ],
+      "license": "MIT",
+      "rights": "own",
+      "source_url": "",
+      "source_author": "Kone",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-11-07",
+      "published_source": true,
+      "demo": "live",
+      "demo_url": "",
+      "demo_source": "site/src/demos/OrbitSceneCardDemo.tsx",
+      "license_url": "",
+      "path": "library/orbit-scene-card/entry.md",
+      "prompt": "library/orbit-scene-card/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/orbit-scene-card/prompt",
+      "summary": "A dark card with a headline on the left and a generated orbit on the right. A flat-shaded icosahedron sits inside three thin rings and a cloud of points, lit with an amber key and a cool rim. The group leans toward the pointer, the scene pauses when it leaves the viewport, and reduced motion keeps a still frame."
     },
     {
       "id": "rocket-field-hero",

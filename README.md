@@ -173,7 +173,7 @@ Spotlight Card by Hossain Jahed is link-only for the same reason: the page recor
 
 Spline Scene by Serafim is MIT, and its twenty line wrapper is vendored with the notice. Its demo scene is a separate asset with no stated license, so the entry is link-only and the scene is not embedded. The site runs an original three.js scene in the same card composition, Orbit Scene Card, with no Spline runtime or borrowed asset. Three.js loads in its own chunk when the card mounts.
 
-Animated Hero by Tommy Jepsen is MIT, recorded on 21st.dev and first published on twblocks.com. The component is vendored with four small edits: the Motion import, the local Button in place of the shadcn Button, the `ghost` variant in place of `outline`, and a reduced-motion branch. The copy and the spring values are unchanged, and the MIT notice is served at `licenses/animated-hero.txt`.
+Animated Hero by Tommy Jepsen is MIT, recorded on 21st.dev and first published on twblocks.com. The component is vendored with the edits listed in its entry: the Motion import, the local Button and its `ghost` variant in place of `outline`, the site's `text-foreground` token, a reduced-motion branch that stops the rotation, `aria-hidden` on inactive titles, and responsive container, heading and CTA sizing for 390px. The copy and the spring values are unchanged, and the MIT notice is served at `licenses/animated-hero.txt`.
 
 Zoom Parallax by Efferd and Interactive Image Accordion by Le Thanh are link-only for the same reason: both pages record no license. Their reference entries document the technique and link out. The site runs original MIT implementations of those ideas, credited as inspired by, using generated images. No code, thumbnails or preview assets were taken from either page.
 

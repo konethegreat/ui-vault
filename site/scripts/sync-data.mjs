@@ -73,6 +73,8 @@ const vendor = [
   ["references/animated-hero/AnimatedHero.tsx", "AnimatedHero.tsx"],
   ["library/orbit-scene-card/OrbitSceneCard.tsx", "OrbitSceneCard.tsx"],
   ["library/orbit-scene-card/orbit-scene-card.css", "orbit-scene-card.css"],
+  ["library/interactive-robot-card/InteractiveRobotCard.tsx", "InteractiveRobotCard.tsx"],
+  ["library/interactive-robot-card/interactive-robot-card.css", "interactive-robot-card.css"],
 ];
 
 await mkdir(join(site, "src", "vendor"), { recursive: true });

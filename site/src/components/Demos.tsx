@@ -15,6 +15,7 @@ import RocketFieldHeroDemo from "@/demos/RocketFieldHeroDemo";
 import PortalCarouselDemo from "@/demos/PortalCarouselDemo";
 import SpotlightGlowCardDemo from "@/demos/SpotlightGlowCardDemo";
 import OrbitSceneCardDemo from "@/demos/OrbitSceneCardDemo";
+import InteractiveRobotCardDemo from "@/demos/InteractiveRobotCardDemo";
 import AnimatedHeroDemo from "@/demos/AnimatedHeroDemo";
 import { DemoFrame } from "@/components/DemoFrame";
 import { REPO } from "@/lib/catalog";
@@ -38,6 +39,7 @@ const DEMO_INDEX = [
   { id: "portal-carousel", title: "Portal Carousel", group: "Third-party" },
   { id: "spotlight-glow-card", title: "Spotlight Glow Card", group: "Original" },
   { id: "orbit-scene-card", title: "Orbit Scene Card", group: "Original" },
+  { id: "interactive-robot-card", title: "Interactive Robot Card", group: "Original" },
   { id: "animated-hero", title: "Animated Hero", group: "Third-party" },
 ];
 
@@ -64,7 +66,7 @@ export function Demos() {
         <nav id="demos-index" aria-label="Demo index" className="scroll-mt-28">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="label text-ink/40">On this page</p>
-            <p className="label text-ink/40">17 live</p>
+            <p className="label text-ink/40">18 live</p>
           </div>
           <ul className="mt-3 grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
             {DEMO_INDEX.map((demo, index) => (
@@ -356,8 +358,30 @@ export function Demos() {
           </DemoFrame>
 
           <DemoFrame
-            id="animated-hero"
+            id="interactive-robot-card"
             index="17"
+            title="Interactive Robot Card"
+            credit={
+              <>
+                Kone Tshivhinda · MIT ·{" "}
+                <Link
+                  href={`${REPO}/blob/main/library/interactive-robot-card/InteractiveRobotCard.tsx`}
+                >
+                  read the source
+                </Link>
+                {" · inspired by "}
+                <Link href="https://21st.dev/@serafimcloud/components/splite">Serafim</Link>
+              </>
+            }
+            note="Original three.js robot. No Spline runtime, scene asset or borrowed character. The head and lenses follow the pointer, and the loop stops offscreen. three.js loads as its own chunk when the demo mounts."
+            bleed
+          >
+            <InteractiveRobotCardDemo />
+          </DemoFrame>
+
+          <DemoFrame
+            id="animated-hero"
+            index="18"
             title="Animated Hero"
             credit={
               <>

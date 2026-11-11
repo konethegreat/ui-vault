@@ -1,6 +1,6 @@
 # Third-party attribution
 
-Generated 2026-11-07. This file lists every source and reference. Names and trademarks belong to their owners.
+Generated 2026-11-11. This file lists every source and reference. Names and trademarks belong to their owners.
 
 | Item | Author | License | Rights | Source | Retrieved | Published source |
 | --- | --- | --- | --- | --- | --- | --- |

@@ -19,6 +19,7 @@ const FALLBACK_TITLES = [
   "Interactive 3D Machine",
   "Circular Navigation Bar",
   "Orbit Scene Card",
+  "Interactive Robot Card",
   "Animated Hero",
 ];
 
@@ -39,7 +40,7 @@ export function Hero() {
 
   const entries = catalog?.entries ?? [];
   const titles = entries.length ? entries.map((entry) => entry.title) : FALLBACK_TITLES;
-  const liveDemos = entries.filter((entry) => entry.demo === "live").length || 17;
+  const liveDemos = entries.filter((entry) => entry.demo === "live").length || 18;
 
   return (
     <section id="top" className="scroll-mt-20">
@@ -121,7 +122,7 @@ export function Hero() {
             </div>
 
             <dl className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
-              <Stat value={entries.length || 27} label="entries in the vault" reduced={reduced} />
+              <Stat value={entries.length || 28} label="entries in the vault" reduced={reduced} />
               <Stat value={liveDemos} label="live demos in the vault" reduced={reduced} />
               <Stat
                 value={catalog?.counts.upstream_components ?? 354}

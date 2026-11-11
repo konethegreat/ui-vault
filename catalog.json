@@ -1,11 +1,11 @@
 {
   "name": "ui-vault",
   "license": "MIT for original work, see NOTICE.md",
-  "generated": "2026-11-07",
+  "generated": "2026-11-11",
   "counts": {
     "sources": 3,
     "references": 16,
-    "patterns": 8,
+    "patterns": 9,
     "upstream_components": 354
   },
   "entries": [
@@ -808,6 +808,46 @@
       "prompt": "library/editorial-image-accordion/prompt.md",
       "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/editorial-image-accordion/prompt",
       "summary": "A horizontal band of images where one panel holds the width and the rest collapse to slim spines with vertical labels. Hovering a spine on a mouse, or clicking, tapping or arrowing to one, expands it. A caption under the band names the active image and describes it."
+    },
+    {
+      "id": "interactive-robot-card",
+      "title": "Interactive Robot Card",
+      "tier": "pattern",
+      "type": "hero",
+      "status": "usable",
+      "stack": [
+        "react",
+        "typescript",
+        "three.js",
+        "css"
+      ],
+      "tags": [
+        "hero",
+        "3d",
+        "robot",
+        "three.js",
+        "pointer",
+        "gaze",
+        "webgl",
+        "lazy-loading",
+        "dark"
+      ],
+      "license": "MIT",
+      "rights": "own",
+      "source_url": "",
+      "source_author": "Kone",
+      "upstream_repo": "",
+      "upstream_commit": "",
+      "retrieved": "2026-11-07",
+      "published_source": true,
+      "demo": "live",
+      "demo_url": "",
+      "demo_source": "site/src/demos/InteractiveRobotCardDemo.tsx",
+      "license_url": "",
+      "path": "library/interactive-robot-card/entry.md",
+      "prompt": "library/interactive-robot-card/prompt.md",
+      "prompt_url": "https://ui-vault-api.erictshivhinda.workers.dev/api/entries/interactive-robot-card/prompt",
+      "summary": "A dark card with a headline on the left and a robot on the right. The robot is a metallic head with a glossy visor, two lit lenses, ear discs, an antenna and a floating shell, hovering over two thin rings. The head turns toward the pointer, the lenses shift inside the visor, and the antenna pulses on its own timer."
     },
     {
       "id": "nebula-hero",

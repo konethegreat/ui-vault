@@ -22,7 +22,7 @@ Agents can also read the same catalog from a free hosted [API](#api), a zero-dep
 - [gallery.html](gallery.html): open in a browser for a visual index with filters.
 - [catalog.json](catalog.json): machine-readable index, including component names for each upstream library.
 - [THIRD_PARTY.md](THIRD_PARTY.md): attribution and license links for every source and reference.
-- [Live site](https://konethegreat.github.io/ui-vault/): seventeen running demos, a searchable catalog and the rights policy.
+- [Live site](https://konethegreat.github.io/ui-vault/): eighteen running demos, a searchable catalog and the rights policy.
 
 ## The site
 
@@ -145,7 +145,7 @@ The site imports generated, byte-for-byte copies of the published source from `r
 
 React Bits permits use inside apps and products, including commercial ones, but forbids selling or redistributing the components themselves. That is why this repo links to React Bits instead of copying it.
 
-The live site runs seventeen components:
+The live site runs eighteen components:
 
 | Component | Author | License | Source |
 | --- | --- | --- | --- |
@@ -165,13 +165,14 @@ The live site runs seventeen components:
 | Portal Carousel | Hyperiux | MPL 2.0 | [21st.dev](https://21st.dev/@hyperiux/components/portal-carousel) |
 | Spotlight Glow Card | Kone | MIT | Original, inspired by Hossain Jahed |
 | Orbit Scene Card | Kone | MIT | Original, inspired by Serafim |
+| Interactive Robot Card | Kone | MIT | Original, inspired by Serafim |
 | Animated Hero | Tommy Jepsen | MIT | [21st.dev](https://21st.dev/@tommyjepsen/components/animated-hero) |
 
 21st.dev components are handled one at a time, not as a library. A component runs live here only when its own page records a permissive license and names the author. Mascot Portfolio Hero, Liquid Sculpture Hero and Glassmorphism Folder Cards meet that bar, so all three are vendored unchanged and run in their own frames. Portal Carousel is a Hyperiux Free Core effect under MPL 2.0, so its source is vendored with the license notice and it runs live. Components with unknown or non-commercial terms stay link-only even when they come from the same platform. Circular Navigation Bar by Kaif UI is link-only: its page names the author but records no license, so the entry documents the technique and links to the original.
 
 Spotlight Card by Hossain Jahed is link-only for the same reason: the page records no license. The site runs an original MIT implementation of the idea, Spotlight Glow Card, credited as inspired by, with its own pointer listener per card, scoped CSS and a focus state. No code or assets were taken from the original.
 
-Spline Scene by Serafim is MIT, and its twenty line wrapper is vendored with the notice. Its demo scene is a separate asset with no stated license, so the entry is link-only and the scene is not embedded. The site runs an original three.js scene in the same card composition, Orbit Scene Card, with no Spline runtime or borrowed asset. Three.js loads in its own chunk when the card mounts.
+Spline Scene by Serafim is MIT, and its twenty line wrapper is vendored with the notice. Its demo scene is a separate asset with no stated license, so the entry is link-only and the scene is not embedded. The site runs two original three.js scenes inspired by it: Orbit Scene Card, an abstract faceted core, and Interactive Robot Card, a robot whose head and lenses follow the pointer. Neither one uses a Spline runtime, the author's scene or a borrowed character, and three.js loads in its own chunk when either card mounts.
 
 Animated Hero by Tommy Jepsen is MIT, recorded on 21st.dev and first published on twblocks.com. The component is vendored with the edits listed in its entry: the Motion import, the local Button and its `ghost` variant in place of `outline`, the site's `text-foreground` token, a reduced-motion branch that stops the rotation, `aria-hidden` on inactive titles, and responsive container, heading and CTA sizing for 390px. The copy and the spring values are unchanged, and the MIT notice is served at `licenses/animated-hero.txt`.
 

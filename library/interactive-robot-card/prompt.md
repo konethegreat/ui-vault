@@ -52,7 +52,7 @@ Add a dark card with copy on one side and an original three.js robot on the othe
 - Do not mount several cards on one page. One scene per page is the budget.
 - Do not put essential text inside the canvas or remove the copy.
 - Do not attach the pointer listener to `document`, and do not keep it after unmount.
-- Do not swap the lens material for a lit one without an emissive colour; the eyes will go dark.
+- Do not swap the lens material for a standard one without an emissive colour; the eyes will go dark.
 - Do not widen the pointer mapping without clamping the head angles.
 - Do not present the robot as the Spline demo character. It is an original three.js model. Keep the Serafim credit as inspiration.
 

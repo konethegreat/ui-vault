@@ -1,12 +1,10 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { listEntries, splitList, firstParagraph, escapeHtml } from "./lib.mjs";
+import { listEntries, splitList, firstParagraph, escapeHtml, readJsonIfExists, resolveGenerated } from "./lib.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
-const now = new Date();
-// UTC keeps the generated stamp stable on CI runners whatever the local timezone.
-const generated = now.toISOString().slice(0, 10);
+const catalogPath = join(root, "catalog.json");
 
 const TIER_RANK = { source: 0, reference: 1, pattern: 2 };
 const TIER_LABEL = { source: "Source", reference: "Reference", pattern: "Library" };
@@ -86,7 +84,7 @@ const upstreamCount = upstream.reduce((sum, item) => sum + item.components.lengt
 const catalog = {
   name: "ui-vault",
   license: "MIT for original work, see NOTICE.md",
-  generated,
+  generated: "",
   counts: {
     sources: sources.length,
     references: references.length,
@@ -97,7 +95,12 @@ const catalog = {
   upstream,
 };
 
-writeFileSync(join(root, "catalog.json"), JSON.stringify(catalog, null, 2) + "\n");
+// index.md, THIRD_PARTY.md and gallery.html are derived from the same content, so they share
+// this stamp and stay byte-identical when nothing changed.
+const generated = resolveGenerated(readJsonIfExists(catalogPath), catalog);
+catalog.generated = generated;
+
+writeFileSync(catalogPath, JSON.stringify(catalog, null, 2) + "\n");
 
 const mdCell = (value) => String(value ?? "").replace(/\|/g, "\\|").replace(/\n/g, " ");
 

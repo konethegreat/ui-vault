@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 export const TIERS = {
@@ -87,4 +87,37 @@ export function escapeHtml(value) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+const DATE_STAMP = /^\d{4}-\d{2}-\d{2}$/;
+
+// UTC keeps the generated stamp stable on CI runners whatever the local timezone.
+export function todayStamp(now = new Date()) {
+  return now.toISOString().slice(0, 10);
+}
+
+// Returns the parsed JSON at path, or null when the file is missing or unreadable as JSON.
+export function readJsonIfExists(path) {
+  if (!existsSync(path)) return null;
+  try {
+    return JSON.parse(readFileSync(path, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function withoutGenerated(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return value;
+  const { generated: _generated, ...rest } = value;
+  return rest;
+}
+
+// Keeps the previous `generated` stamp when the rest of the content is unchanged, so rebuilding
+// on a new calendar day does not dirty committed output. Any content change takes the new date.
+export function resolveGenerated(previous, next, today = todayStamp()) {
+  if (!previous || typeof previous.generated !== "string" || !DATE_STAMP.test(previous.generated)) {
+    return today;
+  }
+  const same = JSON.stringify(withoutGenerated(previous)) === JSON.stringify(withoutGenerated(next));
+  return same ? previous.generated : today;
 }

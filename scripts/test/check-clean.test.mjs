@@ -88,6 +88,11 @@ test("npm run check leaves generated files clean today", () => {
   withCopy((_dir, copy) => {
     runCheck(copy);
     assert.deepEqual(changedFiles(copy), []);
+    for (const file of GENERATED) {
+      const rebuilt = readFileSync(join(copy, file), "utf8");
+      assert.ok(!rebuilt.includes("
+\n"), `${file} must use LF line endings`);
+    }
   });
 });
 

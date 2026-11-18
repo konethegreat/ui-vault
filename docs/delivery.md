@@ -6,6 +6,7 @@ Use this checklist for changes that affect the catalog, the site or the Worker.
 
 ```bash
 npm run check
+npm run test:scripts
 npm run test:worker
 npm run build
 cd site
@@ -28,6 +29,14 @@ Commit generated files when they change:
 - `site/src/vendor/`
 
 CI verifies the generated files are committed and the site builds.
+
+The `generated` date in these files changes only when their content changes. `build-catalog.mjs`
+compares the new catalog with the committed `catalog.json`, ignoring `generated`, and keeps the old
+date when they match. `index.md`, `THIRD_PARTY.md` and `gallery.html` use the same date.
+`build-worker-data.mjs` does the same against the committed `worker/src/data.json`, which also holds
+prompt text, so a prompt-only edit updates the Worker date and leaves the catalog date alone. A
+rebuild on a new day with no entry or upstream changes leaves `git diff --exit-code` clean. The
+helper is `resolveGenerated` in `scripts/lib.mjs`, covered by `npm run test:scripts`.
 
 ## What deploys where
 

@@ -205,10 +205,14 @@ npm run build        # regenerate catalog.json, index.md, gallery.html, THIRD_PA
 npm run check        # validate, then build the catalog and Worker data
 npm run upstream     # rebuild source component indexes from local upstream data
 npm run audit        # check every external link in the catalog, docs and site
+npm run test:scripts # run the build script unit tests
 npm run test:worker  # run the MCP and API unit tests
 npm run worker:dev   # build data, then run the Worker locally
 npm run worker:deploy # build data, then deploy the Worker
 ```
+
+The `generated` date in the built files changes only when their content changes, so rebuilding on a
+new day with no entry changes leaves the committed files clean. See [docs/delivery.md](docs/delivery.md).
 
 Site, React and Vite dependencies:
 

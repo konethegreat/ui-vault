@@ -206,6 +206,7 @@ npm run check        # validate, then build the catalog and Worker data
 npm run upstream     # rebuild source component indexes from local upstream data
 npm run audit        # check every external link in the catalog, docs and site
 npm run test:scripts # run the build script unit tests
+npm run test:check   # assert npm run check leaves the committed generated files unchanged
 npm run test:worker  # run the MCP and API unit tests
 npm run worker:dev   # build data, then run the Worker locally
 npm run worker:deploy # build data, then deploy the Worker

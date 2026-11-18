@@ -5,7 +5,7 @@ Execute tasks in order. Each checkbox is sized for a single pull request on its 
 ## Phase 1: Stabilize CI and Deterministic Catalog Builds
 
 - [x] Update `scripts/build-catalog.mjs` and `scripts/build-worker-data.mjs` so `generated` timestamps only update when catalog or worker content changes (or add a `--check` mode), preventing `git diff --exit-code` CI failures on new dates.
-- [ ] Add a regression test verifying `npm run check` leaves generated files clean when no entries or upstream files changed.
+- [x] Add a regression test verifying `npm run check` leaves generated files clean when no entries or upstream files changed.
 - [ ] Audit `.gitattributes` and Windows CRLF behavior for `worker/src/data.json` so local Windows runs of `npm run check` do not introduce line-ending noise.
 
 ## Phase 2: Add Unit Tests for Scripts, CLI, and Worker HTTP API

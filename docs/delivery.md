@@ -38,6 +38,13 @@ prompt text, so a prompt-only edit updates the Worker date and leaves the catalo
 rebuild on a new day with no entry or upstream changes leaves `git diff --exit-code` clean. The
 helper is `resolveGenerated` in `scripts/lib.mjs`, covered by `npm run test:scripts`.
 
+`npm run test:check` (`scripts/test/check-clean.test.mjs`, also part of `npm run test:scripts`) is
+the end-to-end regression test for this. It copies the repository to a temporary folder, runs the
+`check` steps from `package.json` there, once with the real clock and once with the clock frozen on
+a later day, and asserts the five generated files above match the committed ones, ignoring CRLF
+versus LF. A control case edits one prompt and asserts the Worker data changes and takes the new
+date. The working tree is never modified. CI runs it after the generated files check.
+
 ## What deploys where
 
 - Push to `main` with changes under `site/`, `catalog.json`, `references/`, `library/`, `scripts/`,

@@ -90,8 +90,7 @@ test("npm run check leaves generated files clean today", () => {
     assert.deepEqual(changedFiles(copy), []);
     for (const file of GENERATED) {
       const rebuilt = readFileSync(join(copy, file), "utf8");
-      assert.ok(!rebuilt.includes("
-\n"), `${file} must use LF line endings`);
+      assert.ok(!rebuilt.includes(String.fromCharCode(13, 10)), `${file} must use LF line endings`);
     }
   });
 });

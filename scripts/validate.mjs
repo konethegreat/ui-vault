@@ -1,13 +1,7 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
-import { join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { join, resolve } from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { listEntries } from "./lib.mjs";
-
-const root = fileURLToPath(new URL("..", import.meta.url));
-const errors = [];
-const warnings = [];
-const entries = listEntries(root);
-const ids = new Map();
 
 const TYPES = new Set([
   "hero",
@@ -33,7 +27,13 @@ const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const COMMIT = /^[0-9a-f]{40}$/;
 
-for (const entry of entries) {
+export function validateEntries(root) {
+  const errors = [];
+  const warnings = [];
+  const entries = listEntries(root);
+  const ids = new Map();
+
+  for (const entry of entries) {
   const { data: d, folder, id, dir } = entry;
   const where = `${folder}/${id}`;
   const fail = (message) => errors.push(`${where}: ${message}`);
@@ -111,14 +111,23 @@ for (const entry of entries) {
       if (!/do not copy/i.test(prompt)) fail('prompt.md must say "do not copy" for non-copyable rights');
     }
   }
+  }
+
+  return { entries, errors, warnings };
 }
 
-for (const warning of warnings) console.warn(`warning: ${warning}`);
+const isMain = process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href;
+if (isMain) {
+  const root = fileURLToPath(new URL("..", import.meta.url));
+  const { entries, errors, warnings } = validateEntries(root);
 
-if (errors.length) {
-  console.error(`Validation failed with ${errors.length} error(s):`);
-  for (const error of errors) console.error(`  - ${error}`);
-  process.exit(1);
+  for (const warning of warnings) console.warn(`warning: ${warning}`);
+
+  if (errors.length) {
+    console.error(`Validation failed with ${errors.length} error(s):`);
+    for (const error of errors) console.error(`  - ${error}`);
+    process.exit(1);
+  }
+
+  console.log(`Validated ${entries.length} entries. No errors.`);
 }
-
-console.log(`Validated ${entries.length} entries. No errors.`);

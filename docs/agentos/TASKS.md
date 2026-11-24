@@ -12,7 +12,7 @@ Execute tasks in order. Each checkbox is sized for a single pull request on its 
 
 - [x] Add `node --test` unit tests for `scripts/lib.mjs` and `scripts/validate.mjs` covering frontmatter parsing, rights/license rules, and prompt validation.
 - [ ] Add `node --test` unit tests for `worker/src/search.js` covering `filterEntries`, `filterComponents`, `getEntry`, and `publicEntry`.
-- [ ] Add `node --test` unit tests for `worker/src/index.js` covering `/api/health`, `/api/entries`, `/api/entries/:id`, `/api/entries/:id/prompt`, `/api/components`, CORS headers, and 404/405 responses.
+- [x] Add `node --test` unit tests for `worker/src/index.js` covering `/api/health`, `/api/entries`, `/api/entries/:id`, `/api/entries/:id/prompt`, `/api/components`, CORS headers, and 404/405 responses.
 - [ ] Add `node --test` unit tests for `bin/ui-vault.mjs` covering `list`, `search`, `show`, `prompt`, `--json` output, and local `catalog.json` fallback.
 - [ ] Update `package.json` and `.github/workflows/check.yml` to run all root `node --test` suites on every PR and push to `main`.
 
